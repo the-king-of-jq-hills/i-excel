@@ -570,10 +570,14 @@ function iexcel_body_class( $classes ) {
 	
 	$iexcel_page_class = '';
 	$iexcel_page_nopad = 0;
-	  
+	$iexcel_no_ubar = '';
+	$iexcel_trans_header = 0;	  
+
 	if ( function_exists( 'rwmb_meta' ) ) { 
 		$iexcel_page_class = rwmb_meta('iexcel_page_class');
 		$iexcel_page_nopad = rwmb_meta('iexcel_page_nopad');
+		$iexcel_no_ubar = rwmb_meta('iexcel_no_ubar');
+		$iexcel_trans_header = rwmb_meta('iexcel_trans_header');		
 	}
 	
 	if ( ! is_multi_author() )
@@ -597,8 +601,27 @@ function iexcel_body_class( $classes ) {
 		
 	// Add PreLoader Class
 	if( get_theme_mod('exta_shadow', 0) == 1 )
-		$classes[] = 'extra-page-shadow';		
+		$classes[] = 'extra-page-shadow';
+		
+	if( $iexcel_no_ubar == 1 )
+		$classes[] = 'tx-noubar';		
 
+	if( $iexcel_trans_header == 1 )
+		$classes[] = 'nx-fullscreen';
+		
+	// Boxed Navigation Icons
+	if( get_theme_mod('boxed-icons', 0) == 1 )
+		$classes[] = 'nx-nav-boxedicons';
+		
+	// Top Nav Menu Items to UPPERCASE
+	if( get_theme_mod('nav_upper', 0) == 1 )
+		$classes[] = 'nx-nav-uppercase';
+		
+	if ( get_theme_mod('show_search', 1) == 1 )	{
+		$classes[] = 'nx-show-search';
+	} else 	{
+		$classes[] = 'nx-no-search';
+	}					
 
 	return $classes;
 }
@@ -720,6 +743,7 @@ if ( function_exists( 'rwmb_meta' ) ) {
 
 include get_template_directory() . '/inc/custom_functions.php';
 include get_template_directory() . '/inc/iexcel-custom-style.php';
+include get_template_directory() . '/inc/woo-functions.php';
 
 /*-----------------------------------------------------------------------------------*/
 /*	changing default Excerpt length 
@@ -777,7 +801,6 @@ function iexcel_register_required_plugins() {
 * If the source is NOT from the .org repo, then source is also required.
 */
     $plugins = array(
-
          // This is an example of how to include a plugin from a private repo in your theme.
         array(
             'name' => 'Breadcrumb NavXT', // The plugin name.
@@ -788,12 +811,6 @@ function iexcel_register_required_plugins() {
         array(
             'name' => 'TemplatesNext ToolKit', // The plugin name.
             'slug' => 'templatesnext-toolkit', // The plugin slug (typically the folder name).
-            'required' => false, // If false, the plugin is only 'recommended' instead of required.
-        ),
-         // This is an example of how to include a plugin from a private repo in your theme.
-        array(
-            'name' => 'Contact Form 7', // The plugin name.
-            'slug' => 'contact-form-7', // The plugin slug (typically the folder name).
             'required' => false, // If false, the plugin is only 'recommended' instead of required.
         ),
          // This is an example of how to include a plugin from a private repo in your theme.
@@ -813,7 +830,7 @@ function iexcel_register_required_plugins() {
             'name' => 'SiteOrigin Widgets Bundle', // The plugin name.
             'slug' => 'so-widgets-bundle', // The plugin slug (typically the folder name).
             'required' => false, // If false, the plugin is only 'recommended' instead of required.
-        ),							
+        ),		
 
     );
 
@@ -985,18 +1002,16 @@ function iexcel_admin_notice_006() {
         $user_id = $current_user->ID;
 		$ocdi_faq = '//templatesnext.org/one-click-demo-imports-faqs/?ref=i-excel';
 		$demo_import_url = admin_url('themes.php?page=pt-one-click-demo-import');
-		$about_iexcel = admin_url('themes.php?page=welcome-screen-about');
 		$notice_url = esc_url('https://wordpress.org/support/theme/i-excel/reviews/?filter=5');
         /* Check that the user hasn't already clicked to ignore the message */
     if ( ! get_user_meta($user_id, 'iexcel_ignore_notice_006') ) {
-        echo '<div class="updated iexcel-notice"><div style="line-height: 20px;">'; 
-			printf(__('i-excel demo layouts are available <a href="%1$s" target="_blank">here</a>. Make sure you have installed all the recommended plugins before you start the import process. Check out One Click Demo Import <a href="%2$s" target="_blank">FAQs here.</a><br />', 'i-excel'), $demo_import_url, $ocdi_faq);
+        echo '<div class="updated"><p><div style="line-height: 20px;">'; 
+			printf(__('i-excel demo layouts are available <a href="%1$s">here</a>. Make sure you have installed all the recommended plugins before you start the import process. Check out One Click Demo Import <a href="%2$s">FAQs here.</a><br />', 'i-excel'), $demo_import_url, $ocdi_faq);
         	printf(__('<div>If you like i-Excel, please help us with your review <a href="%1$s" target="_blank">here</a>, Your Feedback will help encourage and support i-excel’s continued development and better user support.</div>', 'i-excel'), $notice_url);
-			printf(__('<a href="%1$s" class="ad-review"><span class="review-text">Import Demo Contents And Settings</span></a>', 'i-excel' ), $demo_import_url);										
+			printf(__('<a href="%1$s" target="_blank" class="ad-review"><span class="review-text">Import Demo Contents And Settings</span></a>', 'i-excel' ), $demo_import_url);										
 			printf(__('<a href="%1$s" target="_blank" class="ad-review"><span class="review-text">Post Your Review</span></a>', 'i-excel' ), $notice_url);
-			printf(__('<a href="%1$s" class="ad-review"><span class="review-text">More About I-Excel</span></a>', 'i-excel' ), $about_iexcel);			
 			printf(__('<a href="%1$s"><span class="dismiss-cross">X</span><span class="dismiss-text">Dismiss this notice</span></a><div class="clear"></div>', 'i-excel' ), '?iexcel_notice_ignore_006=0');				
-        echo "</div></div>";
+        echo "</div></p></div>";
     }
 }
 

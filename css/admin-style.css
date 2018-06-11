@@ -186,135 +186,6 @@ li.customize-control {
 	text-decoration: none;	
 }
 
-.ad-review:before {
-	display: block;
-	clear: both;
-	content: " ";
-	height: 1px;
-}
-
-.ad-review {
-	display: block;
-	float: left;
-	padding-right: 16px;
-}
-.tx-notice {
-	font-size: 16px;
-	padding: 0px;
-	margin: 0px;
-}
-
-/* New Notification design */
-.wp-admin .iexcel-notice {
-	display: none;
-}
-.wp-admin.index-php .wrap .iexcel-notice {
-	display: block!important;
-	background-image: url(../images/notice-bg.png);
-	background-repeat: repeat;
-	background-position: left center;
-}
-
-.wrap .iexcel-notice {
-	background-color: #95c837;
-	color: #FFF;
-	font-size: 15px;
-	font-weight: 500;
-	border-left: 4px solid #95c837;
-	background-color: rgba( 126, 185, 17, 0.64 );
-	position: relative;
-	padding: 16px 12px;
-}
-
-.wrap .iexcel-notice:after {
-	display: block;
-	content: " ";
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	z-index: 1;
-	background-color: rgba( 126, 185, 17, 0.72 );
-}
-
-.wrap .iexcel-notice > div {
-	display: block;
-	position: relative;
-	z-index: 2;
-}
-
-.wrap .iexcel-notice a,
-.wrap .iexcel-notice a:visited {
-	color: #FFF;
-	text-decoration: underline;
-}
-
-.wrap .iexcel-notice a:hover {
-	text-decoration: none;
-}
-
-.wrap .iexcel-notice .ad-review,
-.wrap .iexcel-notice .ad-review:visited,
-.wrap .iexcel-notice .tx-dismiss,
-.wrap .iexcel-notice .tx-dismiss:visited {
-	display: inline-block;
-	padding: 4px 12px 6px 12px;
-	background-color: #dde9c6;
-	color: #6fa806;
-	border: 1px solid #6fa806;
-	border-radius: 0px;
-	text-decoration: none;
-	margin-top: 16px;
-	margin-right: 12px;
-	font-weight: 600;
-	transition-property: all;
-	transition-duration: 0.3s;
-	transition-timing-function: ease-in-out;
-	transition-delay: 0s;	
-}
-
-.wrap .iexcel-notice .ad-review:hover,
-.wrap .iexcel-notice .tx-dismiss:hover {
-	background-color: #6fa806;
-	text-decoration: none;
-	color: #FFFFFF;	
-}
-
-.wrap .iexcel-notice .ad-review:before {
-}
-
-.wrap .iexcel-notice .ad-review .review-text,
-.wrap .iexcel-notice .ad-review .review-text:visited {
-    display: inline-block;
-    float: none;
-    margin: 0px;
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 14px;
-	height: auto;
-    color: #6fa806;
-    background: transparent;
-    padding: 0px 0px;
-}
-
-.wrap .iexcel-notice .ad-review:hover .review-text {
-    text-decoration: none;
-    color: #fff;
-    background: transparent;
-}
-
-.dismiss-text {
-	display: block;
-	float: right;
-	margin-top: 16px;
-	text-decoration: none;
-	font-size: 14px;
-	line-height: 20px;
-	color: #fff;
-	background-color: #666;
-	padding: 4px 12px;
-}
 
 .dismiss-cross,
 .rn-dismiss-btn {
@@ -322,13 +193,13 @@ li.customize-control {
 	float: right;
 	margin-right: 12px;
 	font-weight: bold;
-	margin-top: 16px;
+	margin-top: 8px;
 	text-decoration: none;
 	font-size: 16px;
 	line-height: 20px;
 	color: #fff;
-	background-color: #666;
-	padding: 4px 6px;
+	background-color: #b6b6b6;
+	padding: 0px 6px;
 	text-transform: uppercase;
 }
 
@@ -343,7 +214,164 @@ li.customize-control {
 	background-color: #000;
 }
 
+.dismiss-text {
+	display: block;
+	float: right;
+	margin-top: 8px;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+	background-color: #999;
+	padding: 0px 6px;
+}
+
 .dismiss-text:hover {
 	color: #FFF;
 	background-color: #000;
+}
+
+.ad-review:before {
+	display: block;
+	clear: both;
+	content: " ";
+	height: 1px;
+}
+
+.ad-review {
+	display: block;
+	float: left;
+	padding-right: 16px;
+}
+
+.review-text {
+	display: block;
+	float: left;
+	margin-top: 8px;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+	background-color: #0085ba;
+	padding: 0px 12px;
+}
+
+.review-text:hover {
+	color: #FFF;
+	background-color: #0095d1;
+}
+
+.tx-notice {
+	font-size: 16px;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+#accordion-section-basic > h3.accordion-section-title,
+#accordion-section-layout > h3.accordion-section-title,
+#accordion-section-social > h3.accordion-section-title,
+#accordion-section-blogpage > h3.accordion-section-title,
+#accordion-section-fonts > h3.accordion-section-title,
+#accordion-panel-slider > h3.accordion-section-title,
+#accordion-panel-rmenu > h3.accordion-section-title,
+#accordion-section-nxtopbar > h3.accordion-section-title,
+#accordion-section-nxheader > h3.accordion-section-title,
+#accordion-section-nxfooter > h3.accordion-section-title  {
+	background-color: #e57e26;
+	color: #FFF;
+}
+
+#accordion-section-basic > h3.accordion-section-title:hover,
+#accordion-section-basic > h3.accordion-section-title:focus,
+#accordion-section-layout > h3.accordion-section-title:hover,
+#accordion-section-layout > h3.accordion-section-title:focus,
+#accordion-section-social > h3.accordion-section-title:hover,
+#accordion-section-social > h3.accordion-section-title:focus,
+#accordion-section-blogpage > h3.accordion-section-title:hover,
+#accordion-section-blogpage > h3.accordion-section-title:focus,
+#accordion-section-fonts > h3.accordion-section-title:hover,
+#accordion-section-fonts > h3.accordion-section-title:focus,
+#accordion-panel-slider > h3.accordion-section-title:hover,
+#accordion-panel-slider > h3.accordion-section-title:focus,
+#accordion-panel-rmenu > h3.accordion-section-title:hover,
+#accordion-panel-rmenu > h3.accordion-section-title:focus,
+#accordion-section-nxtopbar > h3.accordion-section-title:hover,
+#accordion-section-nxtopbar > h3.accordion-section-title:focus,
+#accordion-section-nxheader > h3.accordion-section-title:hover,
+#accordion-section-nxheader > h3.accordion-section-title:focus,
+#accordion-section-nxfooter > h3.accordion-section-title:hover,
+#accordion-section-nxfooter > h3.accordion-section-title:focus {
+	background-color: #333!important;
+	color: #FFF!important;	
+}
+
+#accordion-section-basic > h3.accordion-section-title:after,
+#accordion-section-layout > h3.accordion-section-title:after,
+#accordion-section-social > h3.accordion-section-title:after,
+#accordion-section-blogpage > h3.accordion-section-title:after,
+#accordion-section-fonts > h3.accordion-section-title:after,
+#accordion-panel-slider > h3.accordion-section-title:after,
+#accordion-panel-rmenu > h3.accordion-section-title:after,
+#accordion-section-nxtopbar > h3.accordion-section-title:after,
+#accordion-section-nxheader > h3.accordion-section-title:after,
+#accordion-section-nxfooter > h3.accordion-section-title:after {
+	color: #FFF!important;	
+}
+
+#accordion-section-basic:hover > h3.accordion-section-title:after,
+#accordion-section-layout:hover > h3.accordion-section-title:after,
+#accordion-section-social:hover > h3.accordion-section-title:after,
+#accordion-section-blogpage:hover > h3.accordion-section-title:after,
+#accordion-section-fonts:hover > h3.accordion-section-title:after,
+#accordion-panel-slider:hover > h3.accordion-section-title:after,
+#accordion-panel-rmenu:hover > h3.accordion-section-title:after,
+#accordion-section-nxtopbar:hover > h3.accordion-section-title:after,
+#accordion-section-nxheader:hover > h3.accordion-section-title:after,
+#accordion-section-nxfooter:hover > h3.accordion-section-title:after {
+	color: #FFF!important;	
+}
+
+#accordion-section-nxpromo > h3.accordion-section-title  {
+	background-color: #dd6a08;
+	color: #FFF;
+}
+
+#accordion-section-nxpromo > h3.accordion-section-title:hover,
+#accordion-section-nxpromo > h3.accordion-section-title:focus {
+	background-color: #333!important;
+	color: #FFF!important;	
+}
+
+#accordion-section-nxpromo:hover > h3.accordion-section-title:after {
+	color: #FFF!important;	
+}
+
+#accordion-section-nxpromo > h3.accordion-section-title:after {
+	color: #FFF!important;	
+}
+
+#accordion-section-woocomm > h3.accordion-section-title  {
+	background-color: #96588a;
+	color: #FFF;
+}
+
+#accordion-section-woocomm > h3.accordion-section-title:hover,
+#accordion-section-woocomm > h3.accordion-section-title:focus {
+	background-color: #333!important;
+	color: #FFF!important;	
+}
+
+#accordion-section-woocomm:hover > h3.accordion-section-title:after {
+	color: #FFF!important;	
+}
+
+#accordion-section-woocomm > h3.accordion-section-title:after {
+	color: #FFF!important;	
+}
+
+#customize-control-logo_trans {
+	background-image: url("../images/logo-bg.png");
+	background-position: center;
+	background-size: cover;
 }

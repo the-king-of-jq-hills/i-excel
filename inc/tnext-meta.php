@@ -208,7 +208,46 @@ function iexcel_register_meta_boxes( $meta_boxes )
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('Remove the spaces/padding from top and bottom of the page/post', 'i-excel'),
-			),							
+			),
+			
+			// Hide page header
+			array(
+				'name' => __( 'Show Transparent Header', 'i-excel' ),
+				'id'   => "{$prefix}trans_header",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'desc' => __('Show transparent header on pages/posts. This will hide the page/post titlebar as well', 'i-excel'),
+			),				
+			
+			// Hide page header
+			array(
+				'name' => __( 'Hide Page Header', 'i-excel' ),
+				'id'   => "{$prefix}no_page_header",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'desc' => __('In case you are building the page without the top navigation and logo', 'i-excel'),
+			),										
+
+			// Hide page header
+			array(
+				'name' => __( 'Hide Topbar', 'i-excel' ),
+				'id'   => "{$prefix}no_ubar",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'desc' => __('Hide top bar with email, phone and social links', 'i-excel'),
+			),
+			// Hide page header
+			array(
+				'name' => __( 'Hide Footer Widget Area', 'i-excel' ),
+				'id'   => "{$prefix}no_footer",
+				'type' => 'checkbox',
+				// Value can be 0 or 1
+				'std'  => 0,
+				'desc' => __('Hide bottom footer widget area', 'i-excel'),
+			),									
 
 			// Custom page primary color			
 			array(
@@ -217,7 +256,30 @@ function iexcel_register_meta_boxes( $meta_boxes )
 				'type'  => 'color',
 				'std'   => '',
 				'desc' => __('Choose a custom primary color for this page', 'i-excel'),
-			),	
+			),
+			
+			// Custom page primary color			
+			array(
+				'name'  => __( 'Topbar Background Color', 'i-excel' ),
+				'id'    => "{$prefix}topbar_bg_color",
+				'type'  => 'color',
+				'std'   => '',
+				'desc' => __('Top bar with phone, email and social link background color', 'i-excel'),
+			),
+			
+			/* Requires Meta Box Update 
+			array(
+				'name'  => __( 'Custom Page Logo Normal', 'i-excel' ),
+				'id'    => "{$prefix}page_logo_normal",
+				'type'  => 'single_image',
+			),
+			// additional page class			
+			array(
+				'name'  => __( 'Custom Page Logo Reverse', 'i-excel' ),
+				'id'    => "{$prefix}page_logo_trans",
+				'type'  => 'single_image',
+			),
+			*/				
 						
 			// additional page class			
 			array(

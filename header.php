@@ -21,19 +21,23 @@ $topbar_bg = get_theme_mod('topbar_bg', 1);
 $top_phone = esc_attr(get_theme_mod('top_phone', '1-000-123-4567'));
 $top_email = esc_attr(get_theme_mod('top_email', 'email@i-create.com'));
 $iexcel_logo = get_theme_mod( 'logo', get_template_directory_uri().'/images/logo.png' );
+$iexcel_logo_trans = get_theme_mod( 'logo_trans', '' );
 
 $nav_dropdown = get_theme_mod('nav_dropdown', 1);
 
-if ( $topbar_bg == 1 )
-{
+if ( $topbar_bg == 1 ) {
 	$topbar_bg_class = "colored-bg";
 }
-if ( $nav_dropdown == 1 )
-{
+if ( $nav_dropdown == 1 ) {
 	$nav_dropdown_class = "colored-drop";
 }
 
 global $post; 
+
+$no_page_header = 0;
+if ( function_exists( 'rwmb_meta' ) ) { 
+	$no_page_header = rwmb_meta('iexcel_no_page_header');
+}
 
 ?>
 
@@ -92,12 +96,22 @@ global $post;
         </div>
         <?php endif; ?>
         
+        <?php if ( $no_page_header == 0 ) : ?>
         <div class="headerwrap">
             <header id="masthead" class="site-header" role="banner">
          		<div class="headerinnerwrap">
-					<?php if ($iexcel_logo) : ?>
+					<?php if ( $iexcel_logo && $iexcel_logo_trans ) : ?>
                         <a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                            <span><img src="<?php echo esc_url($iexcel_logo); ?>" alt="<?php bloginfo( 'name' ); ?>" /></span>
+                            <span><img src="<?php echo esc_url($iexcel_logo); ?>" alt="<?php bloginfo( 'name' ); ?>" class="iexcel-logo normal-logo" /></span>
+                            <span><img src="<?php echo $iexcel_logo_trans; ?>" alt="<?php bloginfo( 'name' ); ?>" class="iexcel-logo trans-logo" /></span>
+                        </a>
+					<?php elseif ( $iexcel_logo ) : ?>
+                        <a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                            <span><img src="<?php echo esc_url($iexcel_logo); ?>" alt="<?php bloginfo( 'name' ); ?>" class="iexcel-logo" /></span>
+                        </a>
+					<?php elseif ( $iexcel_logo_trans ) : ?>
+                        <a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                            <span><img src="<?php echo $iexcel_logo_trans; ?>" alt="<?php bloginfo( 'name' ); ?>" class="iexcel-logo" /></span>
                         </a>
                     <?php else : ?>
                         <span id="site-titlendesc">
@@ -123,14 +137,37 @@ global $post;
 								?>
 							
                         </nav><!-- #site-navigation -->
+                        
+                        <?php
+                        global $woocommerce;
+						$show_cart = get_theme_mod('show_cart', 0);
+                        if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && $show_cart == 1 ) {
+                        ?>
+                        <div class="header-iconwrap">
+                            <div class="header-icons woocart">
+                                <a href="<?php echo wc_get_cart_url(); ?>" >
+                                    <span class="show-sidr"><?php _e('Cart','i-excel'); ?></span>
+                                    <span class="genericon genericon-cart"></span>
+                                    <span class="cart-counts"><?php echo sprintf($woocommerce->cart->cart_contents_count); ?></span>
+                                </a>
+                                <?php echo iexcel_top_cart(); ?>
+                            </div>
+                        </div>  
+                        <?php	
+                        }
+                        ?>                           
+                        
+                        <?php if ( get_theme_mod('show_search', 1) == 1 ) : ?> 
                         <div class="topsearch">
                             <?php get_search_form(); ?>
                         </div>
+                        <?php endif; ?>	
                     </div><!-- #navbar -->
                     <div class="clear"></div>
                 </div>
             </header><!-- #masthead -->
         </div>
+        <?php endif; ?>
         
         <!-- #Banner -->
         <?php
@@ -190,7 +227,7 @@ global $post;
 			elseif( !$hide_title ) : 
 			?>
 			
-			<div class="iheader" style="">
+			<div class="iheader nx-titlebar" style="">
 				<div class="titlebar">
 					
 					<?php
@@ -209,34 +246,29 @@ global $post;
 									_e( 'Archives', 'i-excel' );
 								endif;                						
 							echo '</h1>';
-						} elseif ( is_search() )
-						{
+						} elseif ( is_search() ) {
 							echo '<h1 class="entry-title">';
 								printf( __( 'Search Results for: %s', 'i-excel' ), get_search_query() );					
 							echo '</h1>';
-						} else
-						{
-							if ( !empty($custom_title) )
-							{
+						} else 	{
+							if ( !empty($custom_title) ) {
 								echo '<h1 class="entry-title">'.esc_attr($custom_title).'</h1>';
-							}
-							else
-							{
+							} else {
 								echo '<h1 class="entry-title">';
 								the_title();
 								echo '</h1>';
 							}						
 						}
 						
-					?>
-					<?php 
-					
-						if(function_exists('bcn_display') && !$hide_breadcrumb )
-						{
-						?>
-							<div class="nx-breadcrumb"><?php bcn_display(); ?></div>
-						<?php		
-						} 
+						if(function_exists('bctx_display') && !$hide_breadcrumb ) {
+							echo '<div class="nx-breadcrumb">';
+								bctx_display(); 
+							echo '</div>';
+						} elseif(function_exists('bcn_display') && !$hide_breadcrumb ) {
+							echo '<div class="nx-breadcrumb">';
+								bcn_display();
+							echo '</div>';
+						}
 					?>               
 					
 				</div>

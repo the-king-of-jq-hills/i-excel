@@ -288,6 +288,13 @@ jQuery(document).ready(function($) {
 		$('.headerwrap').addClass('noutility');
 	}
 	
+	// Title height adjustment for transparent header
+	if ( $('.nx-titlebar').length > 0 && $('.nx-fullscreen').length > 0 )
+	{
+		$('.iheader').css( "height", 180);
+		$('.titlebar').css( "paddingTop", 88);
+		
+	}		
 	
 		
 })(jQuery);
