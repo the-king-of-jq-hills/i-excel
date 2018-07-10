@@ -162,7 +162,11 @@
 			
 			echo '.colored-drop .nav-container ul ul a, .colored-drop ul.nav-container ul a, .colored-drop ul.nav-container ul, .colored-drop .nav-container ul ul {background-color: '.$primary_color.';}';
 			
-			echo '.nx-nav-boxedicons .site-header .header-icons > a > span.genericon:before, ul.nav-menu > li.tx-heighlight:before, .woocommerce .nxowoo-box:hover a.button.add_to_cart_button {background-color: '.$primary_color.'}';			
+			echo '.nx-nav-boxedicons .site-header .header-icons > a > span.genericon:before, ul.nav-menu > li.tx-heighlight:before, .woocommerce .nxowoo-box:hover a.button.add_to_cart_button {background-color: '.$primary_color.'}';	
+
+			echo '.woocommerce ul.products li.product .onsale, .woocommerce span.onsale, .nx-nav-boxedicons .header-iconwrap .header-icons.woocart > a .cart-counts { background-color: '.$primary_color.'; color: #FFF; }';
+			
+			echo '.woocommerce ul.products li.product .button, .navbar .widget_shopping_cart_content > p.buttons > a.button.wc-forward {background-color: '.$primary_color.';}';			
 			
 			if( !empty($topbar_bg_color) ) {
 				echo '.site .utilitybar { background-color: '.$topbar_bg_color.'; color: #FFFFFF; border-bottom: 1px solid '.$topbar_bg_color.';}';

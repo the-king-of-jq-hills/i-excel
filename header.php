@@ -35,8 +35,20 @@ if ( $nav_dropdown == 1 ) {
 global $post; 
 
 $no_page_header = 0;
+$custom_logo_normal = $custom_logo_reverse = '';
 if ( function_exists( 'rwmb_meta' ) ) { 
+
 	$no_page_header = rwmb_meta('iexcel_no_page_header');
+	/* Requires Meta Box Update */
+	if(rwmb_meta( 'iexcel_page_logo_normal' )) {
+		$custom_logo_normal = rwmb_meta( 'iexcel_page_logo_normal', '' );
+		$iexcel_logo = $custom_logo_normal['full_url'];
+	}
+	if(rwmb_meta( 'iexcel_page_logo_trans' )) {
+		$custom_logo_reverse = rwmb_meta( 'iexcel_page_logo_trans', '' );
+		$iexcel_logo_trans = $custom_logo_reverse['full_url'];
+	}
+			
 }
 
 ?>
@@ -171,13 +183,14 @@ if ( function_exists( 'rwmb_meta' ) ) {
         
         <!-- #Banner -->
         <?php
-		$hide_title = $show_slider = $other_slider = $custom_title = $hide_breadcrumb = "";
+		$hide_title = $show_slider = $other_slider = $custom_title = $hide_breadcrumb = $smart_slider_3 = "";
 		if ( function_exists( 'rwmb_meta' ) ) {
 			$hide_title = rwmb_meta('iexcel_hidetitle');
 			$show_slider = rwmb_meta('iexcel_show_slider');
 			$other_slider = rwmb_meta('iexcel_other_slider');
 			$custom_title = rwmb_meta('iexcel_customtitle');
 			$hide_breadcrumb = rwmb_meta('iexcel_hide_breadcrumb');
+			$smart_slider_3 = rwmb_meta('iexcel_smart_slider');
 		}
 		
 		$hide_front_slider = get_theme_mod('slider_stat', 1);
@@ -187,7 +200,13 @@ if ( function_exists( 'rwmb_meta' ) ) {
 		$other_slider = esc_html($other_slider);
 		$other_front_slider = esc_html($other_front_slider);
 		
+		if ( get_theme_mod('blog_smart_slider', 0) ) {
+			$other_front_slider = '[smartslider3 slider='.get_theme_mod('blog_smart_slider', 0).']';
+		}
 		
+		if( $smart_slider_3 ) {
+			$other_slider = '[smartslider3 slider='.$smart_slider_3.']';
+		}		
 		
 		if ( is_home() ) {
 			

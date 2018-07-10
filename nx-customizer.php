@@ -235,10 +235,16 @@ function iexcel_add_panels_and_sections( $wp_customize ) {
 	
 	// WooCommerce Settings
     $wp_customize->add_section('woocomm', array(
-        'title'    => __('WooCommerce Theme Options', 'i-max'),
+        'title'    => __('WooCommerce Theme Options', 'i-excel'),
         'description' => '',
         'priority' => 191,
-    ));			
+    ));	
+	
+    $wp_customize->add_section('mmode', array(
+        'title'    => __('Coming Soon/Maintenance Mode', 'i-excel'),
+        'description' => __('', 'i-excel'),
+        'priority' => 192,
+    ));				
 	
 }
 
@@ -329,8 +335,8 @@ function iexcel_custom_setting( $controls ) {
 	$controls[] = array(
 		'type'        => 'switch',
 		'settings'     => 'show_search',
-		'label'       => __( 'Show Site Search', 'i-max' ),
-		'description' => __( 'Turn the search ON/OFF on main navigation', 'i-max' ),
+		'label'       => __( 'Show Site Search', 'i-excel' ),
+		'description' => __( 'Turn the search ON/OFF on main navigation', 'i-excel' ),
 		'section'     => 'nxheader',
 		'default'     => 1,
 		'priority'    => 4,
@@ -349,8 +355,8 @@ function iexcel_custom_setting( $controls ) {
 	$controls[] = array(
 		'type'        => 'switch',
 		'settings'     => 'boxed-icons',
-		'label'       => __( 'Boxed Menu Icons', 'i-craft' ),
-		'description' => __( 'The crat and search icons will appear as boxed', 'i-craft' ),
+		'label'       => __( 'Boxed Menu Icons', 'i-excel' ),
+		'description' => __( 'The crat and search icons will appear as boxed', 'i-excel' ),
 		'section'     => 'nxheader',
 		'default'     => 0,			
 		'priority'    => 4,
@@ -359,12 +365,154 @@ function iexcel_custom_setting( $controls ) {
 	$controls[] = array(
 		'type'        => 'switch',
 		'settings'     => 'nav_upper',
-		'label'       => __( 'Turn All Top Menu Item UPPERCASE', 'i-craft' ),
-		'description' => __( 'Turns all top navigation manu item to UPPERCASE', 'i-craft' ),
+		'label'       => __( 'Turn All Top Menu Item UPPERCASE', 'i-excel' ),
+		'description' => __( 'Turns all top navigation manu item to UPPERCASE', 'i-excel' ),
 		'section'     => 'nxheader',
 		'default'  => 0,		
 		'priority'    => 5,
-	);			
+	);	
+	
+	$controls[] = array(
+		'type'        => 'slider',
+		'settings'     => 'nav_font_size',
+		'label'       => __( 'Top Navigation Font size', 'i-excel' ),
+		'section'     => 'nxheader',
+		'priority'    => 6,
+		'default'     => 14,
+		'choices'     => array(
+			'min'  => '12',
+			'max'  => '18',
+			'step' => '1',
+		),		
+		'output' => array(
+			array(
+				'element'  => '.nav-container li a',
+				'property' => 'font-size',
+				'units'	   => 'px',
+			),
+		),
+		
+	);	
+	
+	$controls[] = array(
+		'type'        => 'slider',
+		'settings'     => 'nav_font_weight',
+		'label'       => __( 'Top Navigation Font Weight', 'i-excel' ),
+		'section'     => 'nxheader',
+		'priority'    => 6,
+		'default'     => 400,
+		'choices'     => array(
+			'min'  => '200',
+			'max'  => '800',
+			'step' => '100',
+		),		
+		'output' => array(
+			array(
+				'element'  => '.nav-container li a',
+				'property' => 'font-weight',
+			),
+		),
+		
+	);
+	
+	
+	/* NXFooter controls */	
+    $controls[] = array(
+        'type'     => 'text',
+        'settings'  => 'copyright_text',
+        'label'    => __( 'Copyright Text', 'i-excel' ),
+		'description' => __( 'Bottom footer copyright text', 'i-excel' ),		
+        'section'  => 'nxfooter',
+		'default'  => __( 'Copyright &copy; ', 'i-excel').get_bloginfo( 'name' ),		
+        'priority' => 1,
+    );		
+	
+	$controls[] = array(
+		'type'        => 'color',
+		'settings'     => 'footer_bg',
+		'label'       => __( 'Footer Widget Area Background Color', 'i-excel' ),
+		'section'     => 'nxfooter',
+		'default'     => '#383838',
+		'priority'    => 2,
+		'output' => array(
+			array(
+				'element'  => '.footer-bg, .site-footer .sidebar-container',
+				'property' => 'background-color',
+			),
+		),		
+	);
+	/**/
+	$controls[] = array(
+		'type'        => 'color',
+		'settings'     => 'footer_title_color',
+		'label'       => __( 'Footer Widgets Title Color', 'i-excel' ),
+		'section'     => 'nxfooter',
+		'default'     => '#FFFFFF',
+		'priority'    => 3,
+		'output' => array(
+			array(
+				'element'  => '.site-footer .widget-area .widget .widget-title',
+				'property' => 'color',
+			),
+		),		
+	);		
+	$controls[] = array(
+		'type'        => 'color',
+		'settings'     => 'footer_text_color',
+		'label'       => __( 'Footer Widgets Text Color', 'i-excel' ),
+		'section'     => 'nxfooter',
+		'default'     => '#bbbbbb',
+		'priority'    => 4,
+		'output' => array(
+			array(
+				'element'  => '.site-footer .widget-area .widget, .site-footer .widget-area .widget li',
+				'property' => 'color',
+			),
+		),		
+	);
+	$controls[] = array(
+		'type'        => 'color',
+		'settings'     => 'footer_link_color',
+		'label'       => __( 'Footer Widgets Link Color', 'i-excel' ),
+		'section'     => 'nxfooter',
+		'default'     => '#dddddd',
+		'priority'    => 4,
+		'output' => array(
+			array(
+				'element'  => '.site-footer .widget-area .widget a',
+				'property' => 'color',
+			),
+		),		
+	);
+	
+	$controls[] = array(
+		'type'        => 'color',
+		'settings'     => 'bottom_footer_bg',
+		'label'       => __( 'Bottom Footer background Color', 'i-excel' ),
+		'section'     => 'nxfooter',
+		'default'     => '#272727',
+		'priority'    => 4,
+		'output' => array(
+			array(
+				'element'  => '.site-footer',
+				'property' => 'background-color',
+			),
+		),		
+	);
+	$controls[] = array(
+		'type'        => 'color',
+		'settings'     => 'bottom_footer_text_color',
+		'label'       => __( 'Bottom Footer Text Color', 'i-excel' ),
+		'section'     => 'nxfooter',
+		'default'     => '#777777',
+		'priority'    => 4,
+		'output' => array(
+			array(
+				'element'  => '.site-footer .site-info, .site-footer .site-info a',
+				'property' => 'color',
+			),
+		),		
+	);					
 	
 	$controls[] = array(
 		'type'        => 'radio-image',
@@ -769,7 +917,28 @@ function iexcel_custom_setting( $controls ) {
         'default'  => 'Welcome To '.get_bloginfo( 'name', 'display' ),
         'priority' => 3,
 		'description' => __( 'if you are using a logo and want your site title or slogan to appear on the header banner', 'i-excel' ),		
-    );		
+    );
+	
+	$controls[] = array(
+		'type'        => 'switch',
+		'settings'     => 'blog_trans_header',
+		'label'       => __( 'Turn ON Transparent Header', 'i-excel' ),
+		'description' => __( 'Turn OFF or ON transparent header on default blog page', 'i-excel' ),
+		'section'     => 'blogpage',
+		'default'     => 0,
+		'priority'    => 4,
+	);
+	
+	$controls[] = array(
+		'label' 		=> __('Smart Slider 3', 'i-excel'),
+		'description' 	=> __('Select a slider from Smart Slider 3', 'i-excel'),
+		'settings' 		=> 'blog_smart_slider',
+		'choices' 		=> icraft_smartslider_list(),
+		'type' 			=> 'select',
+        'section'  		=> 'blogpage',
+		'default'     	=> '',
+		'priority'    	=> 4,				
+	);				
 	
 	//rmgeneral
 	//rmsettings
@@ -779,7 +948,7 @@ function iexcel_custom_setting( $controls ) {
 		'description' => __('Check if you want to activate mobile navigation.', 'i-excel'),
 		'settings' => 'enabled',
 		'default' => 1,
-		'type' => 'checkbox',
+		'type' => 'switch',
         'section'  => 'rmgeneral',	
 	);
 	/*
@@ -1013,7 +1182,88 @@ function iexcel_custom_setting( $controls ) {
 				),
 			),
 		),	
-	);				
+	);
+	
+	/* Maintenance mode */
+	$controls[] = array(
+		'type'        => 'switch',
+		'settings'     => 'mmode_status',
+		'label'       => __( 'Turn ON Maintenance Mode', 'i-excel' ),
+		'description' => esc_attr__( 'Logged in admins will view a normal site.', 'i-excel' ),
+		'section'     => 'mmode',
+		'default'  	  => 0,		
+		'priority'    => 1,
+	);	
+
+	$controls[] = array(
+		'label' => esc_attr__( 'Title', 'i-excel'),
+		'description' => __('Maintanance mode/coming soon title', 'i-excel'),
+		'settings' => 'mmode_title',
+		'default' => esc_attr__( 'Under Maintenance', 'i-excel' ),
+		'class' => '',
+		'type' => 'text',
+        'section'  => 'mmode',
+		'priority'    => 2,		
+	);
+
+	$controls[] = array(
+		'label' => esc_attr__( 'Description', 'i-excel'),
+		'description' => __('Maintanance mode/coming soon description', 'i-excel'),
+		'settings' => 'mmode_desc',
+		'default' => esc_attr__( 'We are currently in maintenance mode. Please check back shortly.', 'i-excel' ),
+		'class' => '',
+		'type' => 'textarea',
+        'section'  => 'mmode',
+		'priority'    => 3,					
+	);
+	
+	$controls[] = array(
+		'type'        => 'background',
+		'settings'    => 'mmode_bg',
+		'label'       => esc_attr__( 'Background', 'i-excel' ),
+		'description' => esc_attr__( 'Background image and color', 'i-excel' ),
+		'section'     => 'mmode',
+		'default'     => array(
+			'background-color'      => 'rgba(20,20,20,.8)',
+			'background-image'      => get_template_directory_uri() . '/images/bg-7.jpg',
+			'background-repeat'     => 'repeat',
+			'background-position'   => 'center center',
+			'background-size'       => 'cover',
+			'background-attachment' => 'scroll',
+		),
+		'priority'    => 4,		
+	);	
+	
+	$controls[] = array(
+	  'type'        => 'date',
+	  'settings'    => 'mmode_days',
+	  'label'       => esc_html__( 'Date', 'i-excel' ),
+	  'description' => __( 'Estimated maintanance until', 'i-excel' ),
+	  'section'     => 'mmode',
+	  /*
+	  'default'     => 12,
+	  
+	  'choices'     => array(
+		'min'  => '0',
+		'max'  => '100',
+		'step' => '1',
+	  ),
+	  */	  
+	);
+	$controls[] = array(
+	  'type'        => 'slider',
+	  'settings'    => 'mmode_hours',
+	  'label'       => esc_html__( 'Hours', 'i-excel' ),
+	  'description' => __( 'Estimated hours add to days', 'i-excel' ),
+	  'section'     => 'mmode',
+	  'default'     => 16,
+	  'choices'     => array(
+		'min'  => '0',
+		'max'  => '24',
+		'step' => '1',
+	  ),	  
+	);	
+			
 	// promos
 	$controls[] = array(
 		'type'        => 'custom',
@@ -1053,8 +1303,8 @@ function iexcel_custom_setting( $controls ) {
 	$controls[] = array(
 		'type'        => 'switch',
 		'settings'     => 'show_login',
-		'label'       => __( 'Hide/Show Topnav Login', 'i-max' ),
-		'description' => __( 'Turn ON or OFF user login menu item on top nav', 'i-max' ),
+		'label'       => __( 'Hide/Show Topnav Login', 'i-excel' ),
+		'description' => __( 'Turn ON or OFF user login menu item on top nav', 'i-excel' ),
 		'section'     => 'woocomm',
 		'default'  	  => 0,		
 		'priority'    => 1,
@@ -1063,8 +1313,8 @@ function iexcel_custom_setting( $controls ) {
 	$controls[] = array(
 		'type'        => 'switch',
 		'settings'     => 'show_cart',
-		'label'       => __( 'Show/Hide Topnav Cart', 'i-max' ),
-		'description' => __( 'Turn ON or OFF cart from top nav', 'i-max' ),
+		'label'       => __( 'Show/Hide Topnav Cart', 'i-excel' ),
+		'description' => __( 'Turn ON or OFF cart from top nav', 'i-excel' ),
 		'section'     => 'woocomm',
 		'default'     => 0,		
 		'priority'    => 1,
@@ -1073,8 +1323,8 @@ function iexcel_custom_setting( $controls ) {
 	$controls[] = array(
 		'type'        => 'switch',
 		'settings'     => 'product_search',
-		'label'       => __( 'Turn On/OFF Product Search', 'i-max' ),
-		'description' => __( 'Turn ON/OFF product only search.', 'i-max' ),
+		'label'       => __( 'Turn On/OFF Product Search', 'i-excel' ),
+		'description' => __( 'Turn ON/OFF product only search.', 'i-excel' ),
 		'section'     => 'woocomm',
 		'default'  	  => 0,		
 		'priority'    => 1,

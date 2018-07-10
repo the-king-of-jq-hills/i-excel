@@ -33,6 +33,14 @@ class Kirki_Control_Base extends WP_Customize_Control {
 	public $option_type = 'theme_mod';
 
 	/**
+	 * Option name (if using options).
+	 *
+	 * @access public
+	 * @var string
+	 */
+	public $option_name = false;
+
+	/**
 	 * The kirki_config we're using for this control
 	 *
 	 * @access public
@@ -48,6 +56,24 @@ class Kirki_Control_Base extends WP_Customize_Control {
 	 * @var array
 	 */
 	public $required = array();
+
+	/**
+	 * Whitelisting the "preset" argument.
+	 *
+	 * @since 3.0.26
+	 * @access public
+	 * @var array
+	 */
+	public $preset = array();
+
+	/**
+	 * Whitelisting the "css_vars" argument.
+	 *
+	 * @since 3.0.28
+	 * @access public
+	 * @var string
+	 */
+	public $css_vars = '';
 
 	/**
 	 * Extra script dependencies.
@@ -68,7 +94,6 @@ class Kirki_Control_Base extends WP_Customize_Control {
 
 		// Build the suffix for the script.
 		$suffix  = '';
-		$suffix .= ( Kirki_Util::get_wp_version() >= 4.9 ) ? '' : '-legacy';
 		$suffix .= ( ! defined( 'SCRIPT_DEBUG' ) || true !== SCRIPT_DEBUG ) ? '.min' : '';
 
 		// The Kirki plugin URL.
@@ -93,6 +118,7 @@ class Kirki_Control_Base extends WP_Customize_Control {
 				'wp-color-picker-alpha',
 				'selectWoo',
 				'jquery-ui-button',
+				'jquery-ui-datepicker',
 			),
 			KIRKI_VERSION
 		);
@@ -101,12 +127,15 @@ class Kirki_Control_Base extends WP_Customize_Control {
 			'kirki-script',
 			'kirkiL10n',
 			array(
-				'noFileSelected' => esc_attr__( 'No File Selected', 'i-excel' ),
-				'remove'         => esc_attr__( 'Remove', 'i-excel' ),
-				'default'        => esc_attr__( 'Default', 'i-excel' ),
-				'selectFile'     => esc_attr__( 'Select File', 'i-excel' ),
-				'standardFonts'  => esc_attr__( 'Standard Fonts', 'i-excel' ),
-				'googleFonts'    => esc_attr__( 'Google Fonts', 'i-excel' ),
+				'isScriptDebug'        => ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ),
+				'noFileSelected'       => esc_attr__( 'No File Selected', 'i-design' ),
+				'remove'               => esc_attr__( 'Remove', 'i-design' ),
+				'default'              => esc_attr__( 'Default', 'i-design' ),
+				'selectFile'           => esc_attr__( 'Select File', 'i-design' ),
+				'standardFonts'        => esc_attr__( 'Standard Fonts', 'i-design' ),
+				'googleFonts'          => esc_attr__( 'Google Fonts', 'i-design' ),
+				'defaultCSSValues'     => esc_attr__( 'CSS Defaults', 'i-design' ),
+				'defaultBrowserFamily' => esc_attr__( 'Default Browser Font-Family', 'i-design' ),
 			)
 		);
 
@@ -114,7 +143,7 @@ class Kirki_Control_Base extends WP_Customize_Control {
 		// Enqueue the style.
 		wp_enqueue_style(
 			'kirki-styles',
-			"{$kirki_url}controls/css/styles{$suffix}.css",
+			"{$kirki_url}controls/css/nx-kirki-styles{$suffix}.css",
 			array(),
 			KIRKI_VERSION
 		);
@@ -154,6 +183,16 @@ class Kirki_Control_Base extends WP_Customize_Control {
 		foreach ( $this->input_attrs as $attr => $value ) {
 			$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
 		}
+		// The kirki-config.
+		$this->json['kirkiConfig'] = $this->kirki_config;
+		// The option-type.
+		$this->json['kirkiOptionType'] = $this->option_type;
+		// The option-name.
+		$this->json['kirkiOptionName'] = $this->option_name;
+		// The preset.
+		$this->json['preset'] = $this->preset;
+		// The CSS-Variables.
+		$this->json['css-var'] = $this->css_vars;
 	}
 
 	/**

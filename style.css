@@ -4,7 +4,7 @@ Theme URI: http://www.templatesnext.org/i-excel/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: i-excel is a beautiful, elegant and flexible theme with several premium features. This highly customizable theme can be used for business websites, portfolios, personal websites or blogging. Highly responsive nature of i-excel makes it suitable for large desktop screens to small mobile screens. i-excel comes with the plugin “templatesnext toolkit” giving you extra flexibilities and functionalities, which includes, shortcodes to build pages with rows/column, SEO enabled headings, portfolios, testimonials, custom blog pages, custom slider etc. You can create beautiful pages with portfolio/blog carousels, masonry blocks, services, call to act sections etc.
-Version: 1.3.6
+Version: 1.3.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: One-Column, Two-Columns, Right-Sidebar, Custom-Colors, Custom-Menu,  Featured-Images, Flexible-Header, Full-Width-Template, Microformats, Post-Formats, Sticky-Post, Theme-Options, Threaded-Comments, Translation-Ready
@@ -6182,5 +6182,47 @@ Menu item highlight style
 }
 
 .tx-noubar .utilitybar {
+	display: none;
+}
+
+/**/
+.site-footer .widget-area .widget .widget-title {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.site-footer .widget-area .widget ul li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.woocommerce ul.products li.product a .nx-prod-vinette {
+	position: relative;
+	display: block;
+}
+
+.woocommerce ul.products li.product a .nx-prod-vinette:after {
+	position: absolute;
+	display: block;
+	content: " ";
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 8;
+	transition-property: all;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
+	transition-delay: 0s;		
+	box-shadow: 0 0 45px rgba(0,0,0,0.0) inset;	
+}
+
+.woocommerce ul.products li.product:hover a .nx-prod-vinette:after {
+	box-shadow: 0 0 45px rgba(0,0,0,0.12) inset;	
+}
+
+.nx-fullscreen .site-header:not(.fixeddiv) .search-field:focus {
+	caption-side: #373737;
+}
+
+.woocommerce ul.products li.product.product-category mark {
 	display: none;
 }

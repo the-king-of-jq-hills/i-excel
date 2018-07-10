@@ -1,6 +1,7 @@
 <?php
 
-
+include get_template_directory() . '/inc/theme-welcome/tw-functions.php';
+	
 if (isset($_GET['activated']) && is_admin()) {
 	set_transient( '_welcome_screen_activation_redirect', true, 30 );
 }
@@ -42,7 +43,6 @@ function welcome_screen_pages() {
 function welcome_screen_content() {
 	
 	include get_template_directory() . '/inc/theme-welcome/tw-content.php';
-	include get_template_directory() . '/inc/theme-welcome/tw-functions.php';	
 	
 	$logo_url = get_template_directory_uri() . '/inc/theme-welcome/i-excel-welcome.jpg';
 	$img_url = get_template_directory_uri() . '/inc/theme-welcome/images/';
@@ -51,7 +51,7 @@ function welcome_screen_content() {
 	/* Urls */
 	$reviewURL = esc_url('//wordpress.org/support/theme/i-excel/reviews/?filter=5');
 	$goPremiumURL = esc_url('//templatesnext.org/ispirit/landing/');
-	$videoguide = esc_url('//www.templatesnext.org/icreate/video-tutorials/');
+	$videoguide = esc_url('//www.templatesnext.org/i-excel-documentations/');
 	$supportforum = esc_url('//templatesnext.org/ispirit/landing/forums/'); 
 	$toolkit = esc_url('//www.templatesnext.org/icreate/templatesnext-toolkit/');
 	$fb_page = esc_url('//www.facebook.com/templatesnext/');
@@ -75,20 +75,9 @@ function welcome_screen_content() {
             	
                 <div class="nx-welcome"><?php _e( 'Welcome To ', 'i-excel' ); echo $name_version; ?></div>
                 <div class="tx-wspace-24"></div>
-                <div class="tx-wspace-24"></div>                
-                <div class="welcome-logo"><img src="<?php echo $logo_url; ?>" alt="" class="welcome-logo-img" width="" /></div>
-                <div class="nx-info-desc">
+                <div class="nx-info-desc" style="width: 100%;">
                     <p>
-						<?php _e( 'Congratulations! You are about to use one of the most popular and easy to customize WordPress theme.', 'i-excel' ); ?>
-                    </p>
-                    <p>
-                    	<a class="" href="<?php echo admin_url(); ?>themes.php?page=tgmpa-install-plugins">
-                        <?php _e( 'Install Recommended Plugins', 'i-excel' ); ?>
-                        </a> 
-                        <?php _e( 'and <b>Kick start your website in one click</b>, Setup any one of our demo websites and edit/remove/add contents.', 'i-excel' ); ?>
-					</p>
-                    <p>
-                    	<?php _e( 'You can also use a demo installation as reference, to check how the contents are formatted, copy/edit them in your main installation.', 'i-excel' ); ?>
+						<?php _e( 'I-EXCEL is a functional, flexible, multipurpose WordPress theme. It can be used as blog, business website, personal website, WooCommerce, portfolios, etc.', 'i-excel' ); ?>
                     </p>
                     <a class="button button-primary button-hero" href="<?php echo $reviewURL; ?>">
                     <?php _e( 'Post Your Review', 'i-excel' ); ?>
@@ -98,11 +87,13 @@ function welcome_screen_content() {
                     </a>  
                 </div>
                 <div class="tx-wspace-12"></div>
+                <div class="tx-wspace-24"></div>
+                <div class="tx-wspace-24"></div>                 
                 <div class="nx-admin-row">
                 	<div class="one-four-col">
                     	<a href="<?php echo $videoguide; ?>" target="_blank">
                             <div class="nx-dash"><span class="dashicons dashicons-video-alt2"></span></div>
-                            <h3 class="tx-admin-link"><?php _e( 'Video Guide', 'i-excel' ); ?></h3>
+                            <h3 class="tx-admin-link"><?php _e( 'Documentations', 'i-excel' ); ?></h3>
                         </a>
                     </div>
                 	<div class="one-four-col">
@@ -134,8 +125,11 @@ function welcome_screen_content() {
                     <a href="?page=welcome-screen-about&tab=iexcel_about" class="nav-tab <?php echo $active_tab == 'iexcel_about' ? 'nav-tab-active' : ''; ?>">
                    		<?php _e( 'Setting Up i-Excel', 'i-excel' ); ?>
                     </a>
+                    <a href="?page=welcome-screen-about&tab=iexcel_ocdi" class="nav-tab <?php echo $active_tab == 'iexcel_ocdi' ? 'nav-tab-active' : ''; ?>">
+                   		<?php _e( 'One Click Demo Import', 'i-excel' ); ?>
+                    </a>                       
                     <a href="?page=welcome-screen-about&tab=iexcel_plugins" class="nav-tab <?php echo $active_tab == 'iexcel_plugins' ? 'nav-tab-active' : ''; ?> nx-kick">
-                    	<?php _e( 'Plugins', 'i-excel' ); ?>
+                    	<?php _e( 'Recommended Plugins', 'i-excel' ); ?>
                     </a>
                     <a href="?page=welcome-screen-about&tab=iexcel_faq" class="nav-tab <?php echo $active_tab == 'iexcel_faq' ? 'nav-tab-active' : ''; ?> nx-plug">
                     	<?php _e( 'FAQs/Support', 'i-excel' ); ?>
@@ -148,32 +142,173 @@ function welcome_screen_content() {
 				?> 
                 	<div class="nx-tab-content">
                 		<p>&nbsp;</p>
+                        <ul class="nx-welcome">
+  							<?php
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Upload Logos', 'i-excel' ));
+									echo '</h3>';
+									printf( esc_html__( 'Start with uploading your logos', 'i-excel' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=title_tagline" target="_blank">Customizer Option</a>', 'i-excel' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Set Theme Color', 'i-excel' ));
+									echo '</h3>';
+									printf( esc_html__( 'Change theme color', 'i-excel' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=colors" target="_blank">Customizer Option</a>', 'i-excel' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Topbar Customization', 'i-excel' ));
+									echo '</h3>';
+									printf( esc_html__( 'Add your phone, email and social links or empty the fields to remove them', 'i-excel' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=nxtopbar" target="_blank">Customizer Option</a>', 'i-excel' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Header Customization', 'i-excel' ));
+									echo '</h3>';
+									printf( esc_html__( 'Customize header, change font menu size, width, etc.', 'i-excel' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=nxheader" target="_blank">Customizer Option</a>', 'i-excel' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Turn ON/OFF Preloader', 'i-excel' ));
+									echo '</h3>';
+									printf( esc_html__( 'Turn on or off page preloader, by default it is on', 'i-excel' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=layout" target="_blank">Customizer Option</a>', 'i-excel' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+									
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Footer Customization', 'i-excel' ));
+									echo '</h3>';
+									printf( esc_html__( 'Customize footer background, text color, etc', 'i-excel' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=nxfooter" target="_blank">Customizer Option</a>', 'i-excel' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';									
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Edit Theme Slider', 'i-excel' ));
+									echo '</h3>';
+									printf( esc_html__( 'Adjust slider settings, edit slides, etc.', 'i-excel' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[panel]=slider" target="_blank">Customizer Option</a>', 'i-excel' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'WooCommerce Customization', 'i-excel' ));
+									echo '</h3>';
+									printf( esc_html__( 'Adjust WooCommerce Settings', 'i-excel' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=woocomm" target="_blank">Customizer Option</a>', 'i-excel' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Set Fonts', 'i-excel' ));
+									echo '</h3>';
+									printf( esc_html__( 'Choose your fonts', 'i-excel' ) );
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=typography" target="_blank">Customizer Option</a>', 'i-excel' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+									
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Choose Your Plugins', 'i-excel' ));
+									echo '</h3>';
+									printf( esc_html__( 'I-ONE supports most of the popular plugins. We have listed some of the most popular plugins with high ratings. ', 'i-excel' ) );
+									printf( esc_html__( 'It is not neccssery to install and activate all the plugins recommendded. ', 'i-excel' ) );
+									printf( esc_html__( 'You need the correct set of plugins suiteable for your job.', 'i-excel' ) );																		
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%sthemes.php?page=welcome-screen-about&tab=iexcel_plugins" target="_blank">Install Plugins</a>', 'i-excel' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';
+									
+									echo '<li>';
+									echo '<h3>';
+									printf( esc_html__( 'Activate Maintenance/Coming Soon  Mode', 'i-excel' ));
+									echo '</h3>';
+									printf( esc_html__( 'Maintenance mode for visitors. If you are logged in admin, use different browser to preview the maintenance mode.', 'i-excel' ) );
+									printf( esc_html__( 'Logged in admins will view a normal site so that they can work on it.', 'i-excel' ) );									
+									echo '<div class="nx-customizer-link">';
+									printf( __( '<a href="%scustomize.php?autofocus[section]=mmode" target="_blank">Customizer Option</a>', 'i-excel' ), admin_url() );
+									echo '</div>';								
+									echo '</li>';																	
+                            ?>                 
+                        </ul>
+        			</div>
+				<?php		
+					} elseif ( $active_tab == 'iexcel_ocdi' ) {
+				?>     
+                	<div class="nx-tab-content"> 
+                		<p>&nbsp;</p>
+                        <p style="font-weight: 600; color: #272727;">
+                            <?php _e( 'Following plugins were used while creating the &quot;One Click Demo&quot;s. <br>Once you are done with installing and activating the plugins go to', 'i-excel' ); ?>
+                            <a class="" href="<?php echo admin_url(); ?>themes.php?page=pt-one-click-demo-import">
+                            <?php _e( 'I-Excel Demo Setup', 'i-excel' ); ?>
+                            </a>                             
+                        </p>                       
                         <ol>
 							<?php
-									echo '<li>';
-									_e( 'Install Plugins', 'i-excel' );
-									printf( __( 'To install and activate all the recommended plugin at once, go to menu "Appearance" > "<a href="%sthemes.php?page=tgmpa-install-plugins">Install Plugins</a>".', 'i-excel' ), admin_url() );
-									echo '</li>';
+			
+								foreach ($tx_plugins as $plugin) {
 									
-									echo '<li>';
-									_e( 'One Click Demo Setup', 'i-excel' );
-									printf( __( 'i-excel comes with "<a href="%sthemes.php?page=pt-one-click-demo-import">One Click Demo Setup</a>", You can import and setup copy of any of our demo website in one click.', 'i-excel' ), admin_url() );
-									echo '</li>';
+									$pluginLocation = rawurlencode($plugin['slug'].'/'.$plugin['pluginfile']);
+									$pluginLink = iexcel_plugin_activation( $pluginLocation, $plugin['slug'], $plugin['pluginfile'] );
+									$nonce_install = iexcel_plugin_install($plugin['slug']);
+															
+									if (!empty($plugin['ocdi']))
+									{
+										echo '<li><b>'.$plugin['title'].'</b><br />';
+										echo $plugin['desc'].'<br />';
+										$pluginTitle = $plugin['title'];
+										if ( is_plugin_active( $plugin['slug'].'/'.$plugin['pluginfile'] ) ) {
+											echo '<a href="#" class="button disabled">' . __( 'Plugin installed and active', 'i-excel' ) . '</a>';  
+										} elseif( iexcel_is_plugin_installed($pluginTitle) == false )
+										{
+											echo '<a data-slug="' . $plugin['slug'] . '" data-active-lebel="' . __( 'Installing...', 'i-excel' ) . '" class="install-now button" href="' . esc_url( $nonce_install ) . '" data-name="' . $plugin['slug'] . '" aria-label="Install ' . $plugin['slug'] . '">' . __( 'Install and activate', 'i-excel' ) . '</a>';
+										} else
+										{
+											echo '<a class="button activate-now button-primary" data-active-lebel="' . __( 'Activating...', 'i-excel' ) . '" data-slug="' . $plugin['slug'] . '" href="' . esc_url( $pluginLink ) . '" aria-label="Activate ' . $plugin['slug'] . '">Activate</a>';
+										}
+										echo '</li>';
+									}
 									
-									echo '<li>';
-									_e( 'Start Customizing', 'i-excel' );
-									printf( __( 'To start setting up your theme go to menu "Appearance" > "<a href="%scustomize.php">Customize</a>".', 'i-excel' ), admin_url() );
-									echo '</li>';								
+								}
                             ?>                    
                         </ol>
-                        <span style="font-size: 13px;"><?php _e( 'Page Builder Tutorials : ', 'i-excel' ); ?><a href="<?php echo $pb_tutorial; ?>" target="_blank"><?php echo $pb_tutorial; ?></a></span>
-        			</div>
+        			</div>                     
 				<?php		
 					} elseif ( $active_tab == 'iexcel_plugins' )
 					{
 				?>     
                 	<div class="nx-tab-content"> 
                 		<p>&nbsp;</p>
+                        <p style="font-weight: 600; color: #272727;">
+                            <?php _e( 'I-EXCEL is based on core WordPress theme and is compatible with most of the popular plugins, Following are few plugins we like to use with I-EXCEL and placed at one place for convenience of I-EXCEL users.', 'i-excel' ); ?>
+                        </p>    
                         <ol>
 							<?php
 			

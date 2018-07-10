@@ -81,7 +81,7 @@ class Kirki_Init {
 	public function default_control_types( $control_types = array() ) {
 
 		$this->control_types = array(
-			'checkbox'              => 'WP_Customize_Control',
+			'checkbox'              => 'Kirki_Control_Checkbox',
 			'kirki-background'      => 'Kirki_Control_Background',
 			'code_editor'           => 'Kirki_Control_Code',
 			'kirki-color'           => 'Kirki_Control_Color',
@@ -98,7 +98,6 @@ class Kirki_Init {
 			'kirki-multicheck'      => 'Kirki_Control_MultiCheck',
 			'kirki-number'          => 'Kirki_Control_Number',
 			'kirki-palette'         => 'Kirki_Control_Palette',
-			'kirki-preset'          => 'Kirki_Control_Preset',
 			'kirki-radio'           => 'Kirki_Control_Radio',
 			'kirki-radio-buttonset' => 'Kirki_Control_Radio_ButtonSet',
 			'kirki-radio-image'     => 'Kirki_Control_Radio_Image',
@@ -112,8 +111,8 @@ class Kirki_Init {
 			'kirki-toggle'          => 'Kirki_Control_Toggle',
 			'kirki-typography'      => 'Kirki_Control_Typography',
 			'image'                 => 'Kirki_Control_Image',
-			'cropped_image'         => 'WP_Customize_Cropped_Image_Control',
-			'upload'                => 'WP_Customize_Upload_Control',
+			'cropped_image'         => 'Kirki_Control_Cropped_Image',
+			'upload'                => 'Kirki_Control_Upload',
 		);
 		return array_merge( $this->control_types, $control_types );
 
@@ -142,6 +141,9 @@ class Kirki_Init {
 		}
 
 		$this->control_types = $this->default_control_types();
+		if ( ! class_exists( 'WP_Customize_Code_Editor_Control' ) ) {
+			unset( $this->control_types['code_editor'] );
+		}
 		foreach ( $this->control_types as $key => $classname ) {
 			if ( ! class_exists( $classname ) ) {
 				unset( $this->control_types[ $key ] );
@@ -277,7 +279,7 @@ class Kirki_Init {
 	 */
 	public static function get_variables() {
 		// Log error for developers.
-		_doing_it_wrong( __METHOD__, esc_attr__( 'We detected you\'re using Kirki_Init::get_variables(). Please use Kirki_Util::get_variables() instead.', 'i-excel' ), '3.0.10' );
+		_doing_it_wrong( __METHOD__, esc_attr__( 'We detected you\'re using Kirki_Init::get_variables(). Please use Kirki_Util::get_variables() instead.', 'i-design' ), '3.0.10' );
 		// Return result using the Kirki_Util class.
 		return Kirki_Util::get_variables();
 	}

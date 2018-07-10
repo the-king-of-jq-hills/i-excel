@@ -120,41 +120,46 @@ final class Kirki_Fonts {
 	 */
 	public static function get_google_fonts() {
 
-		if ( null === self::$google_fonts || empty( self::$google_fonts ) ) {
+		// Get fonts from cache.
+		self::$google_fonts = get_site_transient( 'kirki_googlefonts_cache' );
 
-			ob_start();
-			include wp_normalize_path( dirname( __FILE__ ) . '/webfonts.json' );
-			$fonts_json = ob_get_clean();
-			$fonts      = json_decode( $fonts_json, true );
-
-			$google_fonts = array();
-			if ( is_array( $fonts ) ) {
-				foreach ( $fonts['items'] as $font ) {
-					$google_fonts[ $font['family'] ] = array(
-						'label'    => $font['family'],
-						'variants' => $font['variants'],
-						'subsets'  => $font['subsets'],
-						'category' => $font['category'],
-					);
-				}
-			}
-
-			self::$google_fonts = apply_filters( 'kirki_fonts_google_fonts', $google_fonts );
-
+		// If we're debugging, don't use cached.
+		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+			self::$google_fonts = false;
 		}
 
+		// If cache is populated, return cached fonts array.
+		if ( self::$google_fonts ) {
+			return self::$google_fonts;
+		}
+
+		// If we got this far, cache was empty so we need to get from JSON.
+		ob_start();
+		include wp_normalize_path( dirname( __FILE__ ) . '/webfonts.json' );
+
+		$fonts_json = ob_get_clean();
+		$fonts      = json_decode( $fonts_json, true );
+
+		$google_fonts = array();
+		if ( is_array( $fonts ) ) {
+			foreach ( $fonts['items'] as $font ) {
+				$google_fonts[ $font['family'] ] = array(
+					'label'    => $font['family'],
+					'variants' => $font['variants'],
+					'category' => $font['category'],
+				);
+			}
+		}
+
+		// Apply the 'kirki_fonts_google_fonts' filter.
+		self::$google_fonts = apply_filters( 'kirki_fonts_google_fonts', $google_fonts );
+
+		// Save the array in cache.
+		$cache_time = apply_filters( 'kirki_googlefonts_transient_time', HOUR_IN_SECONDS );
+		set_site_transient( 'kirki_googlefonts_cache', self::$google_fonts, $cache_time );
+
 		return self::$google_fonts;
-
 	}
-
-	/**
-	 * Dummy function to avoid issues with backwards-compatibility.
-	 * This is not functional, but it will prevent PHP Fatal errors.
-	 *
-	 * @static
-	 * @access public
-	 */
-	public static function get_google_font_uri() {}
 
 	/**
 	 * Returns an array of all available subsets.
@@ -185,6 +190,15 @@ final class Kirki_Fonts {
 	}
 
 	/**
+	 * Dummy function to avoid issues with backwards-compatibility.
+	 * This is not functional, but it will prevent PHP Fatal errors.
+	 *
+	 * @static
+	 * @access public
+	 */
+	public static function get_google_font_uri() {}
+
+	/**
 	 * Returns an array of all available variants.
 	 *
 	 * @static
@@ -193,29 +207,29 @@ final class Kirki_Fonts {
 	 */
 	public static function get_all_variants() {
 		return array(
-			'100'       => esc_attr__( 'Ultra-Light 100', 'i-excel' ),
-			'100light'  => esc_attr__( 'Ultra-Light 100', 'i-excel' ),
-			'100italic' => esc_attr__( 'Ultra-Light 100 Italic', 'i-excel' ),
-			'200'       => esc_attr__( 'Light 200', 'i-excel' ),
-			'200italic' => esc_attr__( 'Light 200 Italic', 'i-excel' ),
-			'300'       => esc_attr__( 'Book 300', 'i-excel' ),
-			'300italic' => esc_attr__( 'Book 300 Italic', 'i-excel' ),
-			'400'       => esc_attr__( 'Normal 400', 'i-excel' ),
-			'regular'   => esc_attr__( 'Normal 400', 'i-excel' ),
-			'italic'    => esc_attr__( 'Normal 400 Italic', 'i-excel' ),
-			'500'       => esc_attr__( 'Medium 500', 'i-excel' ),
-			'500italic' => esc_attr__( 'Medium 500 Italic', 'i-excel' ),
-			'600'       => esc_attr__( 'Semi-Bold 600', 'i-excel' ),
-			'600bold'   => esc_attr__( 'Semi-Bold 600', 'i-excel' ),
-			'600italic' => esc_attr__( 'Semi-Bold 600 Italic', 'i-excel' ),
-			'700'       => esc_attr__( 'Bold 700', 'i-excel' ),
-			'700italic' => esc_attr__( 'Bold 700 Italic', 'i-excel' ),
-			'800'       => esc_attr__( 'Extra-Bold 800', 'i-excel' ),
-			'800bold'   => esc_attr__( 'Extra-Bold 800', 'i-excel' ),
-			'800italic' => esc_attr__( 'Extra-Bold 800 Italic', 'i-excel' ),
-			'900'       => esc_attr__( 'Ultra-Bold 900', 'i-excel' ),
-			'900bold'   => esc_attr__( 'Ultra-Bold 900', 'i-excel' ),
-			'900italic' => esc_attr__( 'Ultra-Bold 900 Italic', 'i-excel' ),
+			'100'       => esc_attr__( 'Ultra-Light 100', 'i-design' ),
+			'100light'  => esc_attr__( 'Ultra-Light 100', 'i-design' ),
+			'100italic' => esc_attr__( 'Ultra-Light 100 Italic', 'i-design' ),
+			'200'       => esc_attr__( 'Light 200', 'i-design' ),
+			'200italic' => esc_attr__( 'Light 200 Italic', 'i-design' ),
+			'300'       => esc_attr__( 'Book 300', 'i-design' ),
+			'300italic' => esc_attr__( 'Book 300 Italic', 'i-design' ),
+			'400'       => esc_attr__( 'Normal 400', 'i-design' ),
+			'regular'   => esc_attr__( 'Normal 400', 'i-design' ),
+			'italic'    => esc_attr__( 'Normal 400 Italic', 'i-design' ),
+			'500'       => esc_attr__( 'Medium 500', 'i-design' ),
+			'500italic' => esc_attr__( 'Medium 500 Italic', 'i-design' ),
+			'600'       => esc_attr__( 'Semi-Bold 600', 'i-design' ),
+			'600bold'   => esc_attr__( 'Semi-Bold 600', 'i-design' ),
+			'600italic' => esc_attr__( 'Semi-Bold 600 Italic', 'i-design' ),
+			'700'       => esc_attr__( 'Bold 700', 'i-design' ),
+			'700italic' => esc_attr__( 'Bold 700 Italic', 'i-design' ),
+			'800'       => esc_attr__( 'Extra-Bold 800', 'i-design' ),
+			'800bold'   => esc_attr__( 'Extra-Bold 800', 'i-design' ),
+			'800italic' => esc_attr__( 'Extra-Bold 800 Italic', 'i-design' ),
+			'900'       => esc_attr__( 'Ultra-Bold 900', 'i-design' ),
+			'900bold'   => esc_attr__( 'Ultra-Bold 900', 'i-design' ),
+			'900italic' => esc_attr__( 'Ultra-Bold 900 Italic', 'i-design' ),
 		);
 	}
 

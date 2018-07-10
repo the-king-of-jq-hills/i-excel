@@ -309,9 +309,14 @@ jQuery(document).ready(function($) {
 		}
 	});
 	
-	if( $('.elementor-editor-active').length > 0 )
-	{
+	if( $('.elementor-editor-active').length > 0 ) {
 		$( '.nx-ispload' ).css( "display", "none" );
+	}
+	
+	if( $('.woocommerce').length > 0 ) {
+		$('.woocommerce ul.products li.product a img').each(function() {
+			$( this ).wrap( "<span class='nx-prod-vinette'></span>" );
+		});
 	}	
 });		
 /**/
