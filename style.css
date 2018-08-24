@@ -4,7 +4,7 @@ Theme URI: http://www.templatesnext.org/i-excel/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: i-excel is a beautiful, elegant and flexible theme with several premium features. This highly customizable theme can be used for business websites, portfolios, personal websites or blogging. Highly responsive nature of i-excel makes it suitable for large desktop screens to small mobile screens. i-excel comes with the plugin “templatesnext toolkit” giving you extra flexibilities and functionalities, which includes, shortcodes to build pages with rows/column, SEO enabled headings, portfolios, testimonials, custom blog pages, custom slider etc. You can create beautiful pages with portfolio/blog carousels, masonry blocks, services, call to act sections etc.
-Version: 1.3.8
+Version: 1.4.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: One-Column, Two-Columns, Right-Sidebar, Custom-Colors, Custom-Menu,  Featured-Images, Flexible-Header, Full-Width-Template, Microformats, Post-Formats, Sticky-Post, Theme-Options, Threaded-Comments, Translation-Ready
@@ -858,7 +858,7 @@ img.wp-smiley,
 	display: block;
 	border-bottom: 1px solid #e7e7e7;
 	height: 36px;
-	line-height: 36px;
+	line-height: 32px;
 	padding: 0px;
 	vertical-align: middle;
 }
@@ -910,7 +910,7 @@ img.wp-smiley,
 }
 
 .topphone .topbarico {
-	padding-top: 4px;
+	padding-top: 0px;
 	line-height: 32px;	
 }
 
@@ -1291,9 +1291,6 @@ ul.nav-container ul a:hover,
 	overflow: hidden;
 }
 
-.da-img {
-}
-
 .ibanner ul,
 .ibanner ul li {
 	margin: 0px;
@@ -1304,7 +1301,21 @@ ul.nav-container ul a:hover,
 	z-index: 0;
 	position: relative;
 	text-align: center;
-	max-height: 600px;
+}
+
+.ibanner .da-slider .nx-slider {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.ibanner .da-slider .nx-slider .da-img {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	content: " ";
 }
 
 .ibanner .da-slider .nx-slider .da-img img {
@@ -1363,7 +1374,7 @@ ul.nav-container ul a:hover,
 	font-weight: 700;
 	padding: 6px 12px;
 	color: #FFF;
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(0,0,0,0.2);
 	width: auto;
 	max-width: 72%;
 	margin-bottom: 12px;
@@ -1376,7 +1387,7 @@ ul.nav-container ul a:hover,
 
 .ibanner .da-slider p {
 	color: #FFF;
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.2);
 	padding: 6px 12px;
 	width: auto;
 	max-width: 72%;
@@ -1384,13 +1395,20 @@ ul.nav-container ul a:hover,
 	position: relative;
 	margin-left: 120px;	
 	transition-delay: .6s;
-	opacity: 0;		
+	opacity: 0;
+	
+	display: inline-block;
+}
+
+.da-link {
+	border: 1px solid #333;
+	font-weight: 500;
 }
 
 .ibanner .da-slider .da-link {
 	background-color: #333;
 	color: #FFF;
-	padding: 16px 32px;
+	padding: 12px 32px;
 	border-radius: 3px;
 	position: relative;
 	margin-left: 120px;
@@ -1406,7 +1424,7 @@ ul.nav-container ul a:hover,
 
 .ibanner .da-slider .owl-item.active p {
 	margin-left: 0px;
-	opacity: 1;	
+	opacity: 1;
 }
 
 .ibanner .da-slider .owl-item.active .da-link {
@@ -4732,7 +4750,9 @@ nav.navigation .nav-links a:visited {
 .ibanner.nxs-shadow .nx-slider .nx-slider-container p,
 .ibanner.nxs-shadow .nx-slider .nx-slider-container h2,
 .ibanner.nxs-excel18 .nx-slider .nx-slider-container p,
-.ibanner.nxs-excel18 .nx-slider .nx-slider-container h2  {
+.ibanner.nxs-excel18 .nx-slider .nx-slider-container h2,
+.ibanner.nxs-excel19 .nx-slider .nx-slider-container p,
+.ibanner.nxs-excel19 .nx-slider .nx-slider-container h2  {
 	background: none;
 	padding-left: 0px;
 	padding-right: 0px;
@@ -4741,6 +4761,7 @@ nav.navigation .nav-links a:visited {
 .ibanner.nxs-pattern .nx-slider .nx-slider-container h2,
 .ibanner.nxs-vinette .nx-slider .nx-slider-container h2,
 .ibanner.nxs-excel18 .nx-slider .nx-slider-container h2,
+.ibanner.nxs-excel19 .nx-slider .nx-slider-container h2,
 .ibanner.nxs-shadow .nx-slider .nx-slider-container h2 {
 	margin-bottom: 0px;
 	font-size: 40px;	
@@ -4750,11 +4771,12 @@ nav.navigation .nav-links a:visited {
 
 .ibanner.nxs-shadow .nx-slider .nx-slider-container p,
 .ibanner.nxs-shadow .nx-slider .nx-slider-container h2 {
-	text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+	text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
 .ibanner.nxs-shadow .nx-slider .nx-slider-container p {
-	text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
+	text-shadow: 0 1px 3px rgba(0,0,0,.5);
+	font-size: 15px;
 }
 
 .ibanner.nxs-pattern .nx-slider .da-img:after {
@@ -5162,6 +5184,57 @@ i-excel 18 slider style
 	left: 13%;	
 	opacity: .4;	
 }
+
+
+/* excel-19 Slider Styles */
+.ibanner.nxs-excel19 .nx-slider .slider-content-wrap {
+	display: block;
+	max-width: 1264px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+}
+.ibanner.nxs-excel19 .nx-slider .slider-content-wrap .nx-slider-container {
+	position: absolute;
+    display: block;
+    z-index: 305;
+    bottom: 64px;
+    transform: none;
+	top: auto;
+	padding-bottom: 0px;
+}
+
+.ibanner.nxs-excel19 .nx-slider .slider-content-wrap .nx-slider-container h2{
+	color: #FFFFFF;
+	max-width: 100%;
+	font-weight: 600;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.ibanner.nxs-excel19 .nx-slider .slider-content-wrap .nx-slider-container p {
+	color: #FFFFFF;
+	max-width: 100%;	
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-bottom: 20px;
+}
+
+.ibanner.nxs-excel19 .nx-slider .da-img:after {
+	display: block;
+	position: absolute;
+	left: 0px;
+	top: 0px;	
+	height: 100%;
+	width: 100%;
+	content: " ";
+
+	background-image: url(images/nxs-design-18-overlay.png);
+	background-position: left bottom;
+	background-size: auto auto;
+	background-repeat: repeat-x;
+}
+
+
 
 @media (max-width: 1600px) {
 
@@ -5970,7 +6043,13 @@ Menu item highlight style
 /* Shoppingcart and Site Search */
 .nx-nav-boxedicons .topsearch form.search-form {
 	position: relative;
+	margin-top: 1px;
 }
+
+.nx-nav-boxedicons .site-header.fixeddiv .headerinnerwrap .search-form {
+	margin-top: -1px;
+}
+
 .nx-nav-boxedicons .topsearch form.search-form label::before {
 	position: absolute;
 	font-size: 20px;
@@ -6022,11 +6101,11 @@ Menu item highlight style
 
 .nx-nav-boxedicons .site-header .navbar .header-icons.woocart {
 	margin-right: 0px;
-	margin-top: 30px;
+	margin-top: 31px;
 }
 
 .nx-nav-boxedicons .site-header.fixeddiv .navbar .header-icons.woocart {
-	margin-top: 14px;
+	margin-top: 17px;
 }
 
 .nx-nav-boxedicons .header-iconwrap {

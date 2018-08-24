@@ -60,8 +60,8 @@ function iexcel_register_meta_boxes( $meta_boxes )
 				// Value can be 0 or 1
 				'std'  => 0,
 				'class' => 'hide-ttl',
-				'on_label'  => esc_attr__('Yes', 'i-design'),
-				'off_label' => esc_attr__('No', 'i-design'),					
+				'on_label'  => esc_attr__('Yes', 'i-excel'),
+				'off_label' => esc_attr__('No', 'i-excel'),					
 			),
 			array(
 				'name' => __( 'Show Default i-excel Slider', 'i-excel' ),
@@ -70,8 +70,8 @@ function iexcel_register_meta_boxes( $meta_boxes )
 				// Value can be 0 or 1
 				'std'  => 0,
 				'class' => 'show-slider',
-				'on_label'  => esc_attr__('Yes', 'i-design'),
-				'off_label' => esc_attr__('No', 'i-design'),					
+				'on_label'  => esc_attr__('Yes', 'i-excel'),
+				'off_label' => esc_attr__('No', 'i-excel'),					
 			),			
 			/*		
 			// Custom Title
@@ -98,8 +98,8 @@ function iexcel_register_meta_boxes( $meta_boxes )
 				'type' => 'switch',
 				// Value can be 0 or 1
 				'std'  => 0,
-				'on_label'  => esc_attr__('Yes', 'i-design'),
-				'off_label' => esc_attr__('No', 'i-design'),				
+				'on_label'  => esc_attr__('Yes', 'i-excel'),
+				'off_label' => esc_attr__('No', 'i-excel'),				
 			),
 			
 			// 3rd part slider
@@ -119,19 +119,19 @@ function iexcel_register_meta_boxes( $meta_boxes )
 			),
 			
 			array(
-				'name'            => __( 'Smart Slider 3', 'i-design' ),
+				'name'            => __( 'Smart Slider 3', 'i-excel' ),
 				'id'              => "{$prefix}smart_slider",
 				'type'            => 'select',
 				// Array of 'value' => 'Label' pairs
-				'options'         => icraft_smartslider_list(),
+				'options'         => iexcel_smartslider_list(),
 				// Allow to select multiple value?
 				'multiple'        => false,
 				// Placeholder text
-				'placeholder'     => __( 'Select a smart slider', 'i-design' ),
+				'placeholder'     => __( 'Select a smart slider', 'i-excel' ),
 				// Display "Select All / None" button?
 				'select_all_none' => false,
-				'desc' 			  => __('This option will override all the above slider options', 'i-design'),
-				'after'			  => icraft_smartslider_after(),
+				'desc' 			  => __('This option will override all the above slider options', 'i-excel'),
+				'after'			  => iexcel_smartslider_after(),
 			),
 
 		)
@@ -229,8 +229,8 @@ function iexcel_register_meta_boxes( $meta_boxes )
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('Remove the spaces/padding from top and bottom of the page/post', 'i-excel'),
-				'on_label'  => esc_attr__('Yes', 'i-design'),
-				'off_label' => esc_attr__('No', 'i-design'),				
+				'on_label'  => esc_attr__('Yes', 'i-excel'),
+				'off_label' => esc_attr__('No', 'i-excel'),				
 			),
 			
 			// Hide page header
@@ -241,8 +241,8 @@ function iexcel_register_meta_boxes( $meta_boxes )
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('Show transparent header on pages/posts. This will hide the page/post titlebar as well', 'i-excel'),
-				'on_label'  => esc_attr__('Yes', 'i-design'),
-				'off_label' => esc_attr__('No', 'i-design'),				
+				'on_label'  => esc_attr__('Yes', 'i-excel'),
+				'off_label' => esc_attr__('No', 'i-excel'),				
 			),				
 			
 			// Hide page header
@@ -253,8 +253,8 @@ function iexcel_register_meta_boxes( $meta_boxes )
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('In case you are building the page without the top navigation and logo', 'i-excel'),
-				'on_label'  => esc_attr__('Yes', 'i-design'),
-				'off_label' => esc_attr__('No', 'i-design'),				
+				'on_label'  => esc_attr__('Yes', 'i-excel'),
+				'off_label' => esc_attr__('No', 'i-excel'),				
 			),										
 
 			// Hide page header
@@ -265,8 +265,8 @@ function iexcel_register_meta_boxes( $meta_boxes )
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('Hide top bar with email, phone and social links', 'i-excel'),
-				'on_label'  => esc_attr__('Yes', 'i-design'),
-				'off_label' => esc_attr__('No', 'i-design'),				
+				'on_label'  => esc_attr__('Yes', 'i-excel'),
+				'off_label' => esc_attr__('No', 'i-excel'),				
 			),
 			// Hide page header
 			array(
@@ -276,8 +276,8 @@ function iexcel_register_meta_boxes( $meta_boxes )
 				// Value can be 0 or 1
 				'std'  => 0,
 				'desc' => __('Hide bottom footer widget area', 'i-excel'),
-				'on_label'  => esc_attr__('Yes', 'i-design'),
-				'off_label' => esc_attr__('No', 'i-design'),				
+				'on_label'  => esc_attr__('Yes', 'i-excel'),
+				'off_label' => esc_attr__('No', 'i-excel'),				
 			),									
 
 			// Custom page primary color			
@@ -329,54 +329,15 @@ function iexcel_register_meta_boxes( $meta_boxes )
 	return $meta_boxes;
 }
 
-	function iexcel_get_category_list_key_array($category_name) {
+function iexcel_get_category_list_key_array($category_name) {
 			
-		$get_category = get_categories( array( 'taxonomy' => $category_name	));
-		$category_list = array( 'all' => 'Select Category');
+	$get_category = get_categories( array( 'taxonomy' => $category_name	));
+	$category_list = array( 'all' => 'Select Category');
 		
-		foreach( $get_category as $category ){
-			if (isset($category->slug)) {
+	foreach( $get_category as $category ){
+		if (isset($category->slug)) {
 			$category_list[$category->slug] = $category->cat_name;
-			}
 		}
-			
-		return $category_list;
-	}	
-
-	function icraft_smartslider_list () {
-		
-		global $wpdb;
-		$smartslider = array();
-		//$smartslider[0] = 'Select a slider';
-		
-		if(class_exists('SmartSlider3')) {
-			$get_sliders = $wpdb->get_results('SELECT * FROM '.$wpdb->prefix.'nextend2_smartslider3_sliders');
-			if($get_sliders) {
-				foreach($get_sliders as $slider) {
-					$smartslider[$slider->id] = $slider->title;
-				}
-			}
-		}
-		return $smartslider;
-	
 	}
-	
-	function icraft_smartslider_after () {
-		
-		$smartslider_html = '';
-		
-		$smartslider_html .= '<div class="nx-ss-pro">';
-		$smartslider_html .= esc_attr__('&quot;Smart Slider 3&quot; can be downloaded from ', 'i-design');
-		$smartslider_html .= '<a href="'.esc_url('//wordpress.org/plugins/smart-slider-3/').'" target="_blank">';
-		$smartslider_html .= esc_attr__('WordPress repository', 'i-design');
-		$smartslider_html .= '</a>. ';
-		$smartslider_html .= esc_attr__('Professionally designed ', 'i-design');
-		$smartslider_html .= '<a href="'.esc_url('//smartslider3.com/sample-sliders/?source=templatesnext').'" target="_blank">';
-		$smartslider_html .= esc_attr__('slider library', 'i-design');
-		$smartslider_html .= '</a> ';
-		$smartslider_html .= esc_attr__('available with Smart Slider 3.', 'i-design');
-		$smartslider_html .= '</div>';
-		
-		return $smartslider_html;
-	
-	}	
+	return $category_list;
+}	

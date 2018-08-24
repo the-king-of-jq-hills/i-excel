@@ -20,8 +20,8 @@ $nav_dropdown_class = '';
 $topbar_bg = get_theme_mod('topbar_bg', 1);
 $top_phone = esc_attr(get_theme_mod('top_phone', '1-000-123-4567'));
 $top_email = esc_attr(get_theme_mod('top_email', 'email@i-create.com'));
-$iexcel_logo = get_theme_mod( 'logo', get_template_directory_uri().'/images/logo.png' );
-$iexcel_logo_trans = get_theme_mod( 'logo_trans', '' );
+$iexcel_logo = get_theme_mod( 'logo', get_template_directory_uri().'/images/logo-soft-pink-black.png' );
+$iexcel_logo_trans = get_theme_mod( 'logo_trans', get_template_directory_uri() . '/images/logo-soft-pink-white.png' );
 
 $nav_dropdown = get_theme_mod('nav_dropdown', 1);
 
@@ -94,14 +94,14 @@ if ( function_exists( 'rwmb_meta' ) ) {
                 <?php if ( !empty($top_phone) ) : ?>
                 <div class="topphone tx-topphone">
                     <i class="topbarico genericon genericon-phone"></i>
-                    <?php _e('Call us : ','i-excel'); ?> <?php echo esc_attr($top_phone); ?>
+                    <?php echo esc_attr($top_phone); ?>
                 </div>
                 <?php endif; ?>
                 
                 <?php if ( !empty($top_email) ) : ?>
                 <div class="topphone tx-topmail">
                     <i class="topbarico genericon genericon-mail"></i>
-                    <?php _e('Mail us : ','i-excel'); ?> <?php echo sanitize_email($top_email); ?>
+                    <?php echo sanitize_email($top_email); ?>
                 </div>
                 <?php endif; ?>                
             </div> 

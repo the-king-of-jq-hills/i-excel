@@ -26,7 +26,7 @@ if ( function_exists( 'rwmb_meta' ) ) {
 			<div class="site-info">
                 <div class="copyright">
                 	<?php //esc_attr_e( 'Copyright &copy;', 'i-excel' ); ?>  <?php //bloginfo( 'name' ); ?>
-                    <?php esc_attr(get_theme_mod('copyright_text', $default_copyright )); ?>                    
+                    <?php echo esc_attr(get_theme_mod('copyright_text', $default_copyright )); ?>                    
                 </div>            
             	<div class="credit-info">
 					<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'i-excel' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'i-excel' ); ?>">

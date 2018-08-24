@@ -22,7 +22,7 @@
 			$body_font_size = "13";
 			$body_line_height = "24";
 			$menu_font_size = "13";
-			$primary_color = "#95C837";
+			$primary_color = "#c8367d";
 			
 			
 			$tx_body_font = array();
@@ -37,7 +37,7 @@
 			
 			$tx_title_font['font-family'] = 'Roboto, Georgia, serif';
 			
-			$primary_color = esc_attr(get_theme_mod('primary_color', '#95C837'));
+			$primary_color = esc_attr(get_theme_mod('primary_color', '#c8367d'));
 			
 			global $post;	
 			$custom_page_color = '';
@@ -166,7 +166,9 @@
 
 			echo '.woocommerce ul.products li.product .onsale, .woocommerce span.onsale, .nx-nav-boxedicons .header-iconwrap .header-icons.woocart > a .cart-counts { background-color: '.$primary_color.'; color: #FFF; }';
 			
-			echo '.woocommerce ul.products li.product .button, .navbar .widget_shopping_cart_content > p.buttons > a.button.wc-forward {background-color: '.$primary_color.';}';			
+			echo '.woocommerce ul.products li.product .button, .navbar .widget_shopping_cart_content > p.buttons > a.button.wc-forward {background-color: '.$primary_color.';}';	
+			
+			echo '.ibanner .da-slider .da-link {border-color: '.$primary_color.';}';		
 			
 			if( !empty($topbar_bg_color) ) {
 				echo '.site .utilitybar { background-color: '.$topbar_bg_color.'; color: #FFFFFF; border-bottom: 1px solid '.$topbar_bg_color.';}';

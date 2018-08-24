@@ -103,7 +103,7 @@ function iexcel_setup() {
 	 * additional Image sizes.
 	 */
 	//add_image_size( 'iexcel-slider-thumb', 1600, 580, true ); //(cropped)	
-	add_image_size( 'iexcel-single-thumb', 1600, 580, true ); //(cropped)
+	add_image_size( 'iexcel-single-thumb', 1600, 800, true ); //(cropped)
 	
 	// Add Support for woocommerce
 	add_theme_support( 'woocommerce' );	
@@ -204,7 +204,7 @@ function iexcel_scripts_styles() {
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array( 'jquery' ), '2.2.1', true );		
 	
 	// Loads JavaScript file with functionality specific to i-excel.
-	wp_enqueue_script( 'iexcel-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2014-07-18', true );
+	wp_enqueue_script( 'iexcel-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2018-06-03', true );
 	
 	
 	$blog_layout = get_theme_mod('blog_layout', '2');
@@ -231,18 +231,13 @@ function iexcel_scripts_styles() {
 	wp_enqueue_style( 'owl-carousel-transitions', get_template_directory_uri() . '/css/owl.transitions.css', array(), '2.2.1' );				
 	
 	// Loads our main stylesheet.
-	wp_enqueue_style( 'iexcel-style', get_stylesheet_uri(), array(), '2016-07-18' );
+	wp_enqueue_style( 'iexcel-style', get_stylesheet_uri(), array(), '2018-06-03' );
 	
 	// blog posts layout style
 	if ( $blog_layout == '2' ) {
 		wp_enqueue_style( 'i-excel-blog-layout', get_template_directory_uri() . '/css/twocol-blog.css', array(), '2015-03-11' );	
 	}
 
-	// Loads the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'iexcel-ie', get_template_directory_uri() . '/css/ie.css', array( 'iexcel-style' ), '2016-07-18' );
-	wp_style_add_data( 'iexcel-ie', 'conditional', 'lt IE 9' );
-	
-	
 	wp_enqueue_style( 'i-excel-extra-stylesheet', get_template_directory_uri() . '/css/extra-style.css', array(), '2016-03-11' );
 	$custom_css = wp_filter_nohtml_kses(get_theme_mod('extra_style', ''), '');
 	
@@ -596,7 +591,7 @@ function iexcel_body_class( $classes ) {
 		$classes[] = 'tx-nopad';
 		
 	// Add PreLoader Class
-	if( get_theme_mod('pre_loader', 0) == 1 )
+	if( get_theme_mod('pre_loader', 1) == 1 )
 		$classes[] = 'nx-preloader';
 		
 	// Add PreLoader Class
@@ -689,7 +684,12 @@ function iexcel_customize_register( $wp_customize ) {
 		'selector' => '.socialicons',
 		'settings' => array( 'itrans_social_facebook' ),
 		//'render_callback' => 'twentyfifteen_customize_partial_blogname',
-	) );				
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'copyright', array(
+		'selector' => '.copyright',
+		'settings' => array( 'copyright_text' ),
+	) );					
 
 
 	/**/	
@@ -780,8 +780,8 @@ add_filter('excerpt_more', 'iexcel_excerpt_more');
 /*-----------------------------------------------------------------------------------*/
 /*	Adding customizer with kirki 
 /*-----------------------------------------------------------------------------------*/ 
-include_once( dirname( __FILE__ ) . '/nx-customizer.php' );
-include_once( dirname( __FILE__ ) . '/inc/kirki/kirki.php' );
+include get_template_directory() . '/nx-customizer.php';
+include get_template_directory() . '/inc/kirki/kirki.php';
 
 /*-----------------------------------------------------------------------------------*/
 /*	Adding Responsive Menu

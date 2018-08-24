@@ -45,6 +45,8 @@ function welcome_screen_content() {
 	include get_template_directory() . '/inc/theme-welcome/tw-content.php';
 	
 	$logo_url = get_template_directory_uri() . '/inc/theme-welcome/i-excel-welcome.jpg';
+	$page_settings_url = get_template_directory_uri() . '/inc/theme-welcome/images/iexcel-static-fp-settings.png';
+	$page_settings_url_2 = get_template_directory_uri() . '/inc/theme-welcome/images/iexcel-pb-settings.png';
 	$img_url = get_template_directory_uri() . '/inc/theme-welcome/images/';
 	$active_tab = 'iexcel_about';
 	
@@ -56,6 +58,9 @@ function welcome_screen_content() {
 	$toolkit = esc_url('//www.templatesnext.org/icreate/templatesnext-toolkit/');
 	$fb_page = esc_url('//www.facebook.com/templatesnext/');
 	$pb_tutorial = esc_url('https://siteorigin.com/page-builder/documentation/');
+	
+	$intro_video_url = esc_url( 'https://www.youtube.com/embed/Gh_roekInwg?rel=0&amp;controls=1&amp;showinfo=0&amp;color=white&quot;theme=light' );
+	$intro_video = '<iframe width="100%" src="'. $intro_video_url . '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
 
 
 	$ocdi_buttont = "";
@@ -72,19 +77,51 @@ function welcome_screen_content() {
         <div class="nx-info-wrap-2 welcome-panel">
         	
         	<div class="nx-info-wrap">
-            	
-                <div class="nx-welcome"><?php _e( 'Welcome To ', 'i-excel' ); echo $name_version; ?></div>
-                <div class="tx-wspace-24"></div>
                 <div class="nx-info-desc" style="width: 100%;">
-                    <p>
-						<?php _e( 'I-EXCEL is a functional, flexible, multipurpose WordPress theme. It can be used as blog, business website, personal website, WooCommerce, portfolios, etc.', 'i-excel' ); ?>
-                    </p>
-                    <a class="button button-primary button-hero" href="<?php echo $reviewURL; ?>">
-                    <?php _e( 'Post Your Review', 'i-excel' ); ?>
-                    </a>  
-                    <a class="button button-primary button-hero" href="<?php echo $goPremiumURL; ?>">
-                    	<?php _e( 'Go Premium', 'i-excel' ); ?>
-                    </a>  
+					
+                            <div class="nx-welcome"><?php _e( 'Welcome To ', 'i-excel' ); echo '<span style="text-transform: uppercase;">'.$name_version.'</span>'; ?></div>
+                            <div class="tx-wspace-24"></div>                    
+                            <p>
+                                <?php _e( 'I-EXCEL is a functional, flexible, multipurpose WordPress theme. Use it for blogs, business websites, personal websites, WooCommerce, portfolios, etc.', 'i-excel' ); ?>
+                            </p>                    
+                	<div class="nx-admin-row">
+                        <div class="col-1-2" style="padding-left: 0px; margin-left: 0px; width: 60%;">
+                        	<h2 style="margin: 12px 0px;"><?php esc_attr_e('I-EXCEL Setup Guide', 'i-excel'); ?></h4>
+                        	<div class="video-wrapper">
+                            	<?php echo $intro_video; ?>
+                            </div>
+                        </div>
+                        <div class="col-1-2" style="padding-right: 0px; margin-right: 0px; width: 36%;">            	
+							<div>
+                            	<ul class="setup-list">
+                                	<li><b><?php esc_attr_e('0:03','i-excel'); ?> </b><?php esc_html_e('Installing TemplatesNext Toolkit', 'i-excel'); ?></li>
+                                	<li><b><?php esc_attr_e('0:36','i-excel'); ?> </b><?php esc_html_e('Setting-up Top Menu', 'i-excel'); ?></li>
+                                	<li><b><?php esc_attr_e('1:08','i-excel'); ?> </b><?php esc_html_e('Highlighting A Menu Item', 'i-excel'); ?></li>
+                                	<li><b><?php esc_attr_e('1:49','i-excel'); ?> </b><?php esc_html_e('Adding Logo', 'i-excel'); ?></li>
+                                	<li><b><?php esc_attr_e('2:58','i-excel'); ?> </b><?php esc_html_e('Maintenance/Coming Soon Mode', 'i-excel'); ?></li>
+                                	<li><b><?php esc_attr_e('4:17','i-excel'); ?> </b><?php esc_html_e('Blog/Shop Page Settings', 'i-excel'); ?></li>
+                                	<li><b><?php esc_attr_e('5.07','i-excel'); ?> </b><?php esc_html_e('Theme Slider', 'i-excel'); ?></li>
+                                	<li><b><?php esc_attr_e('6:03','i-excel'); ?> </b><?php esc_html_e('Topbar Customization', 'i-excel'); ?></li>
+                                	<li><b><?php esc_attr_e('6:53','i-excel'); ?> </b><?php esc_html_e('Header Customization', 'i-excel'); ?></li>
+                                	<li><b><?php esc_attr_e('7:42','i-excel'); ?> </b><?php esc_html_e('Creating A Front Page', 'i-excel'); ?></li>
+                                	<li><b><?php esc_attr_e('15:03','i-excel'); ?> </b><?php esc_html_e('Setting A Page As Your Front/Home Page', 'i-excel'); ?></li>
+                                	<li><b><?php esc_attr_e('15:34','i-excel'); ?> </b><?php esc_html_e('A Preview : Premium Theme I-SPIRIT', 'i-excel'); ?></li>
+                                </ul>
+                            </div>                                                       
+                        </div>
+                    </div> 
+                    
+                	<div class="nx-admin-row">
+                        <div class="">            	
+                            <a class="button button-primary button-hero" href="<?php echo $reviewURL; ?>">
+                            <?php _e( 'Post Your Review', 'i-excel' ); ?>
+                            </a>  
+                            <a class="button button-primary button-hero" href="<?php echo $goPremiumURL; ?>">
+                                <?php _e( 'Go Premium', 'i-excel' ); ?>
+                            </a>
+                        </div>
+                    </div>                     
+                    
                 </div>
                 <div class="tx-wspace-12"></div>
                 <div class="tx-wspace-24"></div>
@@ -129,11 +166,14 @@ function welcome_screen_content() {
                    		<?php _e( 'One Click Demo Import', 'i-excel' ); ?>
                     </a>                       
                     <a href="?page=welcome-screen-about&tab=iexcel_plugins" class="nav-tab <?php echo $active_tab == 'iexcel_plugins' ? 'nav-tab-active' : ''; ?> nx-kick">
-                    	<?php _e( 'Recommended Plugins', 'i-excel' ); ?>
+                    	<?php _e( 'Useful Plugins', 'i-excel' ); ?>
                     </a>
                     <a href="?page=welcome-screen-about&tab=iexcel_faq" class="nav-tab <?php echo $active_tab == 'iexcel_faq' ? 'nav-tab-active' : ''; ?> nx-plug">
                     	<?php _e( 'FAQs/Support', 'i-excel' ); ?>
                     </a>
+                    <a href="?page=welcome-screen-about&tab=iexcel_vid" class="nav-tab <?php echo $active_tab == 'iexcel_vid' ? 'nav-tab-active' : ''; ?> nx-plug">
+                    	<?php _e( 'Video Guide', 'i-excel' ); ?>
+                    </a>                     
                 </h2>
                 
                 <?php
@@ -259,6 +299,15 @@ function welcome_screen_content() {
                             ?>                 
                         </ul>
         			</div>
+                    <div>
+                    	<h3 style="margin: 16px 0px 6px 0px;">
+                        <a href="<?php echo $page_settings_url; ?>" class="nx-colorbox"><?php echo esc_attr__('Ideal Static Front Page Settings.', 'i-excel'); ?></a>
+                        </h3>
+                    	<h3 style="margin: 16px 0px 6px 0px;">
+                        <a href="<?php echo $page_settings_url_2; ?>" class="nx-colorbox"><?php echo esc_attr__('Ideal Page Settings For Page Builders Using Full Width Layout.', 'i-excel'); ?></a>
+                        </h3>
+                        
+                    </div>                    
 				<?php		
 					} elseif ( $active_tab == 'iexcel_ocdi' ) {
 				?>     
@@ -358,6 +407,26 @@ function welcome_screen_content() {
 							}
                         ?>                    
                         
+        			</div>      
+                        
+				<?php	
+					} elseif ( $active_tab == 'iexcel_vid' ) {
+				?>     
+                	<div class="nx-tab-content"> 
+                		<p>&nbsp;</p>
+                        <ul class="vd-thumb">
+                        	<li><a href="#media-popup" data-media="//www.youtube.com/embed/J7mJSnuko_w?autoplay=1"><img src="<?php echo esc_url(get_template_directory_uri() . '/inc/theme-welcome/images/so-pb.png'); ?>" alt="" /></a></li>
+                            <li><a href="#media-popup" data-media="//www.youtube.com/embed/sCStWRm6iUU?autoplay=1"><img src="<?php echo esc_url(get_template_directory_uri() . '/inc/theme-welcome/images/elementor.png'); ?>" alt="" /></a></li>
+                            <li><a href="#media-popup" data-media="//www.youtube.com/embed/KFuO0Jg6Ps4?autoplay=1"><img src="<?php echo esc_url(get_template_directory_uri() . '/inc/theme-welcome/images/brizy-n-ss3.png'); ?>" alt="" /></a></li>
+                        </ul>    
+                            
+                        <div class="popup" id="media-popup">
+                        	<div class="nx-videowrapper">
+                            	<iframe width="560" height="315" src="" frameborder="0" autoplay="1" allowfullscreen></iframe>
+                                <div class="clvideo"><a href="#"><?php esc_attr_e('Close Video', 'i-excel'); ?></a></div>
+                            </div>
+                        </div>                       
+						<div class="tx-wspace-12"></div>
         			</div>      
                         
 				<?php	

@@ -128,14 +128,14 @@ class Kirki_Control_Base extends WP_Customize_Control {
 			'kirkiL10n',
 			array(
 				'isScriptDebug'        => ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ),
-				'noFileSelected'       => esc_attr__( 'No File Selected', 'i-design' ),
-				'remove'               => esc_attr__( 'Remove', 'i-design' ),
-				'default'              => esc_attr__( 'Default', 'i-design' ),
-				'selectFile'           => esc_attr__( 'Select File', 'i-design' ),
-				'standardFonts'        => esc_attr__( 'Standard Fonts', 'i-design' ),
-				'googleFonts'          => esc_attr__( 'Google Fonts', 'i-design' ),
-				'defaultCSSValues'     => esc_attr__( 'CSS Defaults', 'i-design' ),
-				'defaultBrowserFamily' => esc_attr__( 'Default Browser Font-Family', 'i-design' ),
+				'noFileSelected'       => esc_attr__( 'No File Selected', 'i-excel' ),
+				'remove'               => esc_attr__( 'Remove', 'i-excel' ),
+				'default'              => esc_attr__( 'Default', 'i-excel' ),
+				'selectFile'           => esc_attr__( 'Select File', 'i-excel' ),
+				'standardFonts'        => esc_attr__( 'Standard Fonts', 'i-excel' ),
+				'googleFonts'          => esc_attr__( 'Google Fonts', 'i-excel' ),
+				'defaultCSSValues'     => esc_attr__( 'CSS Defaults', 'i-excel' ),
+				'defaultBrowserFamily' => esc_attr__( 'Default Browser Font-Family', 'i-excel' ),
 			)
 		);
 

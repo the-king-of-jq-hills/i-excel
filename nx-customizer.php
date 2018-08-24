@@ -248,7 +248,7 @@ function iexcel_add_panels_and_sections( $wp_customize ) {
 	
 }
 
-
+if ( ! function_exists( 'iexcel_custom_setting' ) ) :
 function iexcel_custom_setting( $controls ) {
 	
     $controls[] = array(
@@ -267,7 +267,7 @@ function iexcel_custom_setting( $controls ) {
 		'label'       => __( 'Turn ON Page Preloader', 'i-excel' ),
 		'description' => __( 'Turn ON/OFF loding animation before page load', 'i-excel' ),
 		'section'     => 'layout',
-		'default'     => 0,		
+		'default'     => 1,		
 		'priority'    => 3,
 	);	
 	
@@ -287,7 +287,7 @@ function iexcel_custom_setting( $controls ) {
 		'label'       => __( 'Site header logo', 'i-excel' ),
 		'description' => __( 'Width 280px, height 72px max. Upload logo for header', 'i-excel' ),
         'section'  => 'title_tagline',
-		'default'     => get_template_directory_uri() . '/images/logo.png',
+		'default'     => get_template_directory_uri() . '/images/logo-soft-pink-black.png',
 		'priority'    => 1,
 	);
 	
@@ -297,7 +297,7 @@ function iexcel_custom_setting( $controls ) {
 		'label'       => __( 'Transparent Logo', 'i-excel' ),
 		'description' => __( 'Optional transparent logo for transparent header', 'i-excel' ),
         'section'  => 'title_tagline',
-        'default'  => '',		
+		'default'     => get_template_directory_uri() . '/images/logo-soft-pink-white.png',
 		'priority'    => 2,
 	);		
 	
@@ -307,7 +307,7 @@ function iexcel_custom_setting( $controls ) {
 		'label'       => __( 'Primary Color', 'i-excel' ),
 		'description' => __( 'Choose your theme color', 'i-excel' ),
 		'section'     => 'colors',
-		'default'     => '#95c837',
+		'default'     => '#c8367d',
 		'priority'    => 1,
 	);
 	
@@ -689,14 +689,15 @@ function iexcel_custom_setting( $controls ) {
 		'settings'    => 'itrans_overlay',
 		'label'       => __( 'Text background', 'i-excel' ),
 		'section'     => 'slidersettings',
-		'default'     => 'nxs-semitrans',
+		'default'     => 'nxs-shadow',
 		'priority'    => 10,
 		'choices'     => array(
 			'nxs-pattern'   => esc_attr__( 'Pattern', 'i-excel' ),
 			'nxs-shadow' => esc_attr__( 'Shadow', 'i-excel' ),
 			'nxs-vinette'  => esc_attr__( 'Vignette', 'i-excel' ),
 			'nxs-semitrans'  => esc_attr__( 'Semi-trans', 'i-excel' ),
-			'nxs-excel18'  => esc_attr__( 'Excel 18', 'i-excel' ),			
+			'nxs-excel18'  => esc_attr__( 'Excel 18', 'i-excel' ),
+			'nxs-excel19'  => esc_attr__( 'Excel 19', 'i-excel' ),						
 		),
 	);	
 	
@@ -714,6 +715,33 @@ function iexcel_custom_setting( $controls ) {
 		),
 	);		
 	
+	$controls[] = array(
+		'type'        => 'slider',
+		'settings'    => 'slider_height',
+		'label'       => __( 'Slider Height (in %)', 'i-excel' ),
+		'section'     => 'slidersettings',
+		'default'     => 80,
+		'choices'     => array(
+			'min'  => '0',
+			'max'  => '100',
+			'step' => '1',
+		),
+	);
+	
+	$controls[] = array(
+		'type'        => 'slider',
+		'settings'    => 'slider_reduction',
+		'label'       => __( 'Reduction In px', 'i-excel' ),
+		'section'     => 'slidersettings',
+		'description' => __( 'Amount of pixels to be reduced from % of slider height', 'i-excel' ),		
+		'default'     => 160,
+		'choices'     => array(
+			'min'  => '0',
+			'max'  => '320',
+			'step' => '1',
+		),
+	);	
+		
 	
 	// Slide1
     $controls[] = array(
@@ -721,7 +749,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide1_title',
         'label'    => __( 'Slide1 Title', 'i-excel' ),
         'section'  => 'slide1',
-        'default'  => 'Welcome To i-excel',
+        'default'  => esc_attr__( '<span class="themecolor">Drag & Drop</span> Ready Layouts.', 'i-excel' ),
         'priority' => 1,
     );
 	$controls[] = array(
@@ -729,7 +757,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide1_desc',
 		'label'       => __( 'Slide1 Description', 'i-excel' ),
 		'section'     => 'slide1',
-		'default'     => 'To start setting up i-excel go to appearance &gt; customize. Make sure you have installed recommended plugin &#34;TemplatesNext Toolkit&#34; by going appearance &gt; install plugin.',
+		'default'     => esc_attr__( 'Perfect For Business And WooCommerce WordPress Sites.', 'i-excel' ),
 		'priority'    => 10,
 	);
     $controls[] = array(
@@ -737,7 +765,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide1_linktext',
         'label'    => __( 'Slide1 Link text', 'i-excel' ),
         'section'  => 'slide1',
-        'default'  => 'Know More',
+        'default'  => esc_attr__( 'Know More', 'i-excel' ),
         'priority' => 1,
     );
     $controls[] = array(
@@ -745,7 +773,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide1_linkurl',
         'label'    => __( 'Slide1 Link URL', 'i-excel' ),
         'section'  => 'slide1',
-        'default'  => 'http://www.templatesnext.org/icreate/?page_id=806',
+        'default'  => esc_url('http://www.templatesnext.org/icreate/?page_id=541&amp;ref=ie-slide'),
         'priority' => 1,
     );
 	$controls[] = array(
@@ -753,7 +781,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide1_image',
 		'label'       => __( 'Slide1 Image', 'i-excel' ),
         'section'  	  => 'slide1',
-		'default'     => get_template_directory_uri() . '/images/slides/slide-1.jpg',
+		'default'     => esc_url( get_template_directory_uri() . '/images/slides/slide-1.jpg' ),
 		'priority'    => 1,
 	);							
 	
@@ -764,7 +792,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide2_title',
         'label'    => __( 'Slide2 Title', 'i-excel' ),
         'section'  => 'slide2',
-        'default'  => 'Responsive & Touch Ready',
+        'default'  => esc_attr__( 'Supports All Page Builders.', 'i-excel' ),
         'priority' => 1,
     );
 	$controls[] = array(
@@ -772,7 +800,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide2_desc',
 		'label'       => __( 'Slide2 Description', 'i-excel' ),
 		'section'     => 'slide2',
-		'default'     => 'In vel magna nibh. Fusce sodales orci ut elit pharetra venenatis. Nam sed ex sed nisl lobortis consequat non sed mi. Aenean convallis mauris ut risus tempor, a consequat mauris commodo. Vivamus eleifend tellus ut nibh volutpat, non commodo nisi aliquam.',
+		'default'     => esc_attr__( 'Design Your Pages With Most Popular Page Builders.', 'i-excel' ),
 		'priority'    => 10,
 	);
     $controls[] = array(
@@ -780,7 +808,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide2_linktext',
         'label'    => __( 'Slide2 Link text', 'i-excel' ),
         'section'  => 'slide2',
-        'default'  => 'Know More',
+        'default'  => esc_attr__( 'Know More', 'i-excel' ),
         'priority' => 1,
     );
     $controls[] = array(
@@ -788,7 +816,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide2_linkurl',
         'label'    => __( 'Slide2 Link URL', 'i-excel' ),
         'section'  => 'slide2',
-        'default'  => 'https://wordpress.org/',
+        'default'  => esc_url('http://templatesnext.org/ispirit/landing/?ref=ie-slide'),
         'priority' => 1,
     );
 	$controls[] = array(
@@ -796,7 +824,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide2_image',
 		'label'       => __( 'Slide2 Image', 'i-excel' ),
         'section'  	  => 'slide2',
-		'default'     => get_template_directory_uri() . '/images/slides/slide-2.jpg',
+		'default'     => esc_url( get_template_directory_uri() . '/images/slides/slide-2.jpg' ),
 		'priority'    => 1,
 	);							
 		
@@ -807,7 +835,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide3_title',
         'label'    => __( 'Slide3 Title', 'i-excel' ),
         'section'  => 'slide3',
-        'default'  => 'Responsive & Touch Ready',
+        'default'  => esc_attr__( 'Portfolio, Testimonial, Services...', 'i-excel' ),
         'priority' => 1,
     );
 	$controls[] = array(
@@ -815,7 +843,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide3_desc',
 		'label'       => __( 'Slide3 Description', 'i-excel' ),
 		'section'     => 'slide3',
-		'default'     => 'In vel magna nibh. Fusce sodales orci ut elit pharetra venenatis. Nam sed ex sed nisl lobortis consequat non sed mi. Aenean convallis mauris ut risus tempor, a consequat mauris commodo. Vivamus eleifend tellus ut nibh volutpat, non commodo nisi aliquam.',
+		'default'     => esc_attr__( 'Create Sections Using Pagebuilder Or TemplatesNext Shortcodes.', 'i-excel' ),
 		'priority'    => 10,
 	);
     $controls[] = array(
@@ -823,7 +851,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide3_linktext',
         'label'    => __( 'Slide3 Link text', 'i-excel' ),
         'section'  => 'slide3',
-        'default'  => 'Know More',
+        'default'  => esc_attr__( 'Know More', 'i-excel' ),
         'priority' => 1,
     );
     $controls[] = array(
@@ -831,7 +859,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide3_linkurl',
         'label'    => __( 'Slide3 Link URL', 'i-excel' ),
         'section'  => 'slide3',
-        'default'  => 'https://wordpress.org/',
+        'default'  => esc_url('http://templatesnext.org/ispirit/landing/?ref=ie-slide'),
         'priority' => 1,
     );
 	$controls[] = array(
@@ -839,18 +867,18 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide3_image',
 		'label'       => __( 'Slide3 Image', 'i-excel' ),
         'section'  	  => 'slide3',
-		'default'     => get_template_directory_uri() . '/images/slides/slide-3.jpg',
+		'default'     => esc_url( get_template_directory_uri() . '/images/slides/slide-3.jpg' ),
 		'priority'    => 1,
 	);							
 	
 	
-	// Slide2
+	// Slide4
     $controls[] = array(
         'type'     => 'text',
         'settings'  => 'itrans_slide4_title',
         'label'    => __( 'Slide4 Title', 'i-excel' ),
         'section'  => 'slide4',
-        'default'  => 'Responsive & Touch Ready',
+        'default'  => esc_attr__( '<span class="themecolor">Exclusive WooCommerce</span> Features.', 'i-excel' ),
         'priority' => 1,
     );
 	$controls[] = array(
@@ -858,7 +886,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide4_desc',
 		'label'       => __( 'Slide4 Description', 'i-excel' ),
 		'section'     => 'slide4',
-		'default'     => 'In vel magna nibh. Fusce sodales orci ut elit pharetra venenatis. Nam sed ex sed nisl lobortis consequat non sed mi. Aenean convallis mauris ut risus tempor, a consequat mauris commodo. Vivamus eleifend tellus ut nibh volutpat, non commodo nisi aliquam.',
+		'default'     => esc_attr__( 'Many WooCommerce Features Like Shopping Cart, Product Listings, Etc.', 'i-excel' ),
 		'priority'    => 10,
 	);
     $controls[] = array(
@@ -866,7 +894,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide4_linktext',
         'label'    => __( 'Slide4 Link text', 'i-excel' ),
         'section'  => 'slide4',
-        'default'  => 'Know More',
+        'default'  => esc_attr__( 'Know More', 'i-excel' ),
         'priority' => 1,
     );
     $controls[] = array(
@@ -874,7 +902,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide4_linkurl',
         'label'    => __( 'Slide4 Link URL', 'i-excel' ),
         'section'  => 'slide4',
-        'default'  => 'https://wordpress.org/',
+        'default'  => esc_url('http://templatesnext.org/ispirit/landing/?ref=ie-slide'),
         'priority' => 1,
     );
 	$controls[] = array(
@@ -882,7 +910,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide4_image',
 		'label'       => __( 'Slide4 Image', 'i-excel' ),
         'section'  	  => 'slide4',
-		'default'     => get_template_directory_uri() . '/images/slides/slide-4.jpg',
+		'default'     => esc_url( get_template_directory_uri() . '/images/slides/slide-4.jpg' ),
 		'priority'    => 1,
 	);
 	
@@ -933,7 +961,7 @@ function iexcel_custom_setting( $controls ) {
 		'label' 		=> __('Smart Slider 3', 'i-excel'),
 		'description' 	=> __('Select a slider from Smart Slider 3', 'i-excel'),
 		'settings' 		=> 'blog_smart_slider',
-		'choices' 		=> icraft_smartslider_list(),
+		'choices' 		=> iexcel_smartslider_list(),
 		'type' 			=> 'select',
         'section'  		=> 'blogpage',
 		'default'     	=> '',
@@ -1333,6 +1361,7 @@ function iexcel_custom_setting( $controls ) {
 	
     return $controls;
 }
+endif;
 add_filter( 'kirki/controls', 'iexcel_custom_setting' );
 
 
