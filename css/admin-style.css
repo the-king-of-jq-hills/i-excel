@@ -456,3 +456,31 @@ li.customize-control {
 	text-decoration: underline;
 }
 
+.tx-dash-notice {
+	position: relative;
+}
+
+.tx-dashnotice-close,
+.tx-dashnotice-close:visited {
+	font-size: 12px;
+	display: block;
+	position: absolute;
+	right: 12px;
+	top: 6px;
+	height: 20px;
+	width: 64px;
+	line-height: 20px;
+	text-decoration: none;
+	color: #dd3333;
+	padding-left: 23px;
+}
+
+.tx-dashnotice-close:before {
+	display: block;
+	position: absolute;
+	font-family: dashicons;
+	left: 0px;
+	top: 1px;
+	font-size: 17px;
+	content: "\f153";
+}

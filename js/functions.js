@@ -362,6 +362,10 @@ jQuery(document).ready(function($) {
 		$('.woocommerce ul.products li.product a img').each(function() {
 			$( this ).wrap( "<span class='nx-prod-vinette'></span>" );
 		});
+	}
+	
+	if( $('.header-icons').length || $('.topsearch').length ) {
+		$('#menu-main-nav').addClass('nx-navicons');
 	}	
 });		
 /**/

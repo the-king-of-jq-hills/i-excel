@@ -39,6 +39,10 @@
 			
 			$primary_color = esc_attr(get_theme_mod('primary_color', '#c8367d'));
 			
+			$overlay_grc_1 = esc_attr(get_theme_mod('nxs_bg_color_1', 'rgba(231,14,119,.72)'));
+			$overlay_grc_2 = esc_attr(get_theme_mod('nxs_bg_color_2', 'rgba(250,162,20,.72)'));
+			$overlay_angle = esc_attr(get_theme_mod('nxs_gradient_angle', 135));									
+			
 			global $post;	
 			$custom_page_color = '';
 			$topbar_bg_color = '';	
@@ -93,6 +97,8 @@
 			
 			//echo '.nav-container > ul li a {font-size: '. $menu_font_size .'px;}';
 			
+			echo '.nxs-gradient .nx-slider .da-img:after { background: '.$overlay_grc_1.'; background: linear-gradient('.$overlay_angle.'deg, '.$overlay_grc_1.' 0%, '.$overlay_grc_2.' 100%);}';
+			
 			echo 'a,a:visited,.blog-columns .comments-link a:hover,.utilitybar.colored-bg .socialicons ul.social li a:hover .socico {color: '.$primary_color.';}';
 
 			echo 'input:focus,textarea:focus {border: 1px solid '.$primary_color.';}';
@@ -141,7 +147,7 @@
 
 			echo '.da-dots > span > span, .nx-preloader .nx-ispload, .sldprev, .ibanner .da-slider .owl-prev, .sldnext, .ibanner .da-slider .owl-next {background-color: '.$primary_color.';}';
 
-			echo '.iheader,.format-status,.tx-service:hover .tx-service-icon span {background-color: '.$primary_color.';}';
+			echo '.iheader,.format-status,.tx-service:hover .tx-service-icon span, .header-iconwrap .header-icons.woocart > a .cart-counts {background-color: '.$primary_color.';}';
 			
 			echo '.tx-cta {border-left: 6px solid '.$primary_color.';}';
 			

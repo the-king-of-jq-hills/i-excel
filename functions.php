@@ -870,34 +870,87 @@ function iexcel_import_files() {
   return array(
   	/**/
     array(
-      'import_file_name'             	=> 'i-Excel Demo Excel-18',
-      'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel.wordpress-excel-18.xml',
-      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-widgets.wie',
-      'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-export-excel-18.dat',
-      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-demo-excel-18.png',
+      'import_file_name'             	=> 'Agency 4',
+      'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency-4.xml',
+      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.wie',
+      'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency-4.dat',
+      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-agency-4.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "Contact Form 7" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
-	  'preview_url'                		=> 'http://templatesnext.org/icreate/',
+	  'preview_url'                		=> 'https://templatesnext.in/demos/tx-demos/index.php/agency-4/',
     ),
 
     array(
-      'import_file_name'             	=> 'i-Excel Demo Classic',
-      'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel.wordpress-1.xml',
-      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-widgets.wie',
-      'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-export.dat',
-      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-demo-1.png',
+      'import_file_name'             	=> 'Agency 1',
+      'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.xml',
+      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-craft-agency.wie',
+      'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency-1.dat',
+      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-agency-1.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "Contact Form 7" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
-	  'preview_url'                		=> 'http://templatesnext.org/icreate/',
+	  'preview_url'                		=> 'http://templatesnext.in/demos/tx-demos/index.php/1635-2/',
     ),
 	
     array(
-      'import_file_name'             	=> 'i-Excel Demo - Page Builder',
-      'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel.wordpress-2.xml',
-      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-widgets.wie',
-      'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-export-2.dat',
-      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-demo-2.png',
+      'import_file_name'             	=> 'Agency 2',
+      'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.xml',
+      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-craft-agency.wie',
+      'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency-2.dat',
+      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-agency-2.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "Contact Form 7" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
-	  'preview_url'                		=> 'http://www.templatesnext.org/icreate/?page_id=1138',	  
+	  'preview_url'                		=> 'http://templatesnext.in/demos/tx-demos/index.php/agency-2-pb/',
+    ),
+	
+    array(
+      'import_file_name'             	=> 'Agency 3',
+      'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.xml',
+      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-craft-agency.wie',
+      'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency-3.dat',
+      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-agency-3.jpg',
+      'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "Contact Form 7" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
+	  'preview_url'                		=> 'https://templatesnext.in/demos/tx-demos/index.php/agency-3/',	  
     ),	
+	
+    array(
+      'import_file_name'             	=> 'Business Home 1',
+      'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.xml',
+      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.wie',
+      'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-business-1.dat',
+      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-business-1.jpg',
+      'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "Contact Form 7" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
+	  'preview_url'                		=> 'http://templatesnext.in/demos/tx-demos/index.php/business-home-1-pb/',
+    ),
+	
+
+    array(
+      'import_file_name'             	=> 'Fashion Shop 1',
+      'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.xml',
+      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
+      'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-fashion-shop.dat',
+      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-fashion-shop.jpg',
+      'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "WooCommerce" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
+	  'preview_url'                		=> 'http://templatesnext.in/demos/tx-demos',
+    ),
+	
+    array(
+      'import_file_name'             	=> 'Shop Shaurya',
+      'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.xml',
+      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
+      'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop-shaurya.dat',
+      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-shaurya.jpg',
+      'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "WooCommerce" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
+	  'preview_url'                		=> 'http://templatesnext.in/demos/tx-demos/index.php/shop-shaurya/',	  
+    ),	
+	
+	
+    array(
+      'import_file_name'             	=> 'Craft-18 Shop',
+      'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.xml',
+      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
+      'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-craft-18.dat',
+      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-craft-18.jpg',
+      'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "WooCommerce" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
+	  'preview_url'                		=> 'http://templatesnext.in/demos/tx-demos/index.php/shop-blank/',	  
+    ),		
+		
   );
 }
 add_filter( 'pt-ocdi/import_files', 'iexcel_import_files' );
@@ -905,47 +958,124 @@ add_filter( 'pt-ocdi/import_files', 'iexcel_import_files' );
 add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 
 function iexcel_after_import_setup($selected_import) {
-		if ( 'i-Excel Demo Classic' === $selected_import['import_file_name'] ) {
+		if ( 'Agency 4' === $selected_import['import_file_name'] ) {
 
 		// Assign menus to their locations.
-		$main_menu = get_term_by( 'name', 'main nav', 'nav_menu' );
+		$main_menu = get_term_by( 'name', 'i-craft Main Nav', 'nav_menu' );
 	
 		set_theme_mod( 'nav_menu_locations', array(
 				'primary' => $main_menu->term_id,
 			)
 		);
 		
-		$front_page_id = get_page_by_title( 'Front Page' );
+		$front_page_id = get_page_by_title( 'Agency 4 PB' );
        	if ( isset( $front_page_id->ID ) ) {
 			update_option( 'page_on_front', $front_page_id->ID );
         	update_option( 'show_on_front', 'page' );
        	}		
 		
-	} elseif ( 'i-Excel Demo - Page Builder' === $selected_import['import_file_name'] ) {
-	
+	} elseif ( 'Agency 1' === $selected_import['import_file_name'] ) {
+
 		// Assign menus to their locations.
-		$main_menu = get_term_by( 'name', 'main nav', 'nav_menu' );
+		$main_menu = get_term_by( 'name', 'i-craft Main Nav', 'nav_menu' );
+	
 		set_theme_mod( 'nav_menu_locations', array(
 				'primary' => $main_menu->term_id,
 			)
 		);
 		
-		$front_page_id = get_page_by_title( 'Home - Page Builder' );
+		$front_page_id = get_page_by_title( 'Agency 1' );
+       	if ( isset( $front_page_id->ID ) ) {
+			update_option( 'page_on_front', $front_page_id->ID );
+        	update_option( 'show_on_front', 'page' );
+       	}		
+		
+	} elseif ( 'Agency 2' === $selected_import['import_file_name'] ) {
+	
+		// Assign menus to their locations.
+		$main_menu = get_term_by( 'name', 'i-craft Main Nav', 'nav_menu' );
+		set_theme_mod( 'nav_menu_locations', array(
+				'primary' => $main_menu->term_id,
+			)
+		);
+		
+		$front_page_id = get_page_by_title( 'Agency 2' );
        	if ( isset( $front_page_id->ID ) ) {
 			update_option( 'page_on_front', $front_page_id->ID );
         	update_option( 'show_on_front', 'page' );
        	}			
 	
-	} elseif ( 'i-Excel Demo Excel-18' === $selected_import['import_file_name'] ) {
+	} elseif ( 'Agency 3' === $selected_import['import_file_name'] ) {
 	
 		// Assign menus to their locations.
-		$main_menu = get_term_by( 'name', 'main nav', 'nav_menu' );
+		$main_menu = get_term_by( 'name', 'i-craft Main Nav', 'nav_menu' );
 		set_theme_mod( 'nav_menu_locations', array(
 				'primary' => $main_menu->term_id,
 			)
 		);
 		
-		$front_page_id = get_page_by_title( 'Home - Page Builder Easy' );
+		$front_page_id = get_page_by_title( 'Agency 3' );
+       	if ( isset( $front_page_id->ID ) ) {
+			update_option( 'page_on_front', $front_page_id->ID );
+        	update_option( 'show_on_front', 'page' );
+       	}			
+	
+	} elseif ( 'Business Home 1' === $selected_import['import_file_name'] ) {
+
+		// Assign menus to their locations.
+		$main_menu = get_term_by( 'name', 'i-craft Main Nav', 'nav_menu' );
+	
+		set_theme_mod( 'nav_menu_locations', array(
+				'primary' => $main_menu->term_id,
+			)
+		);
+		
+		$front_page_id = get_page_by_title( 'Business Home 1' );
+       	if ( isset( $front_page_id->ID ) ) {
+			update_option( 'page_on_front', $front_page_id->ID );
+        	update_option( 'show_on_front', 'page' );
+       	}		
+		
+	} elseif ( 'Fashion Shop 1' === $selected_import['import_file_name'] ) {
+	
+		// Assign menus to their locations.
+		$main_menu = get_term_by( 'name', 'i-craft Main Nav', 'nav_menu' );
+		set_theme_mod( 'nav_menu_locations', array(
+				'primary' => $main_menu->term_id,
+			)
+		);
+		
+		$front_page_id = get_page_by_title( 'Fashion Shop 1' );
+       	if ( isset( $front_page_id->ID ) ) {
+			update_option( 'page_on_front', $front_page_id->ID );
+        	update_option( 'show_on_front', 'page' );
+       	}			
+	
+	} elseif ( 'Shop Shaurya' === $selected_import['import_file_name'] ) {
+	
+		// Assign menus to their locations.
+		$main_menu = get_term_by( 'name', 'i-craft Main Nav', 'nav_menu' );
+		set_theme_mod( 'nav_menu_locations', array(
+				'primary' => $main_menu->term_id,
+			)
+		);
+		
+		$front_page_id = get_page_by_title( 'Shop Shaurya' );
+       	if ( isset( $front_page_id->ID ) ) {
+			update_option( 'page_on_front', $front_page_id->ID );
+        	update_option( 'show_on_front', 'page' );
+       	}			
+	
+	} elseif ( 'Craft-18 Shop' === $selected_import['import_file_name'] ) {
+	
+		// Assign menus to their locations.
+		$main_menu = get_term_by( 'name', 'i-craft Main Nav', 'nav_menu' );
+		set_theme_mod( 'nav_menu_locations', array(
+				'primary' => $main_menu->term_id,
+			)
+		);
+		
+		$front_page_id = get_page_by_title( 'Craft-18 Shop' );
        	if ( isset( $front_page_id->ID ) ) {
 			update_option( 'page_on_front', $front_page_id->ID );
         	update_option( 'show_on_front', 'page' );
@@ -960,9 +1090,10 @@ add_action( 'pt-ocdi/after_import', 'iexcel_after_import_setup' );
 /* Resetting default Widgets */
 function ispirit_before_content_import( $selected_import ) {
 	wp_delete_post(1);
-	update_option( 'sidebars_widgets', $null );
+	update_option( 'sidebars_widgets', array() );
 }
 add_action( 'pt-ocdi/before_content_import', 'ispirit_before_content_import' );
+
 
 /* change title for page and menu */
 function iexcel_plugin_page_setup( $default_settings ) {
@@ -983,29 +1114,29 @@ add_filter( 'pt-ocdi/plugin_intro_text', 'ocdi_plugin_intro_text' );
 
 /* Admin Notice for i-excel Users */
 
-add_action('admin_notices', 'iexcel_admin_notice_007');
-function iexcel_admin_notice_007() {
+add_action('admin_notices', 'iexcel_admin_notice_008');
+function iexcel_admin_notice_008() {
     global $current_user ;
         $user_id = $current_user->ID;
+		$about_url = admin_url('themes.php?page=welcome-screen-about');			
 		$support_url = esc_url('https://wordpress.org/support/theme/i-excel/');
 		$notice_url = esc_url('https://wordpress.org/support/theme/i-excel/reviews/?filter=5');
         /* Check that the user hasn't already clicked to ignore the message */
-    if ( ! get_user_meta($user_id, 'iexcel_ignore_notice_007') ) {
-        echo '<div class="updated"><p><div style="line-height: 20px;">'; 
-			printf(__('i-excel I-EXCEL 1.3.7 adds new features like, maintenance mode, transparent header, wide page template &quot;TX Full Width&quot; for page builders, etc.<br />', 'i-excel'));
-			printf(__('Use the  <a href="%1$s" target="_blank">support forum</a> to report an issue.', 'i-excel'), $support_url);
-			echo '<div class="clear" style="height: 6px; display: block; clear: both;"></div>';
-			printf(__('<a href="%1$s"><span class="dismiss-cross">X</span><span class="dismiss-text">Dismiss This Notice</span></a><div class="clear"></div>', 'i-excel' ), '?iexcel_notice_ignore_007=0');				
+    if ( ! get_user_meta($user_id, 'iexcel_ignore_notice_008') ) {
+        echo '<div class="updated tx-dash-notice"><p><div style="line-height: 20px;">'; 
+		printf(__('<div style="font-size: 16px;">Welcome to I-EXCEL! To know more about I-EXCEL and its features go to <a href="%1$s">about page<a/>.</div>', 'i-excel'), $about_url);
+		printf(__('<a href="%1$s" target="_blank" class="button button-primary button-hero" style="margin-top: 16px;">Get Started With I-EXCEL</a><div class="clear"></div>', 'i-excel' ), $about_url);			
+			printf(__('<a href="%1$s" class="tx-dashnotice-close">Dismiss</a><div class="clear"></div>', 'i-excel' ), '?iexcel_notice_ignore_008=0');				
         echo "</div></p></div>";
     }
 }
 
-add_action('admin_init', 'iexcel_notice_ignore_007');
-function iexcel_notice_ignore_007() {
+add_action('admin_init', 'iexcel_notice_ignore_008');
+function iexcel_notice_ignore_008() {
     global $current_user;
 	$user_id = $current_user->ID;
     /* If user clicks to ignore the notice, add that to their user meta */
-	if ( isset($_GET['iexcel_notice_ignore_007']) && '0' == $_GET['iexcel_notice_ignore_007'] ) {
-    	add_user_meta($user_id, 'iexcel_ignore_notice_007', 'true', true);
+	if ( isset($_GET['iexcel_notice_ignore_008']) && '0' == $_GET['iexcel_notice_ignore_008'] ) {
+    	add_user_meta($user_id, 'iexcel_ignore_notice_008', 'true', true);
     }
 }

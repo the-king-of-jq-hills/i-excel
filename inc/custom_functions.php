@@ -219,14 +219,14 @@ function iexcel_filter_active_widgets($active){
     $active['social-media-buttons'] = true;	
     $active['call-to-action'] = true;
     $active['google-maps'] = true;	
-    //$active['image'] = true;	
+    $active['image'] = true;	
     //$active['post-carousel'] = true;	
     //$active['taxonomy'] = true;
     $active['contact'] = true;	
     $active['headline'] = true;	
     $active['image-grid'] = true;	
     $active['price-table'] = true;	
-    //$active['testimonial'] = true;	
+    $active['testimonial'] = true;	
     $active['editor'] = true;	
     $active['hero'] = true;	
     $active['image-slider'] = true;

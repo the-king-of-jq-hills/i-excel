@@ -4,7 +4,7 @@ Theme URI: http://www.templatesnext.org/i-excel/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: i-excel is a beautiful, elegant and flexible theme with several premium features. This highly customizable theme can be used for business websites, portfolios, personal websites or blogging. Highly responsive nature of i-excel makes it suitable for large desktop screens to small mobile screens. i-excel comes with the plugin “templatesnext toolkit” giving you extra flexibilities and functionalities, which includes, shortcodes to build pages with rows/column, SEO enabled headings, portfolios, testimonials, custom blog pages, custom slider etc. You can create beautiful pages with portfolio/blog carousels, masonry blocks, services, call to act sections etc.
-Version: 1.4.2
+Version: 1.4.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: One-Column, Two-Columns, Right-Sidebar, Custom-Colors, Custom-Menu,  Featured-Images, Flexible-Header, Full-Width-Template, Microformats, Post-Formats, Sticky-Post, Theme-Options, Threaded-Comments, Translation-Ready
@@ -3537,22 +3537,22 @@ nav.navigation .nav-links a:visited {
 	padding-bottom: 32px;
 }
 
-.widget ul,
-.widget ol {
+.sidebar-container .widget ul,
+.sidebar-container .widget ol {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
 
-.widget li {
+.sidebar-container .widget li {
 	padding: 12px 0px;
 	border-bottom: 1px solid #e7e7e7;
 	vertical-align: middle;
 }
 
-.widget .menu li:before,
-.widget_pages li:before,
-.widget_meta li:before {
+.sidebar-container .widget .menu li:before,
+.sidebar-container .widget_pages li:before,
+.sidebar-container .widget_meta li:before {
 	content: '\f501';
 	display: inline-block;
 	width: 12px;
@@ -3569,25 +3569,25 @@ nav.navigation .nav-links a:visited {
 	color: #999;
 }
 
-.widget .children li:last-child {
+.sidebar-container .widget .children li:last-child {
 	padding-bottom: 0;
 	border-bottom: none;
 }
 
-.widget li > ul,
-.widget li > ol {
+.sidebar-container .widget li > ul,
+.sidebar-container .widget li > ol {
 	margin-left: 20px;
 }
 
-.widget li {
+.sidebar-container .widget li {
 	color: #999;
 }
 
-.widget a {
+.sidebar-container .widget a {
 	color: #575757;
 }
 
-.widget a:hover {
+.sidebar-container .widget a:hover {
 	color: #95C837;
 	text-decoration: none;
 }
@@ -4752,7 +4752,9 @@ nav.navigation .nav-links a:visited {
 .ibanner.nxs-excel18 .nx-slider .nx-slider-container p,
 .ibanner.nxs-excel18 .nx-slider .nx-slider-container h2,
 .ibanner.nxs-excel19 .nx-slider .nx-slider-container p,
-.ibanner.nxs-excel19 .nx-slider .nx-slider-container h2  {
+.ibanner.nxs-excel19 .nx-slider .nx-slider-container h2,
+.ibanner.nxs-gradient .nx-slider .nx-slider-container p,
+.ibanner.nxs-gradient .nx-slider .nx-slider-container h2  {
 	background: none;
 	padding-left: 0px;
 	padding-right: 0px;
@@ -4762,7 +4764,8 @@ nav.navigation .nav-links a:visited {
 .ibanner.nxs-vinette .nx-slider .nx-slider-container h2,
 .ibanner.nxs-excel18 .nx-slider .nx-slider-container h2,
 .ibanner.nxs-excel19 .nx-slider .nx-slider-container h2,
-.ibanner.nxs-shadow .nx-slider .nx-slider-container h2 {
+.ibanner.nxs-shadow .nx-slider .nx-slider-container h2,
+.ibanner.nxs-gradient .nx-slider .nx-slider-container h2 {
 	margin-bottom: 0px;
 	font-size: 40px;	
 }
@@ -6304,4 +6307,42 @@ Menu item highlight style
 
 .woocommerce ul.products li.product.product-category mark {
 	display: none;
+}
+
+.nxs-gradient .nx-slider .da-img:after {
+	position: absolute;
+	content: " ";
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+}
+
+.ibanner.nxs-gradient .da-slider .owl-controls .owl-page span { 
+	border-color:#FFF; 
+}
+			
+.ibanner.nxs-gradient .da-slider .owl-controls .owl-page.active span, 
+.ibanner.nxs-gradient .da-slider .owl-controls.clickable .owl-page:hover span {  
+	background-color: #FFF; 
+}
+
+.ibanner.nxs-gradient .da-slider .da-link,
+.ibanner.nxs-gradient .da-slider .da-link:visited {
+	background: transparent!important;
+	border: 1px solid #FFF;
+	color: #FFF;
+}
+
+.nav-container #menu-main-nav:not(.nx-navicons) {
+	padding-right: 0px;
+}
+
+.nav-container #menu-main-nav:not(.nx-navicons) li:last-child {
+	padding-right: 10px;
+}
+
+.nx-wide-nav .ubarinnerwrap,
+.nx-wide-nav .headerinnerwrap {
+	max-width: 100%;
 }

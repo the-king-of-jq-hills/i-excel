@@ -465,3 +465,113 @@ ul.vd-thumb li img {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
+
+.nx-cstnt {
+	padding: 12px;
+	position: relative;
+	background-color: #FFFFFF;
+	margin-bottom: 12px;
+}
+
+.tx-notice-close,
+.tx-notice-close:visited {
+	font-size: 12px;
+	display: block;
+	position: absolute;
+	right: 12px;
+	top: 6px;
+	height: 20px;
+	width: 20px;
+	line-height: 20px;
+	text-decoration: none;
+	text-align: center;
+	color: #dd3333;
+}
+
+.tx-notice-close:before {
+	display: block;
+	position: absolute;
+	font-family: dashicons;
+	left: 0px;
+	right: 0px;
+	font-size: 17px;
+	content: "\f153";
+}
+
+@-webkit-keyframes blinker {
+  from {opacity: 1.0;}
+  to {opacity: 0.64;}
+}
+.tx-blink{
+	text-decoration: blink;
+	-webkit-animation-name: blinker;
+	-webkit-animation-duration: 0.64s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:ease-in-out;
+	-webkit-animation-direction: alternate;
+}
+
+.tx-setup-guide {
+	display: block;
+	clear: both;
+}
+.tx-setup-guide a,
+.tx-setup-guide a:visited {
+	display: block;
+	clear: both;
+	background: transparent;
+	text-align: center;
+	text-decoration: none;
+	color: #333333;
+	
+	border: 1px solid #999;
+	padding: 6px 12px;
+	border-radius: 3px;	
+}
+
+.tx-setup-guide a:hover {
+	color: #333333;
+	box-shadow:   inset 0 0 3px #666;	
+}
+
+.tx-promo-panel a,
+.tx-promo-panel a:visited {
+	display: block;
+	clear: both;
+	line-height: 42px;
+	background-color: #c42766;
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+	padding-left: 15px;
+	font-size: 14px;
+	margin-bottom: 2px;
+	border-left: 4px solid #FFF;
+}
+.tx-promo-panel a:hover {
+	border-left: 4px solid #0073aa;
+	background-color: #333333;
+	color: #FFF;
+}
+
+.wp-full-overlay.section-open .nx-cstnt,
+.wp-full-overlay.in-sub-panel .nx-cstnt, 
+.wp-full-overlay.section-open .tx-promo-panel,
+.wp-full-overlay.in-sub-panel .tx-promo-panel {
+	display: none;
+}
+/*
+.ocdi-vdo,
+.ocdi-vdo:visited {
+	display: block;
+	padding: 8px 16px;
+	margin: 12px 0px;
+	background-color: #dd3333;
+	color: #FFF;
+}
+
+.ocdi-vdo:hover {
+	color: #FFF;
+}
+*/

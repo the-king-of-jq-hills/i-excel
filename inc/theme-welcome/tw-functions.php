@@ -62,3 +62,49 @@ function iexcel_plugin_activation( $plugin, $slug, $plugin_filename ) {
 	
 	return $url;
 }
+
+/***************************
+Customizer Activation Notice
+****************************/
+
+function iexcel_customizer_activate_notice () {
+	
+    global $current_user ;
+    $user_id = $current_user->ID;	
+	
+	$pluginLocation = rawurlencode('templatesnext-toolkit/tx-toolkit.php');
+	$pluginLink = iexcel_plugin_activation( $pluginLocation, 'templatesnext-toolkit', 'tx-toolkit.php' );
+	$nonce_install = iexcel_plugin_install('templatesnext-toolkit');
+	$pluginTitle = 'TemplatesNext ToolKit';
+	$activation_button = '';
+	
+	$activation_button .= '<div class="nx-cstnt">';								
+	$activation_button .= '<p>'.esc_attr__('Install accompanying plugin &quot;TemplatesNext ToolKit&quot; to activate all the features of this theme.', 'i-excel').'</p>';								
+	if ( is_plugin_active( 'templatesnext-toolkit/tx-toolkit.php' ) ) {
+		$activation_button .= '<a href="#" class="button disabled">' . __( 'Plugin installed and active', 'i-excel' ) . '</a>';  
+	} elseif( iexcel_is_plugin_installed($pluginTitle) == false ) {
+		$activation_button .= '<a data-slug="templatesnext-toolkit" data-active-lebel="' . __( 'Installing...', 'i-excel' ) . '" class="install-nx-now button" href="' . esc_url( $nonce_install ) . '" data-name="templatesnext-toolkit" aria-label="Install templatesnext-toolkit">' . __( 'Install and activate', 'i-excel' ) . '</a>';
+		$activation_button .= '<a class="button activate-nx-now button-primary" data-active-lebel="' . __( 'Activating...', 'i-excel' ) . '" data-slug="templatesnext-toolkit" href="' . esc_url( $pluginLink ) . '" aria-label="Activate templatesnext-toolkit" style="display: none;">' . __( 'Activate', 'i-excel' ) . '</a>';
+		$activation_button .= '<a href="#" class="tx-active button disabled" style="display: none;">' . __( 'Plugin installed and active', 'i-excel' ) . '</a>';
+	} else {
+		$activation_button .= '<a class="button activate-nx-now button-primary" data-active-lebel="' . __( 'Activating...', 'i-excel' ) . '" data-slug="templatesnext-toolkit" href="' . esc_url( $pluginLink ) . '" aria-label="Activate templatesnext-toolkit">' . __( 'Activate', 'i-excel' ) . '</a>';
+		$activation_button .= '<a href="#" class="tx-active button disabled" style="display: none;">' . __( 'Plugin installed and active', 'i-excel' ) . '</a>';  
+	}
+	$activation_button .= '<a class="tx-notice-close" href="?iexcel_customizer_notice_007=0"></a>';
+	$activation_button .= '</div>';
+	
+	if ( get_user_meta($user_id, 'iexcel_customizer_notice_007') || is_plugin_active( 'templatesnext-toolkit/tx-toolkit.php' ) ) {
+		$activation_button = '0';
+	}
+	
+	return $activation_button;									
+}
+
+add_action('admin_init', 'iexcel_customizer_notice_ignore_007');
+function iexcel_customizer_notice_ignore_007() {
+    global $current_user;
+	$user_id = $current_user->ID;
+	if ( isset($_GET['iexcel_customizer_notice_007']) && '0' == $_GET['iexcel_customizer_notice_007'] ) {
+    	add_user_meta($user_id, 'iexcel_customizer_notice_007', 'true', true);
+    }
+}

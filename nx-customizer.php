@@ -687,19 +687,73 @@ function iexcel_custom_setting( $controls ) {
 		//'type'        => 'radio-buttonset',
 		'type'        => 'radio',
 		'settings'    => 'itrans_overlay',
-		'label'       => __( 'Text background', 'i-excel' ),
+		'label'       => __( 'Background Overlay &frasl; Text Background', 'i-excel' ),
 		'section'     => 'slidersettings',
 		'default'     => 'nxs-shadow',
 		'priority'    => 10,
 		'choices'     => array(
-			'nxs-pattern'   => esc_attr__( 'Pattern', 'i-excel' ),
-			'nxs-shadow' => esc_attr__( 'Shadow', 'i-excel' ),
-			'nxs-vinette'  => esc_attr__( 'Vignette', 'i-excel' ),
-			'nxs-semitrans'  => esc_attr__( 'Semi-trans', 'i-excel' ),
-			'nxs-excel18'  => esc_attr__( 'Excel 18', 'i-excel' ),
-			'nxs-excel19'  => esc_attr__( 'Excel 19', 'i-excel' ),						
+			'nxs-pattern'   	=> esc_attr__( 'Pattern', 'i-excel' ),
+			'nxs-shadow' 		=> esc_attr__( 'Shadow', 'i-excel' ),
+			'nxs-vinette'  		=> esc_attr__( 'Vignette', 'i-excel' ),
+			'nxs-semitrans'  	=> esc_attr__( 'Semi-trans', 'i-excel' ),
+			'nxs-excel18'  		=> esc_attr__( 'Excel 18', 'i-excel' ),
+			'nxs-excel19'  		=> esc_attr__( 'Excel 19', 'i-excel' ),
+			'nxs-gradient'  	=> esc_attr__( 'Gradient', 'i-excel' ),						
 		),
+	);
+	
+	$controls[] = array(
+		'type'        	=> 'color',
+		'settings'     	=> 'nxs_bg_color_1',
+		'label'       	=> __( 'Overlay Gradient Color 1', 'i-excel' ),
+		'section'     	=> 'slidersettings',
+		'default'     	=> 'rgba(231,14,119,.72)',
+		'priority'    	=> 12,
+		'choices'     	=> array(
+							'alpha' => true,
+						),		
+		/*
+		'active_callback' => array(
+								array( 'setting' => 'itrans_overlay', 'operator' => '==', 'value' => 'nxs-gradient' ),
+							),		
+		*/
+		'active_callback' => 'iexcel_nxs_gradient',
 	);	
+	
+	$controls[] = array(
+		'type'        	=> 'color',
+		'settings'     	=> 'nxs_bg_color_2',
+		'label'       	=> __( 'Overlay Gradient Color 2', 'i-excel' ),
+		'section'     	=> 'slidersettings',
+		'default'     	=> 'rgba(250,162,20,.72)',
+		'priority'    	=> 13,
+		'choices'     	=> array(
+							'alpha' => true,
+						),		
+		/*
+		'active_callback' => array(
+								array( 'setting' => 'itrans_overlay', 'operator' => '==', 'value' => 'nxs-gradient' ),
+							),		
+		*/
+		'active_callback' => 'iexcel_nxs_gradient',
+	);	
+	
+	$controls[] = array(
+		'type'        => 'slider',
+		'settings'    => 'nxs_gradient_angle',
+		'label'       => __( 'Gradient Angle', 'i-excel' ),
+		'section'     => 'slidersettings',
+		'default'     => 135,
+		'choices'     => array(
+						'min'  => '0',
+						'max'  => '360',
+						'step' => '1',
+					),
+		'active_callback' => 'iexcel_nxs_gradient',	
+		'priority'    	=> 14,					
+	);
+		
+	
 	
 	$controls[] = array(
 		'type'        => 'radio-buttonset',
@@ -707,7 +761,7 @@ function iexcel_custom_setting( $controls ) {
 		'label'       => __( 'Text Alignment', 'i-excel' ),
 		'section'     => 'slidersettings',
 		'default'     => 'nxs-left',
-		'priority'    => 10,
+		'priority'    => 20,
 		'choices'     => array(
 			'nxs-left'   => esc_attr__( 'Left', 'i-excel' ),
 			'nxs-center' => esc_attr__( 'Center', 'i-excel' ),
@@ -726,6 +780,7 @@ function iexcel_custom_setting( $controls ) {
 			'max'  => '100',
 			'step' => '1',
 		),
+		'priority'    => 30,
 	);
 	
 	$controls[] = array(
@@ -740,6 +795,7 @@ function iexcel_custom_setting( $controls ) {
 			'max'  => '320',
 			'step' => '1',
 		),
+		'priority'    => 31,
 	);	
 		
 	
@@ -1293,39 +1349,25 @@ function iexcel_custom_setting( $controls ) {
 	);	
 			
 	// promos
+	/*
 	$controls[] = array(
 		'type'        => 'custom',
 		'settings'    => 'custom_demo',
-		'label' => __( 'TemplatesNext Promo', 'i-excel' ),
+		'label' => __( 'Useful Links', 'i-excel' ),
 		'section'     => 'nxpromo',
 		'default'	  => '<div class="promo-box">
         <div class="promo-2">
         	<div class="promo-wrap">
-            	<a href="http://templatesnext.org/i-excel/" target="_blank">i-excel Demo</a>
-                <a href="https://www.facebook.com/templatesnext" target="_blank">Facebook</a> 
-                <a href="http://templatesnext.org/ispirit/landing/forums/" target="_blank">Support</a>                                 
-                <div class="donate">                
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_s-xclick">
-                    <input type="hidden" name="hosted_button_id" value="M2HN47K2MQHAN">
-                    <table>
-                    <tr><td><input type="hidden" name="on0" value="If you like my work, you can buy me">If you like my work, you can buy me</td></tr><tr><td><select name="os0">
-                        <option value="a cup of coffee">1 cup of coffee $10.00 USD</option>
-                        <option value="2 cup of coffee">2 cup of coffee $20.00 USD</option>
-                        <option value="3 cup of coffee">3 cup of coffee $30.00 USD</option>
-                    </select></td></tr>
-                    </table>
-                    <input type="hidden" name="currency_code" value="USD">
-                    <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
-                    <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-                    </form>
-                </div>                                                                          
+                <a href="'. esc_url('//templatesnext.org/ispirit/landing/').'" target="_blank">' . esc_html__( 'Go Premium', 'i-excel' ) . '</a>			
+            	<a href="'. admin_url('themes.php?page=welcome-screen-about') .'" target="_blank">' . esc_html__( 'Getting Started With I-EXCEL', 'i-excel' ) . '</a>
+                <a href="'. esc_url('//www.facebook.com/templatesnext').'" target="_blank">' . esc_html__( 'Facebook', 'i-excel' ) . '</a> 
+                <a href="'. esc_url('//templatesnext.org/ispirit/landing/forums/').'" target="_blank">' . esc_html__( 'Support', 'i-excel' ) . '</a>                                 
             </div>
         </div>
 		</div>',
 		'priority' => 10,
 	);	
-
+	*/
 	
 	/* WooCommerce Settings */
 	$controls[] = array(
@@ -1365,7 +1407,14 @@ endif;
 add_filter( 'kirki/controls', 'iexcel_custom_setting' );
 
 
-
+function iexcel_nxs_gradient() {
+	//'setting' => 'itrans_overlay', 'operator' => '==', 'value' => 'nxs-gradient'
+	if ( get_theme_mod('itrans_overlay') == 'nxs-gradient' ) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 
 
