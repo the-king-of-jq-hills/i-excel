@@ -882,7 +882,7 @@ function iexcel_import_files() {
     array(
       'import_file_name'             	=> 'Agency 1',
       'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.xml',
-      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-craft-agency.wie',
+      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.wie',
       'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency-1.dat',
       'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-agency-1.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "Contact Form 7" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
@@ -892,7 +892,7 @@ function iexcel_import_files() {
     array(
       'import_file_name'             	=> 'Agency 2',
       'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.xml',
-      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-craft-agency.wie',
+      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.wie',
       'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency-2.dat',
       'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-agency-2.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "Contact Form 7" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
@@ -902,7 +902,7 @@ function iexcel_import_files() {
     array(
       'import_file_name'             	=> 'Agency 3',
       'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.xml',
-      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-craft-agency.wie',
+      'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.wie',
       'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency-3.dat',
       'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-agency-3.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "Contact Form 7" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
@@ -1098,7 +1098,7 @@ add_action( 'pt-ocdi/before_content_import', 'ispirit_before_content_import' );
 /* change title for page and menu */
 function iexcel_plugin_page_setup( $default_settings ) {
     $default_settings['page_title']  = esc_html__( 'i-excel One Click Demo Setup', 'i-excel' );
-    $default_settings['menu_title']  = esc_html__( 'i-excel Demo Setup' ,'i-excel' );
+    $default_settings['menu_title']  = esc_html__( 'Theme Demo Setup' ,'i-excel' );
     return $default_settings;
 }
 add_filter( 'pt-ocdi/plugin_page_setup', 'iexcel_plugin_page_setup' );

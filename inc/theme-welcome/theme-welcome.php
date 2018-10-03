@@ -110,7 +110,7 @@ function welcome_screen_content() {
                                 </ul>
                             </div> 
                             <a href="//www.youtube.com/watch?v=M_-HUs4EN-8?autoplay=1" target="_blank" style="display: block; margin: 16px 0px;" class="ocdi-vdo">
-                                <?php printf( esc_html__( 'Demo import video guide.', 'i-craft' )); ?>
+                                <?php printf( esc_html__( 'Demo import video guide.', 'i-excel' )); ?>
                             </a>                                                                                   
                         </div>
                     </div> 
