@@ -40,7 +40,7 @@ function iexcel_ibanner_slider () {
 	$banner_text = esc_attr(get_theme_mod('banner_text', ''));
 	
 	$text_alignment = esc_attr(get_theme_mod('itrans_align', 'nxs-left'));	
-	$banner_overlay = esc_attr(get_theme_mod('itrans_overlay', 'nxs-shadow'));
+	$banner_overlay = esc_attr(get_theme_mod('itrans_overlay', 'nxs-semitrans'));
 	if( $banner_overlay == "nxs-excel18" )
 	{
 		$text_alignment = "nxs-left";
@@ -54,32 +54,32 @@ function iexcel_ibanner_slider () {
 	
 	$slides_preset = array (
         array(
-            'itrans_slide_title' => esc_attr__( '<span class="themecolor">Drag & Drop</span> Ready Layouts.', 'i-excel' ),
-            'itrans_slide_desc' => esc_attr__( 'Perfect For Business And WooCommerce WordPress Sites.', 'i-excel' ),
+            'itrans_slide_title' => esc_attr__( '<span class="themecolor">Together</span> We Can Change The World.', 'i-excel' ),
+            'itrans_slide_desc' => esc_attr__( 'Don not gamble on the future, act now, without delay.', 'i-excel' ),
             'itrans_slide_linktext' => esc_attr__( 'Know More', 'i-excel' ),
             'itrans_slide_linkurl' => esc_url('http://www.templatesnext.org/icreate/?page_id=541&amp;ref=ie-slide'),
             'itrans_slide_image' => esc_url( get_template_directory_uri() . '/images/slides/slide-1.jpg' ),
         ),
         array(
-            'itrans_slide_title' => esc_attr__( 'Supports All Page Builders.', 'i-excel' ),
-            'itrans_slide_desc' => esc_attr__( 'Design Your Pages With Most Popular Page Builders.', 'i-excel' ),
-            'itrans_slide_linktext' => esc_attr__( 'Know More', 'i-excel' ),
-            'itrans_slide_linkurl' => esc_url('http://templatesnext.org/ispirit/landing/?ref=ie-slide'),
-            'itrans_slide_image' => esc_url( get_template_directory_uri() . '/images/slides/slide-2.jpg' ),
+            'itrans_slide_title' => '',
+            'itrans_slide_desc' => '',
+            'itrans_slide_linktext' => '',
+            'itrans_slide_linkurl' => '',
+            'itrans_slide_image' => '',
         ),
         array(
-            'itrans_slide_title' => esc_attr__( 'Portfolio, Testimonial, Services...', 'i-excel' ),
-            'itrans_slide_desc' => esc_attr__( 'Create Sections Using Pagebuilder Or TemplatesNext Shortcodes.', 'i-excel' ),
-            'itrans_slide_linktext' => esc_attr__( 'Know More', 'i-excel' ),
+            'itrans_slide_title' => '',
+            'itrans_slide_desc' => '',
+            'itrans_slide_linktext' => '',
             'itrans_slide_linkurl' => '',
-            'itrans_slide_image' => esc_url( get_template_directory_uri() . '/images/slides/slide-3.jpg' ),
+            'itrans_slide_image' => '',
         ),
         array(
-            'itrans_slide_title' => esc_attr__( '<span class="themecolor">Exclusive WooCommerce</span> Features.', 'i-excel' ),
-            'itrans_slide_desc' => esc_attr__( 'Many WooCommerce Features Like Shopping Cart, Product Listings, Etc.', 'i-excel' ),
-            'itrans_slide_linktext' => esc_attr__( 'Know More', 'i-excel' ),
+            'itrans_slide_title' => '',
+            'itrans_slide_desc' => '',
+            'itrans_slide_linktext' => '',
             'itrans_slide_linkurl' => '',
-            'itrans_slide_image' => esc_url( get_template_directory_uri() . '/images/slides/slide-4.jpg' ),
+            'itrans_slide_image' => '',
         ),
 
 	);		
@@ -94,8 +94,8 @@ function iexcel_ibanner_slider () {
 			$slide_linkurl = esc_url(get_theme_mod('itrans_slide'.$counter.'_linkurl', $slides_preset[$slideno]['itrans_slide_linkurl'] ));
 			$slide_image = esc_url(get_theme_mod('itrans_slide'.$counter.'_image', $slides_preset[$slideno]['itrans_slide_image'] ));
 			
-			$slider_height = esc_attr(get_theme_mod('slider_height', 80 ));
-			$slider_reduct = esc_attr(get_theme_mod('slider_reduction', 160 ));										
+			$slider_height = esc_attr(get_theme_mod('slider_height', 72 ));
+			$slider_reduct = esc_attr(get_theme_mod('slider_reduction', 120 ));										
 			
 			$slider_image_id = iexcel_get_attachment_id_from_url( $slide_image );			
 			$slider_resized_image = wp_get_attachment_image( $slider_image_id, 'iexcel-single-thumb' );

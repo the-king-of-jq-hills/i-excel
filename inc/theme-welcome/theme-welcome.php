@@ -1,7 +1,9 @@
 <?php
 
+/* include Theme Welcome Page functions */
 include get_template_directory() . '/inc/theme-welcome/tw-functions.php';
-	
+
+/*	
 if (isset($_GET['activated']) && is_admin()) {
 	set_transient( '_welcome_screen_activation_redirect', true, 30 );
 }
@@ -25,6 +27,7 @@ function welcome_screen_do_activation_redirect() {
   wp_safe_redirect( add_query_arg( array( 'page' => 'welcome-screen-about' ), admin_url( 'themes.php' ) ) );
 
 }
+*/
 
 add_action('admin_menu', 'welcome_screen_pages');
 

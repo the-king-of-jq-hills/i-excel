@@ -4,7 +4,7 @@ Theme URI: http://www.templatesnext.org/i-excel/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: i-excel is a beautiful, elegant and flexible theme with several premium features. This highly customizable theme can be used for business websites, portfolios, personal websites or blogging. Highly responsive nature of i-excel makes it suitable for large desktop screens to small mobile screens. i-excel comes with the plugin “templatesnext toolkit” giving you extra flexibilities and functionalities, which includes, shortcodes to build pages with rows/column, SEO enabled headings, portfolios, testimonials, custom blog pages, custom slider etc. You can create beautiful pages with portfolio/blog carousels, masonry blocks, services, call to act sections etc.
-Version: 1.4.6
+Version: 1.5.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: One-Column, Two-Columns, Right-Sidebar, Custom-Colors, Custom-Menu,  Featured-Images, Flexible-Header, Full-Width-Template, Microformats, Post-Formats, Sticky-Post, Theme-Options, Threaded-Comments, Translation-Ready
@@ -6334,11 +6334,11 @@ Menu item highlight style
 	color: #FFF;
 }
 
-.nav-container #menu-main-nav:not(.nx-navicons) {
+.nav-container .nav-menu:not(.nx-navicons) {
 	padding-right: 0px;
 }
 
-.nav-container #menu-main-nav:not(.nx-navicons) li:last-child {
+.nav-container .nav-menu:not(.nx-navicons) li:last-child {
 	padding-right: 10px;
 }
 
@@ -6346,3 +6346,38 @@ Menu item highlight style
 .nx-wide-nav .headerinnerwrap {
 	max-width: 100%;
 }
+
+.ss-style-triangles,
+.ss-style-doublediagonal {
+	z-index: 124!important;
+}
+.ss-style-doublediagonal:before {
+	opacity: 0.56;
+}
+
+.social-bar.tb-reversed {
+    border-bottom: none;
+}
+.sow-slider-pagination li {
+    border-bottom: none;
+}
+
+/*
+.main-navigation div.nav-menu {}
+
+.main-navigation div.nav-menu ul li {
+	display: inline-block;
+	position: relative;
+	padding: 0px 20px;
+}
+
+.site-header:not(.fixeddiv) .main-navigation div.nav-menu ul li a {
+	display: block;
+	color: #333;
+	text-decoration: none;
+	padding: 12px 0px;	
+}
+.nx-fullscreen .site-header:not(.fixeddiv) .main-navigation div.nav-menu ul li a {
+	color: #FFF;
+}
+*/

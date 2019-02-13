@@ -61,7 +61,7 @@ function iexcel_customizer_config() {
   
         // Change the logo image. (URL) Point this to the path of the logo file in your theme directory
                 // The developer recommends an image size of about 250 x 250
-        'logo_image'   => get_template_directory_uri() . '/images/logo.png',
+        //'logo_image'   => get_template_directory_uri() . '/images/logo-g.png',
   
         // The color of active menu items, help bullets etc.
         //'color_active' => '#95c837',
@@ -276,7 +276,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'top_email',
         'label'    => __( 'Email Address', 'i-excel' ),
         'section'  => 'nxtopbar',
-        'default'  => 'email@i-create.com',
+        'default'  => 'email@example.com',
         'priority' => 1,
 		'description' => __( 'Email Id that appears on top bar.', 'i-excel' ),		
     );
@@ -287,7 +287,8 @@ function iexcel_custom_setting( $controls ) {
 		'label'       => __( 'Site header logo', 'i-excel' ),
 		'description' => __( 'Width 280px, height 72px max. Upload logo for header', 'i-excel' ),
         'section'  => 'title_tagline',
-		'default'     => get_template_directory_uri() . '/images/logo-soft-pink-black.png',
+		//'default'     => get_template_directory_uri() . '/images/logo-soft-pink-black.png',
+		'default'     => '',		
 		'priority'    => 1,
 	);
 	
@@ -297,7 +298,8 @@ function iexcel_custom_setting( $controls ) {
 		'label'       => __( 'Transparent Logo', 'i-excel' ),
 		'description' => __( 'Optional transparent logo for transparent header', 'i-excel' ),
         'section'  => 'title_tagline',
-		'default'     => get_template_directory_uri() . '/images/logo-soft-pink-white.png',
+		//'default'     => get_template_directory_uri() . '/images/logo-soft-pink-white.png',
+		'default'     => '',		
 		'priority'    => 2,
 	);		
 	
@@ -689,7 +691,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'    => 'itrans_overlay',
 		'label'       => __( 'Background Overlay &frasl; Text Background', 'i-excel' ),
 		'section'     => 'slidersettings',
-		'default'     => 'nxs-shadow',
+		'default'     => 'nxs-semitrans',
 		'priority'    => 10,
 		'choices'     => array(
 			'nxs-pattern'   	=> esc_attr__( 'Pattern', 'i-excel' ),
@@ -774,7 +776,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'    => 'slider_height',
 		'label'       => __( 'Slider Height (in %)', 'i-excel' ),
 		'section'     => 'slidersettings',
-		'default'     => 80,
+		'default'     => 72,
 		'choices'     => array(
 			'min'  => '0',
 			'max'  => '100',
@@ -789,7 +791,7 @@ function iexcel_custom_setting( $controls ) {
 		'label'       => __( 'Reduction In px', 'i-excel' ),
 		'section'     => 'slidersettings',
 		'description' => __( 'Amount of pixels to be reduced from % of slider height', 'i-excel' ),		
-		'default'     => 160,
+		'default'     => 120,
 		'choices'     => array(
 			'min'  => '0',
 			'max'  => '320',
@@ -805,7 +807,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide1_title',
         'label'    => __( 'Slide1 Title', 'i-excel' ),
         'section'  => 'slide1',
-        'default'  => esc_attr__( '<span class="themecolor">Drag & Drop</span> Ready Layouts.', 'i-excel' ),
+        'default'  => esc_attr__( '<span class="themecolor">Together</span> We Can Change The World.', 'i-excel' ),
         'priority' => 1,
     );
 	$controls[] = array(
@@ -813,7 +815,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide1_desc',
 		'label'       => __( 'Slide1 Description', 'i-excel' ),
 		'section'     => 'slide1',
-		'default'     => esc_attr__( 'Perfect For Business And WooCommerce WordPress Sites.', 'i-excel' ),
+		'default'     => esc_attr__( 'Don not gamble on the future, act now, without delay.', 'i-excel' ),
 		'priority'    => 10,
 	);
     $controls[] = array(
@@ -848,7 +850,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide2_title',
         'label'    => __( 'Slide2 Title', 'i-excel' ),
         'section'  => 'slide2',
-        'default'  => esc_attr__( 'Supports All Page Builders.', 'i-excel' ),
+        'default'  => '',
         'priority' => 1,
     );
 	$controls[] = array(
@@ -856,7 +858,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide2_desc',
 		'label'       => __( 'Slide2 Description', 'i-excel' ),
 		'section'     => 'slide2',
-		'default'     => esc_attr__( 'Design Your Pages With Most Popular Page Builders.', 'i-excel' ),
+		'default'     => '',
 		'priority'    => 10,
 	);
     $controls[] = array(
@@ -864,7 +866,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide2_linktext',
         'label'    => __( 'Slide2 Link text', 'i-excel' ),
         'section'  => 'slide2',
-        'default'  => esc_attr__( 'Know More', 'i-excel' ),
+        'default'  => '',
         'priority' => 1,
     );
     $controls[] = array(
@@ -872,7 +874,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide2_linkurl',
         'label'    => __( 'Slide2 Link URL', 'i-excel' ),
         'section'  => 'slide2',
-        'default'  => esc_url('http://templatesnext.org/ispirit/landing/?ref=ie-slide'),
+        'default'  => '',
         'priority' => 1,
     );
 	$controls[] = array(
@@ -880,7 +882,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide2_image',
 		'label'       => __( 'Slide2 Image', 'i-excel' ),
         'section'  	  => 'slide2',
-		'default'     => esc_url( get_template_directory_uri() . '/images/slides/slide-2.jpg' ),
+		'default'     => '',
 		'priority'    => 1,
 	);							
 		
@@ -891,7 +893,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide3_title',
         'label'    => __( 'Slide3 Title', 'i-excel' ),
         'section'  => 'slide3',
-        'default'  => esc_attr__( 'Portfolio, Testimonial, Services...', 'i-excel' ),
+        'default'  => '',
         'priority' => 1,
     );
 	$controls[] = array(
@@ -899,7 +901,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide3_desc',
 		'label'       => __( 'Slide3 Description', 'i-excel' ),
 		'section'     => 'slide3',
-		'default'     => esc_attr__( 'Create Sections Using Pagebuilder Or TemplatesNext Shortcodes.', 'i-excel' ),
+		'default'     => '',
 		'priority'    => 10,
 	);
     $controls[] = array(
@@ -907,7 +909,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide3_linktext',
         'label'    => __( 'Slide3 Link text', 'i-excel' ),
         'section'  => 'slide3',
-        'default'  => esc_attr__( 'Know More', 'i-excel' ),
+        'default'  => '',
         'priority' => 1,
     );
     $controls[] = array(
@@ -915,7 +917,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide3_linkurl',
         'label'    => __( 'Slide3 Link URL', 'i-excel' ),
         'section'  => 'slide3',
-        'default'  => esc_url('http://templatesnext.org/ispirit/landing/?ref=ie-slide'),
+        'default'  => '',
         'priority' => 1,
     );
 	$controls[] = array(
@@ -923,7 +925,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide3_image',
 		'label'       => __( 'Slide3 Image', 'i-excel' ),
         'section'  	  => 'slide3',
-		'default'     => esc_url( get_template_directory_uri() . '/images/slides/slide-3.jpg' ),
+		'default'     => '',
 		'priority'    => 1,
 	);							
 	
@@ -934,7 +936,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide4_title',
         'label'    => __( 'Slide4 Title', 'i-excel' ),
         'section'  => 'slide4',
-        'default'  => esc_attr__( '<span class="themecolor">Exclusive WooCommerce</span> Features.', 'i-excel' ),
+        'default'  => '',
         'priority' => 1,
     );
 	$controls[] = array(
@@ -942,7 +944,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide4_desc',
 		'label'       => __( 'Slide4 Description', 'i-excel' ),
 		'section'     => 'slide4',
-		'default'     => esc_attr__( 'Many WooCommerce Features Like Shopping Cart, Product Listings, Etc.', 'i-excel' ),
+		'default'     => '',
 		'priority'    => 10,
 	);
     $controls[] = array(
@@ -950,7 +952,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide4_linktext',
         'label'    => __( 'Slide4 Link text', 'i-excel' ),
         'section'  => 'slide4',
-        'default'  => esc_attr__( 'Know More', 'i-excel' ),
+        'default'  => '',
         'priority' => 1,
     );
     $controls[] = array(
@@ -958,7 +960,7 @@ function iexcel_custom_setting( $controls ) {
         'settings'  => 'itrans_slide4_linkurl',
         'label'    => __( 'Slide4 Link URL', 'i-excel' ),
         'section'  => 'slide4',
-        'default'  => esc_url('http://templatesnext.org/ispirit/landing/?ref=ie-slide'),
+        'default'  => '',
         'priority' => 1,
     );
 	$controls[] = array(
@@ -966,7 +968,7 @@ function iexcel_custom_setting( $controls ) {
 		'settings'     => 'itrans_slide4_image',
 		'label'       => __( 'Slide4 Image', 'i-excel' ),
         'section'  	  => 'slide4',
-		'default'     => esc_url( get_template_directory_uri() . '/images/slides/slide-4.jpg' ),
+		'default'     => '',
 		'priority'    => 1,
 	);
 	
@@ -1370,35 +1372,37 @@ function iexcel_custom_setting( $controls ) {
 	*/
 	
 	/* WooCommerce Settings */
-	$controls[] = array(
-		'type'        => 'switch',
-		'settings'     => 'show_login',
-		'label'       => __( 'Hide/Show Topnav Login', 'i-excel' ),
-		'description' => __( 'Turn ON or OFF user login menu item on top nav', 'i-excel' ),
-		'section'     => 'woocomm',
-		'default'  	  => 0,		
-		'priority'    => 1,
-	);
-	
-	$controls[] = array(
-		'type'        => 'switch',
-		'settings'     => 'show_cart',
-		'label'       => __( 'Show/Hide Topnav Cart', 'i-excel' ),
-		'description' => __( 'Turn ON or OFF cart from top nav', 'i-excel' ),
-		'section'     => 'woocomm',
-		'default'     => 0,		
-		'priority'    => 1,
-	);
-	
-	$controls[] = array(
-		'type'        => 'switch',
-		'settings'     => 'product_search',
-		'label'       => __( 'Turn On/OFF Product Search', 'i-excel' ),
-		'description' => __( 'Turn ON/OFF product only search.', 'i-excel' ),
-		'section'     => 'woocomm',
-		'default'  	  => 0,		
-		'priority'    => 1,
-	);		 	
+	if ( class_exists( 'WooCommerce' ) ) {
+		$controls[] = array(
+			'type'        => 'switch',
+			'settings'     => 'show_login',
+			'label'       => __( 'Hide/Show Topnav Login', 'i-excel' ),
+			'description' => __( 'Turn ON or OFF user login menu item on top nav', 'i-excel' ),
+			'section'     => 'woocomm',
+			'default'  	  => 0,		
+			'priority'    => 1,
+		);
+		
+		$controls[] = array(
+			'type'        => 'switch',
+			'settings'     => 'show_cart',
+			'label'       => __( 'Show/Hide Topnav Cart', 'i-excel' ),
+			'description' => __( 'Turn ON or OFF cart from top nav', 'i-excel' ),
+			'section'     => 'woocomm',
+			'default'     => 0,		
+			'priority'    => 1,
+		);
+		
+		$controls[] = array(
+			'type'        => 'switch',
+			'settings'     => 'product_search',
+			'label'       => __( 'Turn On/OFF Product Search', 'i-excel' ),
+			'description' => __( 'Turn ON/OFF product only search.', 'i-excel' ),
+			'section'     => 'woocomm',
+			'default'  	  => 0,		
+			'priority'    => 1,
+		);
+	}
 	
 	
     return $controls;

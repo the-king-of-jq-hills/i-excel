@@ -365,7 +365,7 @@ jQuery(document).ready(function($) {
 	}
 	
 	if( $('.header-icons').length || $('.topsearch').length ) {
-		$('#menu-main-nav').addClass('nx-navicons');
+		$('.nav-menu').addClass('nx-navicons');
 	}	
 });		
 /**/

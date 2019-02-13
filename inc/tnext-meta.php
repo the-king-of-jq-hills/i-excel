@@ -320,6 +320,14 @@ function iexcel_register_meta_boxes( $meta_boxes )
 				'std'   => __( '', 'i-excel' ),
 				'desc' => __('Enter an additional page class, will be added to body. "hide-page-header" for no header, "boxed" for boxed page for wide layout.', 'i-excel'),
 			),
+			// additional page Style			
+			array(
+				'name'  => __( 'Additional Page CSS', 'i-excel' ),
+				'id'    => "{$prefix}page_styles",
+				'type'  => 'textarea',
+				'std'   => '',
+				'desc' => __('Enter an additional page CSS Codes, Styles will be applied on this page only.', 'i-excel'),
+			),				
 						
 		)
 	);			

@@ -19,9 +19,10 @@ $nav_dropdown_class = '';
 
 $topbar_bg = get_theme_mod('topbar_bg', 1);
 $top_phone = esc_attr(get_theme_mod('top_phone', '1-000-123-4567'));
-$top_email = esc_attr(get_theme_mod('top_email', 'email@i-create.com'));
-$iexcel_logo = get_theme_mod( 'logo', get_template_directory_uri().'/images/logo-soft-pink-black.png' );
-$iexcel_logo_trans = get_theme_mod( 'logo_trans', get_template_directory_uri() . '/images/logo-soft-pink-white.png' );
+$top_email = esc_attr(get_theme_mod('top_email', 'email@example.com'));
+$iexcel_logo = get_theme_mod( 'logo', '' );
+$iexcel_logo_trans = get_theme_mod( 'logo_trans', '' );
+
 
 $nav_dropdown = get_theme_mod('nav_dropdown', 1);
 
