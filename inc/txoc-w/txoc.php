@@ -12,7 +12,7 @@ function iexcel_txoc_admin_js() {
 	if ( is_plugin_active( 'templatesnext-toolkit/tx-toolkit.php' ) ) {
 		$intropop_content = iexcel_customizer_demolist();
 	} else {
-		$intropop_content = iexcel_customizer_intropop() . iexcel_customizer_demolist();
+		$intropop_content = iexcel_customizer_intropop();
 	}
 	
 	wp_localize_script('iexcel-txoc-admin-js', 'intropop_content', $intropop_content);
@@ -31,7 +31,6 @@ function iexcel_customizer_intropop () {
     global $current_user ;
     $user_id = $current_user->ID;
 	$show_pop_meta = get_user_meta($user_id, 'iexcel_txoc_show_pops');
-	$how_to_import = esc_url('https://www.youtube.com/watch?v=9m1MQUFGQN8');
 	
 	if ( !empty($show_pop_meta) ){
 		if ( '1' == $show_pop_meta[0] ) {
@@ -44,20 +43,15 @@ function iexcel_customizer_intropop () {
 	}
 	
 	$intropop_content .= '<div class="closepop"><a href="#" title="Close"></a></div>';
-	$intropop_content .= '<h1>'. esc_html__('Welcome To I-EXCEL Setup', 'i-excel') .'</h1>';
-	$intropop_content .= '<h4>'. esc_html__('Installing accompanying plugin Templatesnext ToolKit.', 'i-excel') .'</h4>';
-	
-	$intropop_content .= '<a href="'.$how_to_import.'" target="_blank" title="How To Import Demo Layouts" class="howtoimport">';
-	$intropop_content .= '</a>';
-		
+	$intropop_content .= '<h1>'. esc_html__('Welcome To I-EXCEL', 'i-excel') .'</h1>';
+	$intropop_content .= '<h4>'. esc_html__('Please Install accompanying plugin Templatesnext ToolKit to take full advantages of all the features.', 'i-excel') .'</h4>';		
 	$intropop_content .= '</div>';
 	$intropop_content .= '<div class="tx-features">';
 	$intropop_content .= '<h1>'. esc_html__('Main Features', 'i-excel') .'</h1>';
 	$intropop_content .= '<ul>';
 	$intropop_content .= '<li>'. esc_html__('Ready To Import Sites.', 'i-excel') .'</li>';
-	$intropop_content .= '<li>'. esc_html__('Portfolio, Team, Custom Slider., etc.', 'i-excel') .'</li>';
+	$intropop_content .= '<li>'. esc_html__('Portfolio, Team, Custom Slider, etc.', 'i-excel') .'</li>';
 	$intropop_content .= '<li>'. esc_html__('Page/Post Meta Options.', 'i-excel') .'</li>';
-	$intropop_content .= '<li>'. esc_html__('20+ Custom Shortcodes.', 'i-excel') .'</li>';	
 	$intropop_content .= '<li>'. esc_html__('Wishlist And Products Compare.', 'i-excel') .'</li>';	
 	$intropop_content .= '<li>'. esc_html__('And Much More..', 'i-excel') .'</li>';					
 	$intropop_content .= '</ul>';		
@@ -80,12 +74,12 @@ function iexcel_customizer_intropop () {
 	if ( is_plugin_active( 'templatesnext-toolkit/tx-toolkit.php' ) ) {
 		$activation_button .= '<a href="#" class="button disabled button-hero">' . __( 'Plugin installed and active', 'i-excel' ) . '</a>';  
 	} elseif( iexcel_is_plugin_installed($pluginTitle) == false ) {
-		$activation_button .= '<a data-slug="templatesnext-toolkit" data-active-lebel="' . __( 'Installing...', 'i-excel' ) . '" class="install-nx-now install-txtk-now button button-hero" href="' . esc_url( $nonce_install ) . '" data-name="templatesnext-toolkit" aria-label="Install templatesnext-toolkit">' . __( 'Install and activate', 'i-excel' ) . '</a>';
-		$activation_button .= '<a class="button activate-nx-now activate-txtk-now button-primary button-hero" data-active-lebel="' . __( 'Activating...', 'i-excel' ) . '" data-slug="templatesnext-toolkit" href="' . esc_url( $pluginLink ) . '" aria-label="Activate templatesnext-toolkit" style="display: none;">' . __( 'Activate', 'i-excel' ) . '</a>';
-		$activation_button .= '<a href="#" class="tx-active txtk-active button disabled button-hero" style="display: none;">' . __( 'Plugin installed and active', 'i-excel' ) . '</a>';
+		$activation_button .= '<a data-slug="templatesnext-toolkit" data-active-lebel="' . __( 'Installing...', 'i-excel' ) . '" class="install-nx-now button button-hero" href="' . esc_url( $nonce_install ) . '" data-name="templatesnext-toolkit" aria-label="Install templatesnext-toolkit">' . __( 'Install and activate', 'i-excel' ) . '</a>';
+		$activation_button .= '<a class="button activate-nx-now button-primary button-hero" data-active-lebel="' . __( 'Activating...', 'i-excel' ) . '" data-slug="templatesnext-toolkit" href="' . esc_url( $pluginLink ) . '" aria-label="Activate templatesnext-toolkit" style="display: none;">' . __( 'Activate', 'i-excel' ) . '</a>';
+		$activation_button .= '<a href="#" class="tx-active button disabled button-hero" style="display: none;">' . __( 'Plugin installed and active', 'i-excel' ) . '</a>';
 	} else {
-		$activation_button .= '<a class="button activate-nx-now activate-txtk-now button-primary button-hero" data-active-lebel="' . __( 'Activating...', 'i-excel' ) . '" data-slug="templatesnext-toolkit" href="' . esc_url( $pluginLink ) . '" aria-label="Activate templatesnext-toolkit">' . __( 'Activate', 'i-excel' ) . '</a>';
-		$activation_button .= '<a href="#" class="tx-active txtk-active button disabled button-hero" style="display: none;">' . __( 'Plugin installed and active', 'i-excel' ) . '</a>';  
+		$activation_button .= '<a class="button activate-nx-now button-primary button-hero" data-active-lebel="' . __( 'Activating...', 'i-excel' ) . '" data-slug="templatesnext-toolkit" href="' . esc_url( $pluginLink ) . '" aria-label="Activate templatesnext-toolkit">' . __( 'Activate', 'i-excel' ) . '</a>';
+		$activation_button .= '<a href="#" class="tx-active button disabled button-hero" style="display: none;">' . __( 'Plugin installed and active', 'i-excel' ) . '</a>';  
 	}
 	$activation_button .= '</div></div></div>';	
 	
@@ -106,32 +100,19 @@ function iexcel_customizer_demolist () {
 		
 	$show_pop_meta = get_user_meta($user_id, 'iexcel_txoc_show_pops');
 	
-	if ( is_plugin_active( 'templatesnext-toolkit/tx-toolkit.php' ) ) {
-		if ( !empty($show_pop_meta) ){
-			if ( '1' == $show_pop_meta[0] ) {
-				$intropop_content .= '<div class="txoc-stage2 txoc-show">';
-			} elseif ( '0' == $show_pop_meta[0] )	{
-				$intropop_content .= '<div class="txoc-stage2 txoc-noshow">';
-			}
-		} else {
+	if ( !empty($show_pop_meta) ){
+		if ( '1' == $show_pop_meta[0] ) {
+			$intropop_content .= '<div class="txoc-stage2 txoc-show">';
+		} elseif ( '0' == $show_pop_meta[0] )	{
 			$intropop_content .= '<div class="txoc-stage2 txoc-noshow">';
-		}	
-	} else {
-		if ( !empty($show_pop_meta) ){
-			if ( '1' == $show_pop_meta[0] ) {
-				$intropop_content .= '<div class="txoc-stage2 txoc-show" style="display: none;">';
-			} elseif ( '0' == $show_pop_meta[0] )	{
-				$intropop_content .= '<div class="txoc-stage2 txoc-noshow" style="display: none;">';
-			}
-		} else {
-			$intropop_content .= '<div class="txoc-stage2 txoc-noshow" style="display: none;">';
 		}
-	}
-	
+	} else {
+		$intropop_content .= '<div class="txoc-stage2 txoc-noshow">';
+	}	
 	
 	$intropop_content .= '<div class="intropop-top demolist-head">';
 	$intropop_content .= '<div class="closepop popstage2"><a href="#" title="Close"></a></div>';
-	$intropop_content .= '<h1>'. esc_html__('Ready to Import Demos', 'i-excel') .'</h1>';
+	$intropop_content .= '<h1>'. esc_html__('Ready to Import Websites', 'i-excel') .'</h1>';
 	$intropop_content .= '<h4>'. esc_html__('Start With A Pre-designed Website', 'i-excel') .'</h4>';
 
 	$intropop_content .= '<ul class="nxl-filter">';
@@ -287,7 +268,7 @@ function iexcel_customizer_demolist () {
 						
 		} else {
 			$intropop_content .= '<div class="fprem-notice">';
-			$intropop_content .= '<h4>'. esc_html__('This demo site is only available with premium theme ', 'i-excel' ) . '<a href="' . esc_url('//templatesnext.org/ispirit/landing/?ref=txoc-iexcel') . '" target="_blank">' . esc_html__( 'I-SPIRIT', 'i-excel' ) . '</a>' . '</h4>';
+			$intropop_content .= '<h4>'. esc_html__('This demo site is only available with premium theme ', 'i-excel' ) . '<a href="' . esc_url('//templatesnext.org/ispirit/landing/') . '" target="_blank">' . esc_html__( 'I-SPIRIT', 'i-excel' ) . '</a>' . '</h4>';
 			$intropop_content .= '</div>';				
 		}			
 
@@ -297,7 +278,7 @@ function iexcel_customizer_demolist () {
 		if ( in_array( "Free", $vals['categories']) ) {
 			$intropop_content .= '<a href="#" class="button button-hero button-primary install-all-txoc" data-item-number="'.$item_counter.'" target="_blank" data-required-plugins="'.$intropop_plugins.'" >'. esc_html__( 'Import Demo Site', 'i-excel' ) .'</a>';
 		} else {
-			$intropop_content .= '<a href="' . esc_url('//templatesnext.org/ispirit/landing/?ref=txoc-iexcel') . '" class="button button-hero button-primary go-prem" data-item-number="'.$item_counter.'" target="_blank" data-required-plugins="'.$intropop_plugins.'" >'. esc_html__( 'Go Premium', 'i-excel' ) .'</a>';
+			$intropop_content .= '<a href="' . esc_url('//templatesnext.org/ispirit/landing/') . '" class="button button-hero button-primary go-prem" data-item-number="'.$item_counter.'" target="_blank" data-required-plugins="'.$intropop_plugins.'" >'. esc_html__( 'Go Premium', 'i-excel' ) .'</a>';
 		}		
 		
 		$intropop_content .= '</div>';		
@@ -313,7 +294,7 @@ function iexcel_customizer_demolist () {
 	
 	$intropop_content .= '<div class="txoc-sitelink" style="display: none;">';
 	$intropop_content .= '<a href="'.site_url().'/wp-admin/customize.php?iexcel_txoc_pops=0" class="button" target="_self" >'. esc_html__( 'Customize', 'i-excel' ) .'</a>';
-	$intropop_content .= '<a href="'.site_url().'/?iexcel_txoc_pops=0" class="button button-primary" target="_blank" >'. esc_html__( 'Visit Site', 'i-excel' ) .'</a>';
+	$intropop_content .= '<a href="'.site_url().'" class="button button-primary" target="_blank" >'. esc_html__( 'Visit Site', 'i-excel' ) .'</a>';
 	$intropop_content .= '</div>';
 	
 	
@@ -455,27 +436,7 @@ function iexcel_ocdi_required_plugins() {
 				'slug' => 'woocommerce',
 				'pluginfile' => 'woocommerce.php',
 				'ocdi' => 1,			
-		),
-		array(
-				'name' => __( 'Loco Translate (<span class="nx-red">Optional</span>)', 'i-excel' ),
-				'desc' => __( 'Theme translation plugin.', 'i-excel' ),
-				'pluginurl' => esc_url( 'https://wordpress.org/plugins/loco-translate/' ),
-				'title' => 'Loco Translate',			
-				'slug' => 'loco-translate',
-				'pluginfile' => 'loco.php',
-				'ocdi'      => 1,
-				'repourl'	=> '',					
-		),
-		array(
-				'name' => __( 'Polylang (<span class="nx-red">Optional</span>)', 'i-excel' ),
-				'desc' => __( 'Multilingual plugin', 'i-excel' ),
-				'pluginurl' => esc_url( 'https://wordpress.org/plugins/polylang/' ),
-				'title' => 'Polylang',			
-				'slug' => 'polylang',
-				'pluginfile' => 'polylang.php',
-				'ocdi'      => 1,
-				'repourl'	=> '',					
-		),						
+		),					
 		
 	);
 }
@@ -499,7 +460,7 @@ function iexcel_txoc_popup_ignore() {
     }
 }
 
-/* Turn On Imporp wiz */
+/*	
 add_action('after_switch_theme', 'iexcel_txoc_setup_options');
 
 function iexcel_txoc_setup_options () {
@@ -510,3 +471,4 @@ function iexcel_txoc_setup_options () {
 		
 	add_user_meta($user_id, 'iexcel_txoc_show_pops', 1);
 }
+*/

@@ -484,3 +484,16 @@ li.customize-control {
 	font-size: 17px;
 	content: "\f153";
 }
+
+.wp-admin #wpwrap .tx-dash-notice {
+	display: none!important;
+	border-left-color: #0085ba;
+	background-color: #e6f1f5;
+	margin-top: 16px;
+}
+.wp-admin.index-php #wpwrap .tx-dash-notice,
+.wp-admin.appearance_page_welcome-screen-about #wpwrap .tx-dash-notice {
+	display: block!important;
+}
+
+

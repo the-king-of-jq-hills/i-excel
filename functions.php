@@ -882,8 +882,11 @@ function iexcel_admin_notice_008() {
     if ( ! get_user_meta($user_id, 'iexcel_ignore_notice_008') ) {
         echo '<div class="updated tx-dash-notice"><p><div style="line-height: 20px;">'; 
 		printf(__('<div style="font-size: 16px;">Welcome to I-EXCEL! To know more about I-EXCEL and its features go to <a href="%1$s">about page<a/>.</div>', 'i-excel'), $about_url);
-		printf(__('<a href="%1$s" target="_blank" class="button button-primary button-hero" style="margin-top: 16px;">Get Started With I-EXCEL</a><div class="clear"></div>', 'i-excel' ), $about_url);			
-			printf(__('<a href="%1$s" class="tx-dashnotice-close">Dismiss</a><div class="clear"></div>', 'i-excel' ), '?iexcel_notice_ignore_008=0');				
+		
+		printf(__('<a href="%1$s" target="_blank" class="button button-primary button-hero txocwiz" style="margin-top: 16px; margin-right: 12px;">I-EXCEL Setup Wizard</a>', 'i-excel' ), $about_url);	
+		//printf(__('<a href="%1$s" target="_blank" class="button button-primary button-hero" style="margin-top: 16px;">Get Started With I-EXCEL</a><div class="clear"></div>', 'i-excel' ), $about_url);			
+		
+		printf(__('<a href="%1$s" class="tx-dashnotice-close">Dismiss</a><div class="clear"></div>', 'i-excel' ), '?iexcel_notice_ignore_008=0');				
         echo "</div></p></div>";
     }
 }

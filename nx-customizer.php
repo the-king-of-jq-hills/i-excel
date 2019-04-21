@@ -280,6 +280,20 @@ function iexcel_custom_setting( $controls ) {
         'priority' => 1,
 		'description' => __( 'Email Id that appears on top bar.', 'i-excel' ),		
     );
+	$controls[] = array(
+		'type'        => 'radio-buttonset',
+		'settings'     => 'show_polylang',
+		'label'       => __( 'Show Polylang Language Switch', 'i-excel' ),
+		'description' => __( 'Show multilingual plugin polylang language switch on top bar.', 'i-excel' ),
+		'section'     => 'nxtopbar',
+		'choices'     => array(
+							'0' => esc_html__( 'Off', 'i-excel' ),
+							'1' => esc_html__( 'On with Flags', 'i-excel' ),
+							'2' => esc_html__( 'On With Names', 'i-excel' ),
+		),		
+		'default'     => '2',
+		'priority'    => 4,
+	);			
 	
 	$controls[] = array(
 		'type'        => 'upload',

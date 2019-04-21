@@ -206,6 +206,33 @@ function iexcel_get_attachment_id_from_url( $attachment_url = '' ) {
     return $attachment_id;
 }
 
+/*
+ * Polylang language switcher
+ *
+ * @since iexcel 1.0.1
+ */
+
+function iexcel_polylang_switcher(){
+
+	$tb_plylang = 2;
+	$tb_plylang = intval(get_theme_mod('show_polylang', '2'));
+	//$tb_plylang = $ispirit_data['tb-polylang'];
+		
+	if( $tb_plylang == 1 || $tb_plylang == 2 ) {
+		$tx_topbar_output .= '<div class="tb-right tb-polylang">';
+		$tx_topbar_output .= '<ul>';
+		if( $tb_plylang == 1 ) {
+			$tx_topbar_output .= pll_the_languages( array( 'show_flags' => 1,'show_names' => 0,'echo' => 0,'hide_current' => 1 ) );
+		} else {
+			$tx_topbar_output .= pll_the_languages( array( 'show_flags' => 1,'show_names' => 1,'echo' => 0,'hide_current' => 1 ) );
+		}
+		$tx_topbar_output .= '</ul>';
+		$tx_topbar_output .= '</div>';
+	}
+	
+	return $tx_topbar_output;
+}
+
 /* Calling Theme Welcome on activation */
 require_once( get_template_directory() . '/inc/theme-welcome/theme-welcome.php' );
 

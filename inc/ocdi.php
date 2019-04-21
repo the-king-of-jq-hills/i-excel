@@ -15,7 +15,7 @@ function iexcel_import_files() {
 		  'import_file_url'            		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/restaurant.xml',
 		  //'import_widget_file_url'     		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/restaurant.wie',
 		  'import_customizer_file_url' 		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/restaurant.dat',
-		  'import_preview_image_url'     	=> '//wp-demos.com/downloads/demos/i-excel/elementor/restaurant.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/restaurant.jpg',
 		  'import_notice'                	=> __( 'This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/i-excel-restaurant/',
 		  'required_plugin'					=> array(
@@ -30,7 +30,7 @@ function iexcel_import_files() {
 		  'import_file_url'            		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/small-business.xml',
 		  //'import_widget_file_url'     		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/small-business.wie',
 		  'import_customizer_file_url' 		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/small-business.dat',
-		  'import_preview_image_url'     	=> '//wp-demos.com/downloads/demos/i-excel/elementor/business.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/business.jpg',
 		  'import_notice'                	=> __( 'This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/i-excel-smallbusiness/',
 		  'required_plugin'					=> array(
@@ -45,7 +45,7 @@ function iexcel_import_files() {
 		  'import_file_url'            		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/personal.xml',
 		  //'import_widget_file_url'     		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/personal.wie',
 		  'import_customizer_file_url' 		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/personal.dat',
-		  'import_preview_image_url'     	=> '//wp-demos.com/downloads/demos/i-excel/elementor/personal.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/personal.jpg',
 		  'import_notice'                	=> __( 'This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/i-excel-personal/',
 		  'required_plugin'					=> array(
@@ -55,10 +55,110 @@ function iexcel_import_files() {
 											),
 		  'categories'                 		=> array( 'Free', 'Elementor' ),	  
 		),
+		
+		/****************************************************************************/
+		/****************************************************************************/		
+		
+		array(
+		  'import_file_name'             	=> 'Multilingual',
+		  'import_file_url'            		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/multilingual.xml',
+		  //'import_widget_file_url'     		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/personal.wie',
+		  'import_customizer_file_url' 		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/multilingual.dat',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/multilingual.jpg',
+		  'import_notice'                	=> __( 'This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
+		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/i-excel-multilingual/',
+		  'required_plugin'					=> array(
+												'elementor',
+												'essential-addons-for-elementor-lite',
+												'contact-form-7',
+												'polylang',												
+											),
+		  'categories'                 		=> array( 'Free', 'Elementor' ),	  
+		),
+		array(
+		  'import_file_name'             	=> 'RTL',
+		  'import_file_url'            		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/rtl.xml',
+		  //'import_widget_file_url'     		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/personal.wie',
+		  'import_customizer_file_url' 		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/rtl.dat',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/rtl.jpg',
+		  'import_notice'                	=> __( 'This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
+		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/i-excel-rtl/',
+		  'required_plugin'					=> array(
+												'elementor',
+												'essential-addons-for-elementor-lite',
+												'contact-form-7',
+												'loco-translate',												
+											),
+		  'categories'                 		=> array( 'Free', 'Elementor' ),	  
+		),
+		array(
+		  'import_file_name'             	=> 'Online Courses',
+		  'import_widget_file_url'     		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/personal.wie',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/max-institute.jpg',
+		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
+		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/max-institute/',
+		  'required_plugin'					=> '',
+		  'categories'                 		=> array( 'Premium', 'Elementor' ),										
+		),	
+		/* Starting 2019 - 3 demos */
+		array(
+		  'import_file_name'             	=> 'Church',
+		  'import_file_url'            		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/church.xml',
+		  //'import_widget_file_url'     		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/personal.wie',
+		  'import_customizer_file_url' 		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/church.dat',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/church.jpg',
+		  'import_notice'                	=> __( 'This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
+		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/i-excel-church/',
+		  'required_plugin'					=> array(
+												'elementor',
+												'essential-addons-for-elementor-lite',
+												'contact-form-7',
+											),
+		  'categories'                 		=> array( 'Free', 'Elementor' ),	  
+		),
+		array(
+		  'import_file_name'             	=> 'SEO',
+		  'import_file_url'            		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/seo.xml',
+		  //'import_widget_file_url'     		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/personal.wie',
+		  'import_customizer_file_url' 		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/seo.dat',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/seo.jpg',
+		  'import_notice'                	=> __( 'This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
+		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/i-excel-seo/',
+		  'required_plugin'					=> array(
+												'elementor',
+												'essential-addons-for-elementor-lite',
+												'contact-form-7',
+											),
+		  'categories'                 		=> array( 'Free', 'Elementor' ),	  
+		),
+		array(
+		  'import_file_name'             	=> 'Yoga',
+		  'import_widget_file_url'     		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/personal.wie',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/yoga.jpg',
+		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
+		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/yoga/',
+		  'required_plugin'					=> '',
+		  'categories'                 		=> array( 'Premium', 'Elementor' ),										
+		),
+		array(
+		  'import_file_name'             	=> 'Gym',
+		  'import_widget_file_url'     		=> 'http://wp-demos.com/downloads/demos/i-excel/elementor/personal.wie',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/gym.jpg',
+		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
+		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/gym/',
+		  'required_plugin'					=> '',
+		  'categories'                 		=> array( 'Premium', 'Elementor' ),										
+		),						
+				
+		/* ending 2019 - 3 demos */			
+		/****************************************************************************/
+		/****************************************************************************/	
+						
+		
 		array(
 		  'import_file_name'             	=> 'MAX Store',
 		  'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
-		  'import_preview_image_url'     	=> '//wp-demos.com/downloads/demos/i-excel/elementor/maxstore.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/maxstore.jpg',
 		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/maxstore/',
 		  'required_plugin'					=> '',
@@ -70,7 +170,7 @@ function iexcel_import_files() {
       'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency-4.xml',
       'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.wie',
       'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency-4.dat',
-      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-agency-4.jpg',
+      'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/agency-4.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "Contact Form 7" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 	  'preview_url'                		=> 'https://templatesnext.in/demos/tx-demos/index.php/agency-4/',
 	  'required_plugin'					=> array(
@@ -86,7 +186,7 @@ function iexcel_import_files() {
 		  'import_file_url'            		=> 'http://wp-demos.com/downloads/demos/i-excel/creative/school.xml',
 		  'import_widget_file_url'     		=> 'http://wp-demos.com/downloads/demos/i-excel/creative/school.wie',
 		  'import_customizer_file_url' 		=> 'http://wp-demos.com/downloads/demos/i-excel/creative/school.dat',
-		  'import_preview_image_url'     	=> '//www.wp-demos.com/images/small-images/school.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/school.jpg',
 		  'import_notice'                	=> __( 'This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/i-excel-school/',
 		  'required_plugin'					=> array(
@@ -100,7 +200,7 @@ function iexcel_import_files() {
 		  'import_file_url'            		=> 'http://wp-demos.com/downloads/demos/i-excel/creative/charity.xml',
 		  //'import_widget_file_url'     		=> 'http://wp-demos.com/downloads/demos/i-excel/creative/charity.wie',
 		  'import_customizer_file_url' 		=> 'http://wp-demos.com/downloads/demos/i-excel/creative/charity.dat',
-		  'import_preview_image_url'     	=> '//www.wp-demos.com/images/small-images/ngo-charity.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/ngo-charity.jpg',
 		  'import_notice'                	=> __( 'This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/i-excel-charity/',
 		  'required_plugin'					=> array(
@@ -114,7 +214,7 @@ function iexcel_import_files() {
 		  'import_file_url'            		=> 'http://wp-demos.com/downloads/demos/i-excel/creative/computer.xml',
 		  //'import_widget_file_url'     		=> 'http://wp-demos.com/downloads/demos/i-excel/creative/computer.wie',
 		  'import_customizer_file_url' 		=> 'http://wp-demos.com/downloads/demos/i-excel/creative/computer.dat',
-		  'import_preview_image_url'     	=> '//www.wp-demos.com/images/small-images/computer.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/computer.jpg',
 		  'import_notice'                	=> __( 'This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/i-spirit/i-excel-computers/',
 		  'required_plugin'					=> array(
@@ -129,7 +229,7 @@ function iexcel_import_files() {
       'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.xml',
       'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.wie',
       'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency-1.dat',
-      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-agency-1.jpg',
+      'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/agency-1.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "Contact Form 7" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 	  'preview_url'                		=> 'http://templatesnext.in/demos/tx-demos/index.php/1635-2/',
 	  'required_plugin'					=> array(
@@ -145,7 +245,7 @@ function iexcel_import_files() {
       'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.xml',
       'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.wie',
       'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency-3.dat',
-      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-agency-3.jpg',
+      'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/agency-3.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "Contact Form 7" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 	  'preview_url'                		=> 'https://templatesnext.in/demos/tx-demos/index.php/agency-3/',
 	  'required_plugin'					=> array(
@@ -161,7 +261,7 @@ function iexcel_import_files() {
       'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.xml',
       'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.wie',
       'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-business-1.dat',
-      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-business-1.jpg',
+      'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/business-1.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "Contact Form 7" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 	  'preview_url'                		=> 'http://templatesnext.in/demos/tx-demos/index.php/business-home-1-pb/',
 	  'required_plugin'					=> array(
@@ -178,7 +278,7 @@ function iexcel_import_files() {
       'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.xml',
       'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
       'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-fashion-shop.dat',
-      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-fashion-shop.jpg',
+      'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/fashion-shop.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "WooCommerce" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 	  'preview_url'                		=> 'http://templatesnext.in/demos/tx-demos',
 	  'required_plugin'					=> array(
@@ -195,7 +295,7 @@ function iexcel_import_files() {
       'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.xml',
       'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
       'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop-shaurya.dat',
-      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-shaurya.jpg',
+      'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/shaurya.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "WooCommerce" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 	  'preview_url'                		=> 'http://templatesnext.in/demos/tx-demos/index.php/shop-shaurya/',
 	  'required_plugin'					=> array(
@@ -211,7 +311,7 @@ function iexcel_import_files() {
       'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.xml',
       'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
       'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-craft-18.dat',
-      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-craft-18.jpg',
+      'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/shop-craft-18.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "WooCommerce" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 	  'preview_url'                		=> 'http://templatesnext.in/demos/tx-demos/index.php/shop-blank/',
 	  'required_plugin'					=> array(
@@ -228,7 +328,7 @@ function iexcel_import_files() {
       'import_file_url'            		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.xml',
       'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency.wie',
       'import_customizer_file_url' 		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-agency-2.dat',
-      'import_preview_image_url'     	=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/thumb-agency-2.jpg',
+      'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/agency-2.jpg',
       'import_notice'                	=> __( 'Please make sure you have plugin "TemplatesNext ToolKit" and "Contact Form 7" installed and active before you start the import process. <br> This process involves transfer of data and media from server to server and might take some time.', 'i-excel' ),
 	  'preview_url'                		=> 'http://templatesnext.in/demos/tx-demos/index.php/agency-2-pb/',
 	  'required_plugin'					=> array(
@@ -242,7 +342,7 @@ function iexcel_import_files() {
 		array(
 		  'import_file_name'             	=> 'Classic 1',
 		  'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
-		  'import_preview_image_url'     	=> '//www.wp-demos.com/images/small-images/classic-1.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/classic-1.jpg',
 		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/ispirit/classic/',
 		  'required_plugin'					=> '',
@@ -252,7 +352,7 @@ function iexcel_import_files() {
 		array(
 		  'import_file_name'             	=> 'Modern 1',
 		  'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
-		  'import_preview_image_url'     	=> '//www.wp-demos.com/images/small-images/modern-1.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/modern-1.jpg',
 		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/ispirit/modern/',
 		  'required_plugin'					=> '',
@@ -261,7 +361,7 @@ function iexcel_import_files() {
 		array(
 		  'import_file_name'             	=> 'Flat 1',
 		  'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
-		  'import_preview_image_url'     	=> '//www.wp-demos.com/images/small-images/flat-1.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/flat-1.jpg',
 		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/ispirit/flat/',
 		  'required_plugin'					=> '',
@@ -271,7 +371,7 @@ function iexcel_import_files() {
 		array(
 		  'import_file_name'             	=> 'Shop 1',
 		  'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
-		  'import_preview_image_url'     	=> '//www.wp-demos.com/images/small-images/shop-1.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/shop-1.jpg',
 		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/ispirit/shop/',
 		  'required_plugin'					=> '',
@@ -280,7 +380,7 @@ function iexcel_import_files() {
 		array(
 		  'import_file_name'             	=> 'Modern 2',
 		  'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
-		  'import_preview_image_url'     	=> '//www.wp-demos.com/images/small-images/modern-2.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/modern-2.jpg',
 		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/ispirit/modern/home-visual-composer/',
 		  'required_plugin'					=> '',
@@ -289,7 +389,7 @@ function iexcel_import_files() {
 		array(
 		  'import_file_name'             	=> 'Classic MAX',
 		  'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
-		  'import_preview_image_url'     	=> '//www.wp-demos.com/images/small-images/classic-max.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/classic-max.jpg',
 		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/ispirit/classic/classic-max',
 		  'required_plugin'					=> '',
@@ -298,7 +398,7 @@ function iexcel_import_files() {
 		array(
 		  'import_file_name'             	=> 'Classic 2',
 		  'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
-		  'import_preview_image_url'     	=> '//www.wp-demos.com/images/small-images/classic-2.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/classic-2.jpg',
 		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/ispirit/classic/nx-front/',
 		  'required_plugin'					=> '',
@@ -308,7 +408,7 @@ function iexcel_import_files() {
 		array(
 		  'import_file_name'             	=> 'Shop 2',
 		  'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
-		  'import_preview_image_url'     	=> '//www.wp-demos.com/images/small-images/shop-2.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/shop-2.jpg',
 		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/ispirit/shop/nx-shop/',
 		  'required_plugin'					=> '',
@@ -317,7 +417,7 @@ function iexcel_import_files() {
 		array(
 		  'import_file_name'             	=> 'Flat 2',
 		  'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
-		  'import_preview_image_url'     	=> '//www.wp-demos.com/images/small-images/flat-2.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/flat-2.jpg',
 		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/ispirit/flat/home-fullscreen-image-slider/',
 		  'required_plugin'					=> '',
@@ -326,7 +426,7 @@ function iexcel_import_files() {
 		array(
 		  'import_file_name'             	=> 'Modern MAX',
 		  'import_widget_file_url'     		=> 'https://raw.githubusercontent.com/TemplatesNext/i-excel-demo/master/i-excel-shop.wie',
-		  'import_preview_image_url'     	=> '//www.wp-demos.com/images/small-images/modern-max.jpg',
+		  'import_preview_image_url'     	=> trailingslashit( get_template_directory_uri() ) . 'inc/txoc/small-images/modern-max.jpg',
 		  'import_notice'                	=> __( 'This demo design is only available with premium theme I-SPIRIT.', 'i-excel' ),
 		  'preview_url'                		=> 'http://www.wp-demos.com/ispirit/modern/home-halfscreen-slider-3/',
 		  'required_plugin'					=> '',
@@ -372,6 +472,81 @@ function iexcel_after_import_setup($selected_import) {
        	}		
 		
 	} elseif ( 'Personal' === $selected_import['import_file_name'] ) {
+
+		$main_menu = get_term_by( 'name', 'Main Navigation', 'nav_menu' );
+	
+		set_theme_mod( 'nav_menu_locations', array(
+				'primary' => $main_menu->term_id,
+			)
+		);
+		
+		$front_page_id = get_page_by_title( 'Home' );
+       	if ( isset( $front_page_id->ID ) ) {
+			update_option( 'page_on_front', $front_page_id->ID );
+        	update_option( 'show_on_front', 'page' );
+       	}		
+		
+	} elseif ( 'Multilingual' === $selected_import['import_file_name'] ) {
+		
+		if ( class_exists( 'PLL_Model' ) ) {
+			
+			$polylang_options = get_option( 'polylang');			
+			if( !array_key_exists('default_lang', $polylang_options) ) {
+				
+				$polylang_options['default_lang'] = 'en';
+				update_option( 'polylang', $polylang_options );
+								
+			}		
+		}			
+
+		$main_menu = get_term_by( 'name', 'Main Navigation', 'nav_menu' );
+		$main_menu_de = get_term_by( 'name', 'Main Navigation De', 'nav_menu' );
+		$main_menu_ru = get_term_by( 'name', 'Main Navigation Ru', 'nav_menu' );		
+	
+		set_theme_mod( 'nav_menu_locations', array(
+				'primary' => $main_menu->term_id,
+				'primary___de' => $main_menu_de->term_id,
+				'primary___ru' => $main_menu_ru->term_id,				
+			)
+		);
+		
+		$front_page_id = get_page_by_title( 'Home' );
+       	if ( isset( $front_page_id->ID ) ) {
+			update_option( 'page_on_front', $front_page_id->ID );
+        	update_option( 'show_on_front', 'page' );
+       	}		
+		
+	} elseif ( 'RTL' === $selected_import['import_file_name'] ) {
+
+		$main_menu = get_term_by( 'name', 'Main Navigation', 'nav_menu' );
+	
+		set_theme_mod( 'nav_menu_locations', array(
+				'primary' => $main_menu->term_id,
+			)
+		);
+		
+		$front_page_id = get_page_by_title( 'Home' );
+       	if ( isset( $front_page_id->ID ) ) {
+			update_option( 'page_on_front', $front_page_id->ID );
+        	update_option( 'show_on_front', 'page' );
+       	}		
+		
+	} elseif ( 'SEO' === $selected_import['import_file_name'] ) {
+
+		$main_menu = get_term_by( 'name', 'Main Navigation', 'nav_menu' );
+	
+		set_theme_mod( 'nav_menu_locations', array(
+				'primary' => $main_menu->term_id,
+			)
+		);
+		
+		$front_page_id = get_page_by_title( 'Front Page' );
+       	if ( isset( $front_page_id->ID ) ) {
+			update_option( 'page_on_front', $front_page_id->ID );
+        	update_option( 'show_on_front', 'page' );
+       	}		
+		
+	} elseif ( 'Church' === $selected_import['import_file_name'] ) {
 
 		$main_menu = get_term_by( 'name', 'Main Navigation', 'nav_menu' );
 	

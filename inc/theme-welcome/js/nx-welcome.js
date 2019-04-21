@@ -63,11 +63,13 @@ jQuery(document).ready(function ($) {
 	******************************************************************************************************************/
 	
 	// Notice Close Button
+	/*
 	jQuery(document).ready(function($) {
 		if( recomended_notice != '0' ) {
 			$( "#customize-info" ).after( recomended_notice );
 		}
 	});
+	*/
     
 	$('#widgets-right').on('click', '.tx-notice-close', function (e) {
         var noticeClose = $(this);

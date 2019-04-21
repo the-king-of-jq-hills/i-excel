@@ -104,7 +104,12 @@ if ( function_exists( 'rwmb_meta' ) ) {
                     <i class="topbarico genericon genericon-mail"></i>
                     <?php echo sanitize_email($top_email); ?>
                 </div>
-                <?php endif; ?>                
+                <?php endif; ?>
+
+                <?php if ( function_exists('pll_the_languages') ) : ?>
+               	<?php echo iexcel_polylang_switcher(); ?>
+                <?php endif; ?>
+                                             
             </div> 
         </div>
         <?php endif; ?>
